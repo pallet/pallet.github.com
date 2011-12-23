@@ -139,3 +139,7 @@ section > .row {
 .post {
     padding-top: 66px;
 }
+
+.twitter_widget p {
+    font-size: 12px;
+}

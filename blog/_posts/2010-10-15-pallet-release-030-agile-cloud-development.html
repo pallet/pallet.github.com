@@ -1,0 +1,24 @@
+---
+layout: news
+title: Pallet release 0.3.0
+permalink: pallet-release-030-agile-cloud-development
+---
+<p>What better way to start this blog, than by announcing the latest release of <a href="http://github.com/hugoduncan/pallet">Pallet</a>. Perhaps the biggest news around this release is that the pallet community is growing rapidly, and the 0.3.0 release has seen great input from many contributors. I really appreciate all the ideas and contributions!</p>
+<p>A particular shout out to David Santiago and Charles Duffy. David has contributed a new <a href="https://github.com/hugoduncan/pallet/blob/pallet-0.3.0/src/pallet/crate/postgres.clj">Postgres crate</a>, and has put together a <a href="http://github.com/davidsantiago/cake-pallet">cake plugin</a> for pallet. Charles has much improved the bash <a href="https://github.com/hugoduncan/pallet/blob/pallet-0.3.0/resources/stevedore/hashlib.bash">hashlib</a> used to propogate state during lifts on a node.</p>
+<p><a href="http://cemerick.com">Chas Emerick</a> has been promoting Pallet as part of his talk at the first <a href="http://clojure-conj.org/">clojure-conj</a> conference, and followed that up with a <a href="http://cemerick.com/2010/11/02/continuous-deployment-of-clojure-web-applications/">blog post</a> and <a href="https://github.com/cemerick/clojure-web-deploy-conj">project code</a>.  The post has an fantastic screen cast on using pallet together with Hudson.</p>
+<p>Toni Batchelli (aka <a href="http://disclojure.org/">disclojure</a>) has given a couple of talks: a <a href="http://www.scribd.com/doc/39275742/Pallet-Bacug">great technical introduction</a>, and a <a href="http://www.scribd.com/doc/40391319/Pallet-Gogrid">slightly higher level overview</a>. He has also vastly improved the <a href="http://github.com/hugoduncan/pallet-examples">pallet examples</a>.</p>
+<p>Finally, Adrian Cole of <a href="http://jclouds.org">jclouds</a>, the foundation of pallet, has been lavish in his support, even giving a <a href="http://oredev.org/2010/speakers/adrian-cole">workshop on pallet</a> at <a href="http://oredev.org/2010">&Oslash;redev</a> in Sweden!</p>
+<h2>What's new</h2>
+<p>Some highlights from the <a href="https://github.com/hugoduncan/pallet/wiki/ReleaseNotes">release notes</a>.</p>
+<ul>
+<li>Added ~/.pallet/config.clj as a way of configuring your credentials, and the default admin user. The admin user can also be configured in project code in the pallet.config namespace.</li>
+<li>Added a "node-list" provider, which simplifies working with pre-existing vms and servers that are not managed through a cloud.</li>
+<li>Added a tomcat task, that can provide a near zero config way of deploying a war file.</li>
+<li>cent-os and amzn-linux support are vastly improved.</li>
+</ul>
+<p>Look out for more, in-depth, posts on the new features.</p>
+<h2>Looking ahead</h2>
+<p>One of the first things we will be doing in the 0.4.0-SNAPSHOT is splitting out the crates into a separate repository.  Hopefully this will be the first step in creating an ecosystem of pallet crates.  Stay tuned for further posts on this.</p>
+<h2>Trying it</h2>
+<p>The release is available on <a href="http://clojars.org/org.cloudhoist/pallet">clojars</a>.</p>
+<p>Both #pallet on freenode IRC, which is a bustling place these days, and the <a href="http://groups.google.com/group/pallet-clj">mailing list</a> are great places to ask, should you have any questions.</p>

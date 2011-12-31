@@ -2,6 +2,7 @@
 layout: news
 title: Zi, the Maven plugin in Clojure
 permalink: zi-the-maven-plugin-in-clojure
+author: Hugo Duncan
 ---
 YACMP doesn't trip off the tongue, so this clojure maven plugin is called [Zi](http://bit.ly/zicljpops), and it's written in clojure. Some highlights:
 

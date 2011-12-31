@@ -2,6 +2,7 @@
 layout: news
 title: Working with Non-Cloud Servers in Pallet
 permalink: working-with-non-cloud-servers-in-pallet
+author: Hugo Duncan
 ---
 If have tried to configure local vm's or non-virtualised servers in
 [Pallet](http://palletops.com), you might well have given up. The recent

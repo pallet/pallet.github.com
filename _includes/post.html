@@ -1,0 +1,48 @@
+{% if page.is_index %}{% assign content = post.content %}{% endif %}
+<div class="span11 content">
+  <div class="page-header">
+    {% if post.title %}
+      <h1 class="title">
+      {% if page.is_index %}
+        <a href="{{ site.baseurl }}{{ post.url }}">
+          {{ post.title }}
+        </a>
+      {% else %}
+        {{ post.title}}
+      {% endif %}
+      </h1>
+    {% endif %}
+  </div>
+  <div class="post_content">
+    {% if page.is_index %}
+       {% if post.summary %}
+         {{ post.summary }}
+       {% else %}
+         {{ content }}
+      {% endif %}
+    {% else %}
+      {{ content }}
+    {% endif %}
+  </div>
+  <div class="row">
+    <div class="span2">
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-size="large" data-hashtags="palletops">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+    <div class="span2">
+      <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+      <script type="IN/Share" data-counter="right"></script>
+</div>
+  </div>
+</div><!--content-->
+
+<div class="span5 sidebar">
+  <h4>Published on {{ post.date | date:'%d %B %Y' }}</h4>
+  {% for category in post.categories %}
+  <h6>{{ category }}</h6>
+  {% endfor %}
+  <br/>
+  <br/>
+  {% include training-cw-2012-blog.html %}
+  {% include twitter-widget.html %}
+</div>

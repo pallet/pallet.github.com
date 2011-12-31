@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% assign post = page %}
+    {% include body-head.html %}
+    {% include topbar-blog-only.html %}
+    <div class="post">
+      <div class="container">
+        {% include post.html %}
+      </div>
+    </div>
+  </body>
+  {% include foot.html %}
+</html>

@@ -6,7 +6,7 @@ layout: nil
   {% include head.html %}
   <body>
     {% include body-head.html %}
-    {% include topbar.html %}
+    {% include topbar-blog-only.html %}
     <div class="post">
       <div class="container">
         <div class="row">
@@ -16,7 +16,6 @@ layout: nil
                 The Pallet Blog
               </h1>
             </div>
-            <section id="blog-nil">
               {% for post in site.categories.blog offset: 0 limit: 25 %}
               <div class="row">
                 <div class="span11 post_content">  
@@ -27,14 +26,16 @@ layout: nil
                 </div>
               </div>
               {% endfor %}
-            </section>
             </div>
           <div class="span5 sidebar">
+            <br>
+            <br>
+            <br>
+            {% include training-cw-2012-blog.html %}
             {% include twitter-widget.html %}
           </div>
         </div> <!-- row -->
-      </div> <!-- container -->
-      
+      </div> <!-- container -->   
       {% include foot.html %}
   </body>
 </html>

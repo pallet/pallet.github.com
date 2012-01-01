@@ -4,3 +4,4 @@ paginate: 10
 exclude: 
 name: Pallet, Devops for the JVM
 pygments: true
+domain: palletops.com

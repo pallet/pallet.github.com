@@ -7,7 +7,7 @@ layout: nil
  <link href="http://palletops.com/atom.xml" rel="self"/>
  <link href="http://palletops.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://pallet.com/</id>
+ <id>http://{{ site.domain }}/</id>
  <author>
    <name>Antoni Batchelli</name>
    <email>tbatchelli@palletops.com</email>
@@ -17,7 +17,7 @@ layout: nil
    <title>{{ post.title }}</title>
    <link href="http://palletops.com/{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://palletops.com/{{ post.url }}</id>
+   <id>http://{{ site.domain }}/{{ post.url }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
    <author>
      <name>{{ post.author }}</name>

@@ -1,7 +1,7 @@
 ---
 
 title: Introducing Jekyll Bootstrap
-layout: default
+layout: news
 
 ---
 

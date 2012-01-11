@@ -1,9 +1,7 @@
 ---
-
 title: This is the title
-layout: default
+layout: news
 categories: first-category second
-
 ---
 
 This is the first post woohoo

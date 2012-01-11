@@ -1,7 +1,7 @@
 ---
 
 title: Testing Markdown
-layout: default
+layout: news
 
 ---
 

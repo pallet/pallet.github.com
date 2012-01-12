@@ -5,13 +5,32 @@
         <div class="container">
           <a class="brand" href="/">Pallet</a>
           <ul class="nav">
-            <li class="active"><a href="#overview">Overview</a></li>
+            {% for section in site.navigation %}
+              {% if section.active %}
+                {% assign active = nil %}
+                {% if section.sections contains post.section %}
+                   {% assign active = "active" %}
+                {% endif %}
+                {% if section.sections contains page.section %}
+                   {% assign active = "active" %}
+                {% endif %}
+                <li class={{active}}>
+                  <a href={{section.url}}>
+                    {{section.text}}
+                    </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+<!--            <li {% if post.url = "/doc/overview" %}
+                class="active" 
+                {% endif %}>
+              <a href="/doc/overview">Overview</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#news">Latest News</a></li>
             <li><a href="/blog.html">Blog</a></li>
             <li><a href="#getting-started">Getting Started</a></li>
             <li><a href="#documentation">Documentation</a></li>
-            <li><a href="#community">Community</a></li>
+            <li><a href="#community">Community</a></li> -->
           </ul>
         </div>
       </div>

@@ -5,3 +5,28 @@ exclude:
 name: Pallet, Devops for the JVM
 pygments: true
 domain: palletops.com
+navigation:
+- text: Overview
+  active: false
+  url: /doc/overview
+  sections: [overview]
+- text: About
+  active: false
+  url: /about
+- text: Latest News
+  active: false
+  url: /news
+- text: Blog
+  active: true
+  url: /blog
+  sections: [blog]
+- text: Getting Started
+  active: false
+  url: /doc/getting-started
+- text: Documentation
+  active: false
+  url: /doc
+  sections: [doc]
+- text: Community
+  active: false
+  url: /community

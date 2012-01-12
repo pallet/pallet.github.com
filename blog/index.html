@@ -1,11 +1,13 @@
 ---
 layout: nil
+title: Pallet Blog
+section: blog
 ---
 <!doctype html>
 <html lang="en">
   {% include head.html %}
   <body>
-    {% include topbar-blog-only.html %}
+    {% include topbar.html %}
     <div class="post">
       <div class="container">
         <div class="row">
@@ -18,10 +20,10 @@ layout: nil
               {% for post in site.categories.blog offset: 0 limit: 25 %}
               <div class="row">
                 <div class="span11 post_content">  
-                  <h2><a href="{{ post.url }}/">{{ post.title }}</a></h2>
+                  <h2><a href="/{{ post.url }}/">{{ post.title }}</a></h2>
                   <p class="date">{{ post.date | date: "%A, %d %B %Y"}}</p>
                   <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
-                  <p><a href="{{ post.url }}/">Go to Article</a></p>
+                  <p><a href="/{{ post.url }}/">Go to Article</a></p>
                 </div>
               </div>
               {% endfor %}

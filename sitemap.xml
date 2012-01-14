@@ -24,7 +24,22 @@ layout: nil
     {% endif %}
   </url>
   {% endfor %}
-<!--
+  
+  <!-- documentation -->
+  {% for page in site.categories.doc %}
+  <url>
+    <loc>http://{{ site.domain }}/{{ page.url }}</loc>
+    {% if page.last_updated %}
+    <lastmod>{{ page.last_updated | date: "%Y-%m-%d" }}</lastmod>
+    {% elsif page.date %}
+    <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
+    {% else %}
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
+    {% endif %}
+  </url>
+  {% endfor %}
+ 
+  <!-- html pages -->
   {% for page in site.html_pages %}
   <url>
     <loc>http://{{ site.domain }}/{{ page.url }}</loc>
@@ -39,5 +54,5 @@ layout: nil
     {% if page.priority %}<priority>{{ page.priority }}</priority>{% endif %}
   </url>
   {% endfor %}
--->
+
 </urlset>

@@ -1,7 +1,7 @@
 ---
 layout: news
 title: How to Configure your Credentials in Pallet
-permalink: how-to-configure-your-credentials-in-pa
+permalink: how-to-configure-your-cloud-credentials-in-pa
 author: Hugo Duncan
 ---
 The recent

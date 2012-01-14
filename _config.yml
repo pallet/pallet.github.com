@@ -24,9 +24,9 @@ navigation:
   active: false
   url: /doc/getting-started
 - text: Documentation
-  active: false
+  active: true
   url: /doc
-  sections: [doc]
+  sections: [doc, documentation]
 - text: Community
   active: false
   url: /community

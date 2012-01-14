@@ -1,11 +1,16 @@
 ---
 layout: doc
 title: Documentation
-section: doc
+section: documentation
 ---
-## [Overview](/doc/overview)
+## Pallet
 
-### [Tutorial](/doc/tutorial)
+Pallet is a node provisioning, configuration and administration tool.  It is
+designed to make small to midsize deployments simple.
 
-## Manuals
-## API Reference
+- [Overview](/doc/overview)
+- [First Steps](/doc/first-steps)
+- [Reference Documentation](/doc/reference)
+- [API Documentation](http://pallet.github.com/pallet/autodoc/index.html)
+- [Annotated Source](http://pallet.github.com/pallet/marginalia/uberdoc.html)
+

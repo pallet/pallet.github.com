@@ -12,9 +12,24 @@ layout: nil
    <name>Antoni Batchelli</name>
    <email>tbatchelli@palletops.com</email>
  </author>
+ <!-- blog posts -->
  {% for post in site.categories.blog limit:100 %}
  <entry>
-   <title>{{ post.title }}</title>
+   <title>Article: {{ post.title }}</title>
+   <link href="http://palletops.com/{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>http://{{ site.domain }}/{{ post.url }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+   <author>
+     <name>{{ post.author }}</name>
+     <uri>{{ post.author_url }}</uri>
+   </author>
+ </entry>
+ {% endfor %}
+ <!-- news -->
+ {% for post in site.categories.news limit:100 %}
+ <entry>
+   <title>News: {{ post.title }}</title>
    <link href="http://palletops.com/{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://{{ site.domain }}/{{ post.url }}</id>

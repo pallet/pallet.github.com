@@ -1,11 +1,264 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html>
-<head>
-<title>Pallet, DevOps for the JVM</title>
-<meta http-equiv="REFRESH" content="1;url=/blog">
-<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-</HEAD>
-<BODY>
-Please visit http://palletops.com/blog
-</BODY>
-</HTML>
+---
+layout: nil
+---
+<!doctype html>
+<html lang="en">
+ {% include head.html %}
+ <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
+
+  <body>
+    {% include topbar.html %}
+    
+    <!-- Masthead (blueprinty thing)
+    ================================================== -->
+    <header class="jumbotron masthead" id="overview">
+      <div class="inner">
+        <div class="container">
+          <h1>Pallet, DevOps for the JVM</h1>
+          <p class="lead">
+             <br/>A fresh look at cloud infrastructure automation.<br/>
+          </p>
+          <p/>
+        </div><!-- /container -->
+      </div>
+    </header>
+    
+    <div class="alerts">
+      <div class="container">
+        {% include training-cw-2012.html %}
+      </div>
+    </div>
+
+    <!-- Calls to Action
+    ================================================== -->
+    <div class="quickstart">
+      <div class="container">
+        <div class="row">
+          <div class="span4 offset1">
+            <h6>Learn what you can do</h6>
+            <p>Create an Apache Hadoop cluster on Amazon EC2 in
+                5 minutes.</p>
+            <p>
+              <a href="{{ site.baseurl }}/create-hadoop-clusters-the-easy-peasy-way-wit/"
+                 class="btn primary">Read the Article</a>
+            </p>
+          </div>
+          <div class="span4 offset1">
+            <h6>Read the Documentation</h6>
+            <p>Want to know more? Head over to our documentation and
+                start building infrastructure in the cloud.</p>
+            <p>
+              <a href="{{ site.baseurl}}/doc"
+                 class="btn primary">
+                Documentation
+              </a>
+            </p>
+          </div>
+          <div class="span4 offset2">
+            <h6>Fork on GitHub</h6>
+            <p>Download, fork, pull, file issues, and more with the
+                official Pallet repo on Github.</p>
+            <p><a target="_blank"
+                  href="https://github.com/pallet/pallet"
+                  class="btn primary">
+                Pallet on GitHub &raquo;</a>
+            </p>
+          </div>
+        </div><!-- /row -->
+      </div>
+    </div>
+    
+    <div class="container">
+      <section id="about">
+        <div class="page-header">
+          <h1>About Pallet
+          </h1>
+        </div>
+        <div class="row">
+          <div class="span-one-third">
+            <h3>What is Pallet?</h3>
+            <p>Pallet is platform for agile and programmatic
+              automation of infrastructure in the cloud, on server
+              racks or directly on virtual machines. Pallet provides
+              cloud provider and operating system independence, and
+              allows for an unprecedented level of customization.</p>
+          </div>
+          <div class="span-one-third">
+            <h3>Supported Cloud Providers</h3>
+            <ul>
+              <li><a href="http://aws.amazon.com/ec2">
+                  Amazon Web Services' EC2</a></li>
+              <li><a href="http://www.rackspace.com/cloud/cloud_hosting_products/servers/">
+                  RackSpace Cloud Servers</a></li>
+              <li><a href="http://www.gogrid.com/">
+                  GoGrid Cloud Hosting</a></li>
+              <li><a href="http://www.eucalyptus.com/">
+                  Eucalyptus</a></li>
+              <li><a href="http://nova.openstack.org/">
+                  OpenStack Nova </a></li>
+              <li><a href="http://www.slicehost.com/">
+                  SliceHost</a></li>
+              <li><a href="/doc/reference/supported-providers">
+                  ... and many more.</a></li>
+            </ul>
+          </div> 
+          <div class="span-one-third">
+            <h3>Special Providers</h3>
+            <p> Infrastructure providers that are not
+              cloud-based</p>
+            <ul>
+              <li>Server Rack</li>
+              <li>Virtual Box</li>
+            </ul>
+   {% comment %}
+            <h3>Supported Node OSs</h3>
+            <ul>
+              <li>Ubuntu</li>
+              <li>Red Hat</li>
+              <li>CentOS</li>
+              <li>Debian</li>
+              <li>... any Linux</li>
+            </ul>
+   {% endcomment %}
+          </div>
+        </div> <!-- row -->
+      </section>
+      <section id="get-started">
+        <div class="page-header">
+          <h1>Getting Started</h1>
+        </div>
+        <div class="row">
+          <div class="span-one-third">
+            <h3>Documentation</h3>
+            <ul>
+              <li><a href="/doc">General Documentation</a></li>
+              <li><a href="/doc/reference">Reference
+                  Documentation</a></li>
+              <li><a href="http://pallet.github.com/pallet/autodoc/index.html">
+                  API Documentation</a></li>
+              <li><a href="http://pallet.github.com/pallet/marginalia/uberdoc.html">
+                  Annotated Source</a></li>
+            </ul>
+          </div>
+          <div class="span-one-third">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>On IRC at #pallet (at irc.freenode.net)</li>
+              <li><a href="http://groups.google.com/group/pallet-clj">
+                  On the Mailing List</a></li>
+              <li><a href="mailto:contact@palletops.com">
+                  Via e-mail</a></li>
+            </ul>
+          </div>
+          <div class="span-one-third">
+            <h3>Example Projects</h3>
+            <ul>
+              <li><a href="https://github.com/pallet/pallet-examples/tree/develop/basic">
+                  Basic</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+            
+      <section id="news">
+        <div class="page-header">
+          <h1><a href="/news">Latest News</a>
+            <small><a href="/news/atom.xml">RSS</a></small>
+          </h1> 
+        </div>
+        
+        <ul class="unstyled">
+          {% for post in site.categories.news limit:3 %}
+          <li><span>{{ post.date | date_to_string }}</span> &raquo;
+            <a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section id="articles">
+        <div class="page-header">
+          <h1><a href="/blog">Articles</a>
+            <small><a href="/blog/atom.xml">RSS</a></small>
+          </h1>
+        </div>
+        <ul class="unstyled">
+          {% for post in site.categories.blog limit:5 %}
+          <li><span>{{ post.date | date_to_string }}</span> &raquo;
+            <a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </section>
+      
+{% comment %}
+      <section id="getting-started">
+        <div class="page-header">
+          <h1>Getting Started</h1>
+        </div>
+        <div class="row">
+          <div class="span8">
+            <h3><a href="{{ site.baseurl }}/getting-started.html">Tutorial</a></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enimad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+          </div>
+          <div class="span8">
+            <h3><a href="{{ site.baseurl}}/getting-started-2.html">
+                Introduction </a></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enimad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</p>
+          </div>
+        </div> <!-- row -->        
+ 
+    </section>
+
+    <section id="documentation">
+      <div class="page-header">
+        <h1>Documentation</h1>
+      </div>
+        <h3><a href="#">Overview</a></h3>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <h3><a href="#">Architecture</a></h3>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <h3><a href="#">Sessions</a></h3>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <h3><a href="#">Phases</a></h3>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <h3><a href="#">Multi-group</a></h3>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <h3><a href="#">Stevedore</a></h3>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enimad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    </section> <!-- documentation section -->
+    
+    <section id="community">
+      <div class="page-header">
+        <h1>Community</h1>
+      </div>
+      <div class="row">
+        <div class="span8">
+          <h3>Case Studies</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua.</p>
+        </div>
+        <div class="span8">
+          <h3>Contribute</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua.</p>
+          <a href="#" class="btn large primary">Fork Pallet on GitHub</a>
+        </div>
+        </div>
+    </section> <!-- contribute section -->
+{% endcomment %}
+</div><!--container-->
+
+{% include foot.html %}
+
+</body>
+</html>

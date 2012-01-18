@@ -10,7 +10,7 @@ author: Antoni Batchelli
 <p><a href="http://clojurewest.org/">Clojure/West</a> will be held in San Jose on March 16-17 and <a href="http://clojurewest.org/">registration for the conference</a> is also open. Make sure you book your hotel rooms soon for an exceptional discount.</p>
 <p>Below is the <a href="http://clojurewest.squarespace.com/training-pallet/">official announcement</a>:</p>
 <p><span style="color: #626262; font-family: 'Lucida Sans Unicode', 'Lucida Grande', Tahoma, sans-serif; font-size: 12px; line-height: 21px;"> </span></p>
-<p style="margin-bottom: 1em; margin-top: 0em;"><strong>Cost:&nbsp;</strong>$1200</p>
+<p style="margin-bottom: 1em; margin-top: 0em;"><strong>Cost:&nbsp;</strong>$1200 (<a href="http://www.regonline.com/Register/Checkin.aspx?EventID=1041359"> <strong>Sign up before Jan 27th and get $200 off!</strong></a>)</p>
 <p style="margin-bottom: 1em; margin-top: 0em;">Included: breakfast, lunch, breaks, power, wifi</p>
 <p style="margin-bottom: 1em; margin-top: 0em;"><strong>Dates:</strong></p>
 <ul style="list-style-type: square; margin-top: 1em; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 2em;">

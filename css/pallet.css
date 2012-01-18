@@ -34,12 +34,12 @@ section > .row {
   margin-bottom: 9px;
 /*  color: #fff; */
   text-align: center;
-  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+/*  text-shadow: 0 1px 1px rgba(0,0,0,.3); no shadows */
 }
 .jumbotron h1 {
   font-size: 54px;
   line-height: 1;
-  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+/*  text-shadow: 0 1px 2px rgba(0,0,0,.5); */
 }
 .jumbotron p {
   font-weight: 300;
@@ -71,13 +71,10 @@ section > .row {
   margin-bottom: 0;
 }
 
-.quickstart .row {
-  margin: 0 -20px;
-}
 .quickstart [class*="span"] {
   width: 285px;
   height: 117px;
-  margin-left: 0;
+/*  margin-left: 0; */
   padding-top: 20px;
 }
 
@@ -86,6 +83,7 @@ section > .row {
 /*  border-right: 1px solid #eee;
 */  width: 286px;
 }
+
 .quickstart h6,
 .quickstart p {
   line-height: 18px;
@@ -142,4 +140,8 @@ section > .row {
 
 .twitter_widget p {
     font-size: 12px;
+}
+
+section {
+    padding-top: 20px;
 }

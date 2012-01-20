@@ -3,6 +3,7 @@ layout: news
 title: How to Configure your Credentials in Pallet
 permalink: how-to-configure-your-cloud-credentials-in-pa
 author: Hugo Duncan
+section: blog
 ---
 The recent
 [0.3.0 release](http://palletops.com/pallet-release-030-agile-cloud-development)

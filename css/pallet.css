@@ -150,3 +150,7 @@ section > .row {
 code, pre {
     font-size: 14px;
 }
+
+.post_content {
+    padding-bottom: 33px;
+}

@@ -1,7 +1,7 @@
 ---
 layout: nil
-title: Latest Documentation Updates
-section: documentation
+title: Documentation Changes
+section: news
 ---
 <!doctype html>
 <html lang="en">
@@ -19,7 +19,7 @@ section: documentation
               </h1>
             </div>
 
-            {% for post in site.categories.doc.news offset: 0 limit: 150 %}
+            {% for post in site.categories.changes offset: 0 limit: 150 %}
             <!-- include news_summary.html -->
             <div class="row">
               <div class="span11 post_content">  
@@ -30,7 +30,9 @@ section: documentation
                    {% else %}
                   {{ post.content | strip_html | truncatewords: 50 }}
                    {% endif %}</p>
-                <p><a href="{{ post.url }}">Read the full article &rarr;</a></p>
+                <p><a class="pull-right" href="{{ post.url }}">
+                    Read the full article &rarr;</a>
+                </p>
               </div>
             </div>
             {% endfor %}

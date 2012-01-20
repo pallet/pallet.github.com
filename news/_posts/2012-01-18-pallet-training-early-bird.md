@@ -2,6 +2,7 @@
 title: Pallet Training at Clojure/West is $1000 until Jan 27th
 author: Antoni Batchelli
 layout: news
+section: news
 ---
 
 [Clojure/West](http://clojurewest.org) has decided to offer Early Bird

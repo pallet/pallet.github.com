@@ -3,6 +3,7 @@ layout: news
 title: Create Hadoop clusters the easy peasy way with Pallet
 permalink: create-hadoop-clusters-the-easy-peasy-way-wit
 author: Antoni Batchelli
+section: blog
 ---
 Setting up a Hadoop cluster
 [is usually a pretty involved task](http://hadoop.apache.org/common/docs/current/cluster_setup.html).

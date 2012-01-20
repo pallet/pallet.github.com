@@ -1,3 +1,6 @@
+{% comment %}
+Assign atom = true if this is an index page that has a corresponding atom page
+{% endcomment %}
 <head>
   <meta charset="utf-8" />
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
@@ -20,4 +23,8 @@
   })();
 
   </script>
+  {% if atom == true %}
+  <link rel="alternate" type="application/rss+xml" title="RSS"
+        href="atom.xml">
+  {% endif %}
 </head>

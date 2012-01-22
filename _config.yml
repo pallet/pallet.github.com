@@ -1,7 +1,7 @@
 # Jekyll
-permalink: /:year/:title/
+permalink: /:categories/:title/
 exclude: 
-name: Pallet, Devops for the JVM
+name: Pallet, DevOps for the JVM
 pygments: true
 domain: palletops.com
 navigation:

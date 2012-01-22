@@ -12,33 +12,23 @@ layout: nil
 		<priority>1.0</priority>
   </url>
 
-  {% for page in site.categories.blog %}
-  <url>
-    <loc>http://{{ site.domain }}/{{ page.url }}</loc>
-    {% if page.last_updated %}
-    <lastmod>{{ page.last_updated | date: "%Y-%m-%d" }}</lastmod>
-    {% elsif page.date %}
-    <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
-    {% else %}
-    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
-    {% endif %}
-  </url>
-  {% endfor %}
+  <!-- Blog entries -->
+  {% assign pages = site.categories.blog %}
+  {% include site-entry.xml %}
+
   
   <!-- documentation -->
-  {% for page in site.categories.doc %}
-  <url>
-    <loc>http://{{ site.domain }}/{{ page.url }}</loc>
-    {% if page.last_updated %}
-    <lastmod>{{ page.last_updated | date: "%Y-%m-%d" }}</lastmod>
-    {% elsif page.date %}
-    <lastmod>{{ page.date | date: "%Y-%m-%d" }}</lastmod>
-    {% else %}
-    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
-    {% endif %}
-  </url>
-  {% endfor %}
- 
+  {% assign pages = site.categories.doc %}
+  {% include site-entry.xml %}
+
+  <!-- FAQs -->
+  {% assign pages = site.categories.faq %}
+  {% include site-entry.xml %}
+
+  <!-- how tos -->
+  {% assign pages = site.categories.how-tos %}
+  {% include site-entry.xml %}
+
   <!-- html pages -->
   {% for page in site.html_pages %}
   <url>

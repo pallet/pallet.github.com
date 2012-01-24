@@ -1,6 +1,6 @@
 # Jekyll
 permalink: /:categories/:title/
-exclude: 
+exclude: [release.sh]
 name: Pallet, DevOps for the JVM
 pygments: true
 domain: palletops.com

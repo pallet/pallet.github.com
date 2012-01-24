@@ -26,7 +26,7 @@ navigation:
   sections: [blog]
 - text: Get the Code!
   active: true
-  url: http://github.com/pallet/pallet
+  url: https://github.com/pallet/pallet
 - text: Getting Started
   active: false
   url: /doc/getting-started

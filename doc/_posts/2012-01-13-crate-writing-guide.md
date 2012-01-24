@@ -34,7 +34,7 @@ is available within clojure for querying, etc.
 ## Install paths, users, etc
 
 In order to expose details of your crate install to other crates, you should
-use the request :parameters to record paths, user names etc.
+use the session :parameters to record paths, user names etc.
 
 Information for consumption on the same node should go into the host parameters
 using `assoc-for-target`, `update-for-target` and `get-for-target` in the
@@ -51,8 +51,8 @@ Package based installs are preferred.
 - a function to install a package or a set of packages should be called `install`
 
 - ensure the package manager is up to date by calling
-  `(pallet.resource.package/package-manager :update)`
-  
+  `(pallet.action.package/package-manager :update)`
+
 ## Source based install
 
 Sometimes a source based install can be useful. This should be optional.
@@ -62,7 +62,7 @@ Sometimes a source based install can be useful. This should be optional.
 Not all crates will use an init service, but many packages install one.
 
 The crate should wrap a provided init service in an `init-service` function that
-forwards actions to `pallet.resource.service/service`, so the name of the
+forwards actions to `pallet.action.service/service`, so the name of the
 service is encapsulated. This wrapper should also expose an `:if-config-changed`
 option to make its actions condtional on a change in configuration.  The flag
 should be set by any changes in configuration, eg. using the

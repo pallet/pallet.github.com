@@ -35,7 +35,7 @@ credentials.
 {% highlight clojure %}
   (require 'pallet.compute)
   (def service
-    (pallet.compute/service
+    (pallet.configure/compute-service
      "provider" :identity "username" :credential "password"))
 {% endhighlight %}
 
@@ -52,11 +52,11 @@ You can use the pallet configuration file
 {% highlight clojure %}
   (defpallet
     :services
-      {:aws {:provider "ec2" 
-             :identity "key" 
+      {:aws {:provider "ec2"
+             :identity "key"
              :credential "secret-key"}
-       :rs  {:provider "cloudservers" 
-             :identity "username" 
+       :rs  {:provider "cloudservers"
+             :identity "username"
              :credential "key"}})
 {% endhighlight %}
 
@@ -64,9 +64,9 @@ The provider key, `:aws` and `:rs` above, has to be unqiue, but you can have
 multiple accounts for the same provider.
 
 To create a compute service object from this file, that you can pass to `lift`
-or `converge`, you use `pallet.compute/service`. By default, the first provider
-entry will be used, and you can specify an alternative provider by passing the
-key to the function.
+or `converge`, you use `pallet.configure/compute-service`. By default, the first
+provider entry will be used, and you can specify an alternative provider by
+passing the key to the function.
 
 {% highlight clojure %}
   (pallet.compute/service "rs")

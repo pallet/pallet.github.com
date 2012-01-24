@@ -10,7 +10,7 @@ designed to make small to midsize deployments simple.
 - [Overview](/doc/overview)
 - [First Steps](/doc/first-steps)
 - [Reference Documentation](/doc/reference)
-- [API Documentation](http://pallet.github.com/pallet/autodoc/index.html)
+- [API Documentation](http://pallet.github.com/pallet/api/0.6/index.html)
 - [Annotated Source](http://pallet.github.com/pallet/marginalia/uberdoc.html)
 
 ## [Latest Documentation Changes](/doc/changes) <small><a href="/doc/changes/atom.xml">RSS</a></small>
@@ -32,5 +32,4 @@ designed to make small to midsize deployments simple.
 - {{post.date | date_to_string }} &raquo; [{{post.title}}]({{post.url}})
 {% endfor %}
 <p><a class="pull-right" href="/doc/faq"> See all the FAQs &rarr;</a></p>
-<br>  
-
+<br>

@@ -7,7 +7,140 @@ subsection: release-notes
 summary: Release Notes for all the Pallet releases.
 ---
 
-## 0.6.4 
+## 0.6.6
+
+### features
+- Add pallet.phase/check-session-thread
+  This is a macro that can be used to add session checking in a session
+  thread pipeline.
+
+- Introduce :create-group, :destroy-group and :destroy-server phases
+  When starting and stopping groups or nodes, it is useful to be able to
+  run setup or tear-down functions.
+
+- Make the merging of keys in a group-spec open
+  Allow extensions of pallet to specify how other keys are merged by a
+  group-spec.
+
+- Add support for declarative hybrid provider definitions
+
+- Add :provider-options to the environment, and pass to run-nodes
+
+- Add :append option to user action (for adding groups)
+
+
+### fixes
+- Normalise the :node-set constructed by lift
+
+- Add missing environment test for hybrid provider
+
+- Make hybrid compute to properly merge the environments of all sub-services
+
+- Fix use of group specific environment for top level pallet keys
+
+- Fix removal of jclouds nodes that fail on bootstrap
+
+- Filter logging of empty messages from scripts
+
+- Refactor converge-node-counts
+  Make it easier to add functions to start, and stop nodes.
+
+- Add a combine-actions implementation for :nested-scope
+  Only the last script of adjacent nested scopes was being returned. Fixes
+  #97.
+
+## 0.6.5
+
+### Features
+- Add cause to unexpected action execution exception
+
+- Add hybrid provider
+  The hybrid provider allows treating multiple cloud services as a single
+  compute service
+
+- Update to be jclouds 1.1.x compatible
+
+- Add execute/local-script-expand and expand key paths supplied in the
+  environment
+  In order to allow ~ and environment variables in paths in config.clj,
+  expand the paths in the shell using echo
+
+### Fixes
+- Fix password option for user action
+
+- Fix missing require
+
+- Fix lib/download-request to use call str on the endpoint
+  When passed a uri, this was failing
+
+- Switch to direct use of pallet.node namespace
+
+- Fix deletion of failed nodes from jclouds run-nodes
+  The wrong set of nodes was being removed.
+
+  Addresses #95.
+
+- Ensure issues with jclouds node startup are handled
+  When jclouds has problems starting nodes, it throws a RunNodesException.
+  This is now caught and processed. If there are no successful nodes, an
+  exception is raised, otherwise processing continues with the successful
+  nodes.
+
+  This should fix #95.
+
+- Merge branch 'feature/multiprovider' into support/0.6.x
+
+- Ensure vmfest failure to obtain IP or to bootstrap removes vm
+  On failure to obtain an IP or to bootstrap, ensure that the vm that was
+  being launched is destroyed. If the bootstrap fails, an exception is also
+  now thrown.
+
+- Add hybrid provider test
+
+- Fix error handling when there is more than one action
+  An error occuring when there were multipl types of actions would not
+  cause an exception to be raised
+
+- Add hybrid provider tests. Move Node to pallet.node namespace
+
+- Add test-utils/redef for clojure 1.2/1.3 compatability
+
+- Fix use of service specific environment in main-invoker
+  The service specific environment wasn't being used by the task invoker
+
+- Remove pallet.task.feedback from repl
+
+- Remove use of clojure.contrib.strint
+
+- Remove use of clojure.contrib.io
+
+- Remove use of clojure.contrib.core
+
+- Remove use of clojure.contrib.map-utils
+
+- Remove use of clojure.contrib.pprint
+
+- Remove use of clojure.contrib.jar
+
+- Remove use of clojure.contrib.classpath and clojure.contrib.find-namespaces
+
+- Remove use of clojure.contrib.string
+
+- Remove use of clojure.contrib.seq
+
+- Remove use of clojure.contrib.def
+
+- Remove heynote
+
+- Refactor the configuration loading into pallet.configure
+  The configuration loading code is now separate from pallet.compute,
+  pallet.blobstore and pallet.utils to make dependencies (and code) cleaner
+
+- Switch to latest pallet-common
+
+- Improve error reporting on failed ssh authentication
+
+## 0.6.4
 
 ### Fixes
 
@@ -724,11 +857,11 @@ Update to jclouds 1.0.0.
   When running in environments that have a proxy available, specifying the
   :proxy key of the environment as a url string will allow remote-file to
   use the proxy.
-  
+
   {% highlight clojure %}
   :environment {:proxy "http://192.168.2.37:3128"}
   {% endhighlight %}
-    
+
 ## 0.4.5
 
 ### Enhancements

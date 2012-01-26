@@ -4,6 +4,8 @@ exclude: [release.sh]
 name: Pallet, DevOps for the JVM
 pygments: true
 domain: palletops.com
+description: Pallet is platform for agile and programmatic automation of 
+   infrastructure in the cloud, on server racks or directly on virtual machines. 
 navigation:
 - text: Overview
   active: false

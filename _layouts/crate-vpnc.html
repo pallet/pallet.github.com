@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% assign post = page %}
+    {% include topbar.html %}
+    <div class="post">
+      <div class="container">
+
+<div class="span11 content">
+  <div class="page-header">
+    <h1 class="title">
+      {{post.title}} {{post.version}}
+    </h1>
+  </div>
+  <div>
+    Install and configure vpnc
+  </div>
+
+  <div class="doc-tabs">
+   <ul>
+    <li><a href="http://pallet.github.com/vpnc-crate/api/{{post.version}}" title="API documentation for vpnc crate {{post.version}}">API documentation</a></li>
+    <li><a href="https://github.com/pallet/vpnc-crate" title="GitHub Repository for crate">Source Repository</a></li>
+    <li><a href="https://github.com/pallet/vpnc-crate/issues" title="GitHub Issues for vpnc crate">Issues</a></li>
+    <li>Versions: {% for v in site.tags.vpnc-crate do %}<a href="{{v.url}}">{{v.version}}</a> {% endfor %}</li>
+  </div>
+  <div>
+      <a href="{{v.url}}">{{v.version}}</a>
+  </div>
+  <div class="post_content">
+    {{ content }}
+    {% capture releasenotes %}{% include crate-vpnc-release-notes.md %}{% endcapture %}
+    {{ releasenotes | markdownify }}
+  </div>
+
+  {% include broken-doc.html %}
+  {% include share.html %}
+  <div class="row disqus-post-comments">
+    <div class="span11">
+      {% include disqus.html %}
+    </div>
+  </div>
+</div><!--content-->
+
+<div class="span5 sidebar">
+  <br/>
+  <br/>
+  {% include training-cw-2012-blog.html %}
+  {% include twitter-widget.html %}
+</div>
+
+      </div>
+    </div>
+  </body>
+  {% include foot.html %}
+</html>

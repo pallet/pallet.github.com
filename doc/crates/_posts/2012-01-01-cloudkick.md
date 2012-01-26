@@ -1,7 +1,7 @@
 ---
 title: Cloudkick
 layout: crate-cloudkick
-permalink: /doc/crate/cloudkick/0.6
+permalink: /doc/crates/cloudkick/0.6
 section: documentation
 subsection: crates
 tags: [cloudkick-crate]

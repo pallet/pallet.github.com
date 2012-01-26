@@ -1,7 +1,7 @@
 ---
 title: Zookeeper
 layout: crate-zookeeper
-permalink: /doc/crate/zookeeper/0.6
+permalink: /doc/crates/zookeeper/0.6
 section: documentation
 subsection: crates
 tags: [zookeeper-crate]

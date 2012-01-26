@@ -1,7 +1,7 @@
 ---
 title: Public-dns-if-no-nameserver
 layout: crate-public-dns-if-no-nameserver
-permalink: /doc/crate/public-dns-if-no-nameserver/0.6
+permalink: /doc/crates/public-dns-if-no-nameserver/0.6
 section: documentation
 subsection: crates
 tags: [public-dns-if-no-nameserver-crate]

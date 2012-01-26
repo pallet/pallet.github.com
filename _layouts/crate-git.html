@@ -1,56 +1,29 @@
-<!doctype html>
-<html lang="en">
-  {% include head.html %}
-  <body>
-    {% assign post = page %}
-    {% include topbar.html %}
-    <div class="post">
-      <div class="container">
-
-<div class="span11 content">
-  <div class="page-header">
-    <h1 class="title">
-      {{post.title}} {{post.version}}
-    </h1>
-  </div>
-  <div>
-    Install and configure git
-  </div>
-
-  <div class="doc-tabs">
-   <ul>
-    <li><a href="http://pallet.github.com/git-crate/api/{{post.version}}" title="API documentation for git crate {{post.version}}">API documentation</a></li>
-    <li><a href="https://github.com/pallet/git-crate" title="GitHub Repository for crate">Source Repository</a></li>
-    <li><a href="https://github.com/pallet/git-crate/issues" title="GitHub Issues for git crate">Issues</a></li>
-    <li>Versions: {% for v in site.tags.git-crate do %}<a href="{{v.url}}">{{v.version}}</a> {% endfor %}</li>
-  </div>
-  <div>
-      <a href="{{v.url}}">{{v.version}}</a>
-  </div>
-  <div class="post_content">
-    {{ content }}
-    {% capture releasenotes %}{% include crate-git-release-notes.md %}{% endcapture %}
-    {{ releasenotes | markdownify }}
-  </div>
-
-  {% include broken-doc.html %}
-  {% include share.html %}
-  <div class="row disqus-post-comments">
-    <div class="span11">
-      {% include disqus.html %}
-    </div>
-  </div>
-</div><!--content-->
-
-<div class="span5 sidebar">
-  <br/>
-  <br/>
-  {% include training-cw-2012-blog.html %}
-  {% include twitter-widget.html %}
+---
+layout: crate
+---
+{% assign post = page %}
+{% include topbar.html %}
+<div class="page-header">
+  <h1 class="title">
+    {{post.title}} {{post.version}}
+  </h1>
+</div>
+<div>
+Install and configure git
 </div>
 
-      </div>
-    </div>
-  </body>
-  {% include foot.html %}
-</html>
+<div class="doc-tabs">
+ <ul>
+  <li><a href="http://pallet.github.com/git-crate/api/{{post.version}}" title="API documentation for git crate {{post.version}}">API documentation</a></li>
+  <li><a href="https://github.com/pallet/git-crate" title="GitHub Repository for git crate">Source Repository</a></li>
+  <li><a href="https://github.com/pallet/git-crate/issues" title="GitHub Issues for git crate">Issues</a></li>
+  <li>API Versions: {% for v in site.tags.git-crate do %}<a href="{{v.url}}">{{v.version}}</a> {% endfor %}</li>
+</div>
+<div>
+    <a href="{{v.url}}">{{v.version}}</a>
+</div>
+<div class="post_content">
+  {{ content }}
+  {% capture releasenotes %}{% include crate-git-release-notes.md %}{% endcapture %}
+  {{ releasenotes | markdownify }}
+</div>

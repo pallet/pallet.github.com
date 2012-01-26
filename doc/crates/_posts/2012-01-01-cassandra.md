@@ -1,7 +1,7 @@
 ---
 title: Cassandra
 layout: crate-cassandra
-permalink: /doc/crate/cassandra/0.6
+permalink: /doc/crates/cassandra/0.6
 section: documentation
 subsection: crates
 tags: [cassandra-crate]

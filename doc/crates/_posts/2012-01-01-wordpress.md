@@ -1,7 +1,7 @@
 ---
 title: Wordpress
 layout: crate-wordpress
-permalink: /doc/crate/wordpress/0.6
+permalink: /doc/crates/wordpress/0.6
 section: documentation
 subsection: crates
 tags: [wordpress-crate]

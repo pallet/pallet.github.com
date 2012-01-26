@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    <div class="post">
+      <div class="container">
+        <div class="span11 content">
+
+  {{ content }}
+
+  {% include broken-doc.html %}
+  {% include share.html %}
+  <div class="row disqus-post-comments">
+    <div class="span11">
+      {% include disqus.html %}
+    </div>
+  </div>
+</div><!--content-->
+
+<div class="span5 sidebar">
+  <br/>
+  <br/>
+  {% include training-cw-2012-blog.html %}
+  {% include twitter-widget.html %}
+</div>
+
+      </div>
+    </div>
+  </body>
+  {% include foot.html %}
+</html>

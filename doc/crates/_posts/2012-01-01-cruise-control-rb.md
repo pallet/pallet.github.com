@@ -1,7 +1,7 @@
 ---
 title: Cruise-control-rb
 layout: crate-cruise-control-rb
-permalink: /doc/crate/cruise-control-rb/0.6
+permalink: /doc/crates/cruise-control-rb/0.6
 section: documentation
 subsection: crates
 tags: [cruise-control-rb-crate]

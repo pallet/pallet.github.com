@@ -1,7 +1,7 @@
 ---
 title: Package-builder
 layout: crate-package-builder
-permalink: /doc/crate/package-builder/0.6
+permalink: /doc/crates/package-builder/0.6
 section: documentation
 subsection: crates
 tags: [package-builder-crate]

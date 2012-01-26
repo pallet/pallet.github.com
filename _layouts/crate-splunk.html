@@ -1,0 +1,29 @@
+---
+layout: crate
+---
+{% assign post = page %}
+{% include topbar.html %}
+<div class="page-header">
+  <h1 class="title">
+    {{post.title}} {{post.version}}
+  </h1>
+</div>
+<div>
+Install and configure splunk
+</div>
+
+<div class="doc-tabs">
+ <ul>
+  <li><a href="http://pallet.github.com/splunk-crate/api/{{post.version}}" title="API documentation for splunk crate {{post.version}}">API documentation</a></li>
+  <li><a href="https://github.com/pallet/splunk-crate" title="GitHub Repository for splunk crate">Source Repository</a></li>
+  <li><a href="https://github.com/pallet/splunk-crate/issues" title="GitHub Issues for splunk crate">Issues</a></li>
+  <li>API Versions: {% for v in site.tags.splunk-crate do %}<a href="{{v.url}}">{{v.version}}</a> {% endfor %}</li>
+</div>
+<div>
+    <a href="{{v.url}}">{{v.version}}</a>
+</div>
+<div class="post_content">
+  {{ content }}
+  {% capture releasenotes %}{% include crate-splunk-release-notes.md %}{% endcapture %}
+  {{ releasenotes | markdownify }}
+</div>

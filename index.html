@@ -1,14 +1,16 @@
 ---
 layout: nil
+description: Pallet is platform for agile and programmatic automation of 
+    infrastructure in the cloud, on server racks or directly on virtual machines. 
 ---
 <!doctype html>
 <html lang="en">
   {% assign atom = true %}
   {% include head.html %}
-  
+
   <body>
     {% include topbar.html %}
-    
+
     <!-- Masthead (blueprinty thing)
          ================================================== -->
     <header class="jumbotron masthead" id="overview">
@@ -23,7 +25,7 @@ layout: nil
         </div><!-- /container -->
       </div>
     </header>
-    
+
     <!-- Calls to Action
          ================================================== -->
     <div class="quickstart">
@@ -35,7 +37,9 @@ layout: nil
               5 minutes.</p>
             <p>
               <a href="{{ site.baseurl }}/create-hadoop-clusters-the-easy-peasy-way-wit/"
-                 class="btn primary">Read the Article</a>
+                 class="btn primary"
+                 title="Create an Apache Hadoop Cluster with Pallet"
+                 >Read the Article</a>
             </p>
           </div>
           <div class="span6">
@@ -44,9 +48,9 @@ layout: nil
               infrastructure in the cloud.</p>
             <p>
               <a href="{{ site.baseurl}}/doc"
-                 class="btn primary">
-                Documentation
-              </a>
+                 class="btn primary"
+                 title="Pallet Documentation"
+                 >Documentation</a>
             </p>
           </div>
           <div class="span5">
@@ -55,14 +59,15 @@ layout: nil
               official Pallet repo on Github.</p>
             <p><a target="_blank"
                   href="https://github.com/pallet/pallet"
-                  class="btn primary">
-                Pallet on GitHub &raquo;</a>
+                  class="btn primary"
+                  title="Pallet GitHub Repository"
+                  >Pallet on GitHub &raquo;</a>
             </p>
           </div>
         </div><!-- row -->
       </div>
     </div> <!-- quickstart -->
-    
+
     <div class="container">
       <section id="banner">
         <div class="alerts">
@@ -71,8 +76,8 @@ layout: nil
           </div>
         </div>
       </section>
-      
-      <section id="about">
+
+      <section id="about" title="About Pallet">
         <div class="page-header">
           <h1>About Pallet
           </h1>
@@ -105,7 +110,7 @@ layout: nil
               <li><a href="/doc/reference/supported-providers">
                   ... and many more.</a></li>
             </ul>
-          </div> 
+          </div>
           <div class="span-one-third">
             <h3>Special Providers</h3>
             <p> Infrastructure providers that are not
@@ -117,7 +122,7 @@ layout: nil
           </div>
         </div> <!-- row -->
       </section>
-      <section id="get-started">
+      <section id="get-started" title="Getting Started with Pallet">
         <div class="page-header">
           <h1>Getting Started</h1>
         </div>
@@ -125,12 +130,14 @@ layout: nil
           <div class="span-one-third">
             <h3>Documentation</h3>
             <ul>
-              <li><a href="/doc">General Documentation</a></li>
-              <li><a href="/doc/reference">Reference
-                  Documentation</a></li>
-              <li><a href="http://pallet.github.com/pallet/autodoc/index.html">
+              <li><a href="/doc" title="Pallet Documentation">General Documentation</a></li>
+              <li><a href="/doc/reference"
+                     title="Pallet Reference Documentation">Reference Documentation</a></li>
+              <li><a href="http://pallet.github.com/pallet/api/0.6/index.html"
+                     title="Pallet API Documentation">
                   API Documentation</a></li>
-              <li><a href="http://pallet.github.com/pallet/marginalia/uberdoc.html">
+              <li><a href="http://pallet.github.com/pallet/marginalia/uberdoc.html"
+                     title="Annotated Pallet Source">
                   Annotated Source</a></li>
             </ul>
           </div>
@@ -138,29 +145,32 @@ layout: nil
             <h3>Contact Us</h3>
             <ul>
               <li>On IRC at #pallet (at irc.freenode.net)</li>
-              <li><a href="http://groups.google.com/group/pallet-clj">
+              <li><a href="http://groups.google.com/group/pallet-clj"
+                     title="Pallet Mailing List">
                   On the Mailing List</a></li>
-              <li><a href="mailto:contact@palletops.com">
+              <li><a href="mailto:contact@palletops.com"
+                     title="Contact PalletOps!">
                   Via e-mail</a></li>
             </ul>
           </div>
           <div class="span-one-third">
             <h3>Example Projects</h3>
             <ul>
-              <li><a href="https://github.com/pallet/pallet-examples/tree/develop/basic">
+              <li><a href="https://github.com/pallet/pallet-examples/tree/develop/basic"
+                     title="Demo of interactive Pallet Use">
                   Basic</a></li>
             </ul>
           </div>
         </div>
       </section>
-      
-      <section id="news">
+
+      <section id="news" title="Pallet News">
         <div class="page-header">
-          <h1><a href="/news">Latest News  &raquo </a>
-            <small><a href="/news/atom.xml">RSS</a></small>
-          </h1> 
+          <h1><a href="/news" title="Latest Pallet News">Latest News  &raquo </a>
+            <small><a href="/news/atom.xml" title="Latest Pallet News Feed">RSS</a></small>
+          </h1>
         </div>
-        
+
         <ul class="unstyled">
           {% for post in site.categories.news limit:3 %}
           <li><span>{{ post.date | date_to_string }}</span> &raquo;
@@ -168,11 +178,11 @@ layout: nil
           {% endfor %}
         </ul>
       </section>
-      
-      <section id="articles">
+
+      <section id="articles" title="Pallet Blog Articles">
         <div class="page-header">
-          <h1><a href="/blog">Articles &raquo</a>
-            <small><a href="/blog/atom.xml">RSS</a></small>
+          <h1><a href="/blog" title="Pallet Blog">Articles &raquo</a>
+            <small><a href="/blog/atom.xml" title="Pallet Blog Feed">RSS</a></small>
           </h1>
         </div>
         <ul class="unstyled">
@@ -184,6 +194,6 @@ layout: nil
       </section>
     </div>
     {% include foot.html %}
-    
+
   </body>
 </html>

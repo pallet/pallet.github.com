@@ -4,6 +4,8 @@ layout: doc
 permalink: /doc/first-steps
 section: documentation
 subsection: first-steps
+summary: Quickstart instructions for creating a new Pallet project. Covers installation
+         of lein and configuration of project.clj.
 ---
 
 Zero to running in five minutes with lein.

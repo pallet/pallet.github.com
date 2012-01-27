@@ -9,19 +9,20 @@ summary: How to make Pallet work with a server rack or existing virtual machines
          the SSH username and keys, and runs a simple lift to make sure everything works.
 ---
 
-Pallet has a `node-list` provider, which you can use to connect pallet to a
-server rack or to existing virtual machines. To talk to these servers, you need
-to tell pallet IP addresses and which group they belong to. You create a compute
-service by instantiating a `node-list` provider with a sequence of nodes to
-provide that information.
+Pallet has a [`node-list`][node-list] provider, which you can use to connect
+pallet to a server rack or to existing virtual machines. To talk to these
+servers, you need to tell pallet IP addresses and which group they belong
+to. You create a compute service by instantiating a [`node-list`][node-list]
+provider with a sequence of nodes to provide that information.
 
 ## Getting a `node-list` compute service
 
 There are two ways you can obtain a compute service.
 
 ### Instantiate directly
-The group is used to match nodes to the `group-spec`s that you use to define the
-configuration to apply.
+
+The group is used to match nodes to the [`group-spec`][node-types]s that you use
+to define the configuration to apply.
 
 {% highlight clojure %}
 (require 'pallet.compute)
@@ -44,7 +45,8 @@ If your nodes are fairly static, you may wish to just list them in `~/.pallet/co
                              ["fe" "tomcats" "10.11.12.14" :ubuntu]]})
 {% endhighlight %}
 
-You can then obtain the compute service using:
+You can then obtain the compute service using
+[pallet.configure/compute-service][compute-service].
 
 {% highlight clojure %}
 (require 'pallet.configure)
@@ -58,7 +60,8 @@ Pallet uses SSH to talk to your nodes. The default is to use your local username
 and your id_rsa key.
 
 The credentials for ssh are specified using a user map, which can be constructed
-using `pallet.utils/make-user`. This user map can be passed to `lift`.
+using [`pallet.utils/make-user`][node-push]. This user map can be passed to
+[`lift`][operations].
 
 ## Running a command on each node
 
@@ -77,3 +80,9 @@ To test your configuration, trying running a simple `ls` command.
          :private-key-path "~/.ssh/id1"
          :public-key-path "~/.ssh/id1.pub")
 {% endhighlight %}
+
+[node-types]: http://palletops.com/doc/reference/node-types "Defining server and group-specs"
+[node-push]: http://palletops.com/doc/reference/node-push "Configuring SSH credentials"
+[operations]: http://palletops.com/doc/reference/operations "Lift and Converge"
+[node-list]: http://palletops.com/pallet/api/0.6/pallet.compute.node-list.html "node-list API"
+[compute-service]: http://palletops.com/pallet/api/0.6/pallet.configure.html#var-compute-service "pallet.configure/compute-service API doc"

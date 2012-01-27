@@ -1,10 +1,12 @@
 ---
-title: Crates
+title: Converge and Lift Operations
 layout: doc
 permalink: /doc/reference/operations
 section: documentation
 subsection: reference
-summary: Pallet reference for converge and lift operations
+summary: Pallet reference documentation for the converge and lift operations.  These
+         two functions can be used to control the number of nodes in your cloud, and
+         to apply configuration to them.
 ---
 ## Converge
 

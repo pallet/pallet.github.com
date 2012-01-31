@@ -5,6 +5,17 @@ layout: news
 section: news
 ---
 
+<div class="row">
+  <div class="span9 offset1">
+    <div class="alert-message block-message error">
+      <p>The Pallet Workshop at Clojure/West was cancelled. We
+      continue to offer on-site training. 
+        <a href="mailto:contact@palletops.com">Contact us</a> if you are
+          interested. </p>
+    </div>
+  </div>
+</div>
+
 [Clojure/West](http://clojurewest.org) has decided to offer Early Bird
 pricing until
 [January 27th, at $1000 per seat](http://www.regonline.com/Register/Checkin.aspx?EventID=1041359).

@@ -5,7 +5,16 @@ permalink: pallet-training-scheduled-for-march-14-15-at
 author: Antoni Batchelli
 section: blog
 ---
-
+<div class="row">
+  <div class="span9 offset1">
+    <div class="alert-message block-message error">
+      <p>The Pallet Workshop at Clojure/West was cancelled. We
+      continue to offer on-site training. 
+        <a href="mailto:contact@palletops.com">Contact us</a> if you are
+          interested. </p>
+    </div>
+  </div>
+</div>
 <p><a href="http://www.regonline.com/Register/Checkin.aspx?EventID=1041359">Registration is now open!</a></p>
 <p>We are very excited to announce that Clojure/West will be hosting a 2-day Pallet training session on March 14-15 with both Hugo Duncan and Toni Batchelli as instructors.&nbsp;</p>
 <p><a href="http://clojurewest.org/">Clojure/West</a> will be held in San Jose on March 16-17 and <a href="http://clojurewest.org/">registration for the conference</a> is also open. Make sure you book your hotel rooms soon for an exceptional discount.</p>

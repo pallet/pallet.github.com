@@ -21,14 +21,22 @@ bash$ curl -O http://github.com/technomancy/leiningen/raw/stable/bin/lein
 bash$ chmod +x lein
 {% endhighlight %}
 
-## Create a new project
+### Install leiningen plugins
 
-Now we can create a new clojure project using lein. To do this we install the
-pallet project template, then use it to creat a project named 'quickstart'.
+We will need some leiningen plugins. Let's install them:
 
 {% highlight bash %}
 bash$ lein plugin install lein-newnew 0.2.4
 bash$ lein plugin install org.cloudhoist/lein-pallet-new 0.1.1-SNAPSHOT
+bash$ lein plugin install org.cloudhoist/pallet-lein 0.4.2-SNAPSHOT
+{% endhighlight %}
+
+
+## Create a new project
+
+Now we can create a new clojure project using lein, we will call it 'quickstart'.
+
+{% highlight bash %}
 bash$ lein new pallet quickstart with-pallet-jclouds 1.3.1
 Created new project in: quickstart
 bash$ cd quickstart
@@ -39,7 +47,6 @@ bash$ cd quickstart
 Now you can configure your credentials.
 
 {% highlight bash %}
-bash$ lein plugin install org.cloudhoist/pallet-lein 0.4.2-SNAPSHOT
 bash$ lein pallet add-service aws aws-ec2 your-aws-key your-aws-secret-key
 {% endhighlight %}
 

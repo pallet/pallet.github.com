@@ -37,7 +37,7 @@ bash$ lein plugin install org.cloudhoist/pallet-lein 0.4.2-SNAPSHOT
 Now we can create a new clojure project using lein, we will call it 'quickstart'.
 
 {% highlight bash %}
-bash$ lein new pallet quickstart with-pallet-jclouds 1.3.1
+bash$ lein new pallet quickstart
 Created new project in: quickstart
 bash$ cd quickstart
 {% endhighlight %}
@@ -76,7 +76,9 @@ You can now start your first compute node:
 
 {% highlight clojure %}
 (pallet.core/converge
-  (pallet.core/group-spec "mygroup" :count 1)
+  (pallet.core/group-spec "mygroup" 
+   :count 1
+   :node-spec (pallet.core/node-spec :image {:os-family :ubuntu}))
   :compute (pallet.configure/compute-service :aws))
 {% endhighlight %}
 

@@ -7,7 +7,7 @@ subsection: reference
 ---
 The specification of a machine in pallet has several components.
 
-The `node-spec` defines all the choces needed to start up a node on a compute
+The `node-spec` defines all the choices needed to start up a node on a compute
 service. The `server-spec` defines a set of configuration functions to run
 on a node.  The `group-spec` provides a name that is used to map nodes to
 their configuration.

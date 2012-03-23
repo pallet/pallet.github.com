@@ -74,7 +74,7 @@ To test your configuration, trying running a simple `ls` command.
   "fe"
   :phases {:configure (pallet.phase/phase-fn
                        (pallet.action.exec-script/exec-script (ls)))})
-  :compute data-center)
+  :compute my-data-center)
 {% endhighlight %}
 
 [node-types]: http://palletops.com/doc/reference/node-types "Defining server and group-specs"

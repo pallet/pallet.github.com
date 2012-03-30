@@ -47,7 +47,7 @@ bash$ cd quickstart
 Now you can configure your credentials.
 
 {% highlight bash %}
-bash$ lein pallet add-service aws aws-ec2 your-aws-key your-aws-secret-key
+bash$ lein pallet add-service aws aws-ec2 "your-aws-key" "your-aws-secret-key"
 {% endhighlight %}
 
 Note that this creates a `~/.pallet/services/aws.clj` file with your credentials

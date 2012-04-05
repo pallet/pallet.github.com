@@ -41,7 +41,7 @@ The
 are built using commit messages.
 
 For the release notes format to be produced directly by git, just add the
-following to your `.gitconfig` file:
+following to your `.gitconfig` file under the `[pretty]` section:
 
     changelog = format:- %w(76,0,2)%s%n%w(76,2,2)%b
 

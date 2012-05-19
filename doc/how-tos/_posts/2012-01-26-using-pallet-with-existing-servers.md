@@ -35,7 +35,8 @@ to define the configuration to apply.
 
 ### Instantiate based on `~/.pallet/config.clj`
 
-If your nodes are fairly static, you may wish to just list them in `~/.pallet/config.clj`.
+If your nodes are fairly static, you may wish to just list them in
+`~/.pallet/config.clj`.
 
 {% highlight clojure %}
 (defpallet
@@ -57,7 +58,8 @@ You can then obtain the compute service using
 ## Specifying the SSH username and credentials
 
 Pallet uses SSH to talk to your nodes. The default is to use your local username
-and your id_rsa key.
+and your id_rsa key, and assumes that your account on the nodes has
+password-less sudo set up.
 
 The credentials for ssh are specified using a user map, which can be constructed
 using [`pallet.utils/make-user`][node-push]. This user map can be passed to

@@ -26,15 +26,17 @@ bash$ chmod +x lein
 We will need some leiningen plugins. Let's install them:
 
 {% highlight bash %}
-bash$ lein plugin install lein-newnew 0.2.4
-bash$ lein plugin install org.cloudhoist/lein-pallet-new 0.1.1-SNAPSHOT
-bash$ lein plugin install org.cloudhoist/pallet-lein 0.4.2-SNAPSHOT
+bash$ lein plugin install lein-newnew 0.2.6
+bash$ lein plugin install pallet/lein-template 0.2.1
 {% endhighlight %}
 
+Note that this is only required for lein 1 (as installed when following the
+steps above). For lein 2, no plugins need to be installed.
 
 ## Create a new project
 
-Now we can create a new clojure project using lein, we will call it 'quickstart'.
+Now we can create a new clojure project using lein, we will call it
+'quickstart'.
 
 {% highlight bash %}
 bash$ lein new pallet quickstart
@@ -47,7 +49,7 @@ bash$ cd quickstart
 Now you can configure your credentials.
 
 {% highlight bash %}
-bash$ lein pallet add-service aws aws-ec2 your-aws-key your-aws-secret-key
+bash$ lein pallet add-service aws aws-ec2 "your-aws-key" "your-aws-secret-key"
 {% endhighlight %}
 
 Note that this creates a `~/.pallet/services/aws.clj` file with your credentials
@@ -76,7 +78,7 @@ You can now start your first compute node:
 
 {% highlight clojure %}
 (pallet.core/converge
-  (pallet.core/group-spec "mygroup" 
+  (pallet.core/group-spec "mygroup"
    :count 1
    :node-spec (pallet.core/node-spec :image {:os-family :ubuntu}))
   :compute (pallet.configure/compute-service :aws))

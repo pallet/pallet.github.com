@@ -21,12 +21,13 @@ bash$ curl -O http://github.com/technomancy/leiningen/raw/stable/bin/lein
 bash$ chmod +x lein
 {% endhighlight %}
 
-### Install lein-newnew plugin (lein 1.x only)
+### Install leiningen plugins (lein 1.x only)
 
-We will need a leiningen plugin for lein 1.x. Let's install it:
+We will need leiningen plugins for lein 1.x. Let's install them:
 
 {% highlight bash %}
 bash$ lein plugin install lein-newnew 0.2.6
+bash$ lein plugin install pallet/lein-template 0.2.2
 {% endhighlight %}
 
 Note that this is only required for lein 1 (as installed when following the

@@ -26,8 +26,8 @@ bash$ chmod +x lein
 We will need leiningen plugins for lein 1.x. Let's install them:
 
 {% highlight bash %}
-bash$ lein plugin install lein-newnew 0.2.6
-bash$ lein plugin install pallet/lein-template 0.2.2
+bash$ lein plugin install lein-newnew 0.3.4
+bash$ lein plugin install pallet/lein-template 0.2.3
 {% endhighlight %}
 
 Note that this is only required for lein 1 (as installed when following the

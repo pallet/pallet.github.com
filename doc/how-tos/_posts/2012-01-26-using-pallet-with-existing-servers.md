@@ -73,10 +73,10 @@ To test your configuration, trying running a simple `ls` command.
 (require 'pallet.action.exec-script 'pallet.phase)
 (pallet.core/lift
  (pallet.core/group-spec
-  "fe"
+  "tomcats"
   :phases {:configure (pallet.phase/phase-fn
                        (pallet.action.exec-script/exec-script (ls)))})
-  :compute my-data-center)
+ :compute my-data-center)
 {% endhighlight %}
 
 [node-types]: http://palletops.com/doc/reference/node-types "Defining server and group-specs"

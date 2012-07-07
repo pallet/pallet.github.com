@@ -13,17 +13,18 @@ Zero to running in five minutes with lein.
 ## Install leiningen
 
 The first thing we need is [leiningen](http://github.com/technomancy/leiningen),
-a build tool for clojure. You can downlaod this with your web browser, `curl` or
-`wget` or your favourite download tool. Here we show using `curl`.
+a build tool for clojure.  You can downlaod this with your web browser, `curl`
+or `wget` or your favourite download tool. Here we show using `curl`.
 
 {% highlight bash %}
-bash$ curl -O http://github.com/technomancy/leiningen/raw/stable/bin/lein
+bash$ curl -O https://raw.github.com/technomancy/leiningen/raw/stable/bin/lein
 bash$ chmod +x lein
 {% endhighlight %}
 
 ### Install leiningen plugins (lein 1.x only)
 
-We will need leiningen plugins for lein 1.x. Let's install them:
+We will need leiningen plugins for lein 1.x (1.6.2 or later). Let's install
+them:
 
 {% highlight bash %}
 bash$ lein plugin install lein-newnew 0.3.4

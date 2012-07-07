@@ -23,7 +23,8 @@ bash$ chmod +x lein
 
 ### Install leiningen plugins (lein 1.x only)
 
-We will need leiningen plugins for lein 1.x. Let's install them:
+We will need leiningen plugins for lein 1.x (1.6.2 or later). Let's install
+them:
 
 {% highlight bash %}
 bash$ lein plugin install lein-newnew 0.3.4

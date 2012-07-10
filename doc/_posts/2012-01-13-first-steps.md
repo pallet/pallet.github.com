@@ -28,7 +28,7 @@ them:
 
 {% highlight bash %}
 bash$ lein plugin install lein-newnew 0.3.4
-bash$ lein plugin install pallet/lein-template 0.2.4
+bash$ lein plugin install pallet/lein-template 0.2.5
 {% endhighlight %}
 
 Note that this is only required for lein 1 (as installed when following the

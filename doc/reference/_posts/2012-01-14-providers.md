@@ -7,42 +7,11 @@ subsection: reference
 summary: Pallet reference documentation for providers
 ---
 
-Pallet uses [jclouds](http://jclouds.org) to create, start and stop nodes.  In order to use the
-cloud, you will need to specify which cloud to use and your cloud credentials.
+Pallet uses providers to create, start, stop and otherwise control nodes.  In
+order to use pallet, you will need to specify a provider to use and your
+credentials for that provider.
 
-## Cloud Provider Names
-
-In order to sign in to your cloud API, you will need to tell pallet the name of
-your provider.  The names pallet recognises can be displayed with the following
-from the REPL:
-
-{% highlight clojure %}
-   (require 'pallet.compute)
-   (pallet.compute/supported-providers)
-{% endhighlight %}
-
-From the command line, you can use the lein plugin to list providers:
-
-{% highlight sh %}
-   lein pallet providers
-{% endhighlight %}
-
-## Explicit credentials
-
-You can log in to the cloud explicitly, using the provider name, and your
-credentials.
-
-{% highlight clojure %}
-  (require 'pallet.compute)
-  (def service
-    (pallet.configure/compute-service
-     "provider" :identity "username" :credential "password"))
-{% endhighlight %}
-
-Pallet uses [jclouds](http://jclouds.org)' terminology, `identity` and
-`credential`, but your cloud provider will probably use different
-terms for these. Identity may be called username or key and credential
-may be called password or secret.
+# Providing Credentials
 
 ## Credentials in config.clj
 
@@ -60,7 +29,7 @@ You can use the pallet configuration file
              :credential "key"}})
 {% endhighlight %}
 
-The provider key, `:aws` and `:rs` above, has to be unqiue, but you can have
+The service key, `:aws` and `:rs` above, has to be unqiue, but you can have
 multiple accounts for the same provider.
 
 To create a compute service object from this file, that you can pass to `lift`
@@ -72,63 +41,64 @@ passing the key to the function.
   (pallet.compute/service "rs")
 {% endhighlight %}
 
-The [~/.pallet/config.clj](/doc/reference/config.clj) file is read
-automatically by the `lein` and `cake` plugins, and in `lein`, you can
-switch between providers using the `-P` command line option.
+The [~/.pallet/config.clj](/doc/reference/config.clj) file is read automatically
+by the `lein` plugin, and in `lein`, you can switch between providers using the
+`-P` command line option.
 
 {% highlight sh %}
   lein pallet -P rs nodes
-  cake pallet nodes -- -P rs
 {% endhighlight %}
 
+## Explicit Credentials
 
-## Credentials in settings.xml
-
-The maven settings.xml file is often used to hold user specific configuration for
-maven.  You can add your cloud provider information to this file, which is
-normally located at [~/.m2/settings.xml](/doc/reference/settings.xml).
-
-{% highlight xml %}
-  <settings>
-    <profiles>
-      <profile>
-        <id>terremark</id>
-        <activation>
-          <activeByDefault>true</activeByDefault>
-        </activation>
-        <properties>
-          <jclouds.compute.provider>
-            Your Cloud serivce name
-          </jclouds.compute.provider>
-          <jclouds.compute.identity>
-            Your Cloud API username or key
-          </jclouds.compute.identity>
-          <jclouds.compute.credential>
-            Your Cloud API secret or password
-          </jclouds.compute.credential>
-        </properties>
-      </profile>
-    </profiles>
-  </settings>
-{% endhighlight %}
-
-To create a compute service object from settings.xml, you use
-`pallet.compute/service`. The default is determined by the active profile. You
-can specify a different profile by passing the profile's id to the function.
+You can log in to the cloud explicitly, using the provider name, and your
+credentials.
 
 {% highlight clojure %}
   (require 'pallet.compute)
-  (def service (pallet.compute/service "aws"))
+  (def service
+    (pallet.configure/compute-service
+     "provider" :identity "username" :credential "password"))
 {% endhighlight %}
 
-You will need the following maven-settings dependency in your project for this
-to work:
+Pallet uses [jclouds](http://jclouds.org)' terminology, `identity` and
+`credential`, but your cloud provider will probably use different
+terms for these. Identity may be called username or key and credential
+may be called password or secret.
 
-{% highlight xml %}
-    <dependency>
-      <groupId>org.apache.maven</groupId>
-      <artifactId>maven-settings</artifactId>
-      <version>2.0.10</version>
-      <optional>true</optional>
-    </dependency>
+
+# Available Providers
+
+Pallet comes with a built-in `node-list` provider, that allows you to work with
+servers that already exist, or a started outside of pallet. Other providers can
+be made available by adding dependencies to your classpath.
+
+Adding the [pallet-jclouds](https://github.com/pallet/pallet-jclouds) jar to
+your project's dependencies gives access to
+[jclouds providers](http://www.jclouds.org/documentation/reference/supported-providers/).
+Each jclouds provider also has a specific jar that you will need to add (there
+is an org.jclouds/jclouds-all dependency, if you want to add all the jclouds
+providers).
+
+Adding the [pallet-vmfest](https://github.com/pallet/pallet-vmfest) jar to your
+project's dependencies allows you to access
+[virtualbox](https://www.virtualbox.org/) as a local "cloud".
+
+Finally, there is a built in `hybrid` provider, that allows you to talk to
+multiple other providers at once (eg. node-list and aws).
+
+## Cloud Provider Names
+
+The provider names pallet recognises (given the dependencies that have been
+configured) can be displayed with the following from the REPL:
+
+{% highlight clojure %}
+   (require 'pallet.compute)
+   (pallet.compute/supported-providers)
+{% endhighlight %}
+
+From the command line, you can use the lein plugin to list providers:
+
+{% highlight sh %}
+   lein pallet providers
 {% endhighlight %}

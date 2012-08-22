@@ -154,3 +154,8 @@ code, pre {
 .post_content {
     padding-bottom: 33px;
 }
+
+/* zendesk tab positioning */
+#zenbox_tab {
+   top: 40% !important;
+}

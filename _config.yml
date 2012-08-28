@@ -10,7 +10,7 @@ navigation:
 - text: Overview
   active: false
   url: /doc/overview
-  sections: [overview]
+  sections: [overview]  
 - text: About
   active: false
   url: /about
@@ -26,13 +26,18 @@ navigation:
   active: true
   url: /blog
   sections: [blog]
-- text: Get the Code!
+- text: Code
   active: true
   url: https://github.com/pallet/pallet
+- text: Support
+  active: true
+  url: https://palletops.zendesk.com/anonymous_requests/new
+- text: Contact
+  active: true
+  url: http://palletops.wufoo.com/forms/contact-palletops/
 - text: Getting Started
   active: false
   url: /doc/getting-started
-
 - text: Community
   active: false
   url: /community

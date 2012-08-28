@@ -6,6 +6,12 @@ section: documentation
 subsection: community
 summary: Guidelines for contributing to the Pallet project.
 ---
+## Building
+
+To build maven based pallet projects, you will need to have various repositories
+in your `settings.xml`. One way to do this is to use the `settings.xml` in the
+[pallet-settings-xml](https://github.com/pallet/pallet-settings-xml) project.
+
 ## Tests
 
 Please make sure tests pass, and test cases are added to cover new code.

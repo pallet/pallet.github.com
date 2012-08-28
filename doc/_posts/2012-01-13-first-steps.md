@@ -4,8 +4,9 @@ layout: doc
 permalink: /doc/first-steps
 section: documentation
 subsection: first-steps
-summary: Quickstart instructions for creating a new Pallet project. Covers installation
-         of lein and configuration of project.clj.
+summary: Quickstart instructions for creating a new Pallet project. Covers
+         installation of lein and configuration of project.clj, and a primer
+         on pallet clojure forms.
 ---
 
 Zero to running in five minutes with lein.
@@ -89,4 +90,67 @@ To shut the node down again, change the `:count` value to `zero`:
   :compute (pallet.configure/compute-service :aws))
 {% endhighlight %}
 
-Congratulations!
+## Authorising yourself
+
+Of course it would be nice to be able to ssh into the node. To enable this we
+add a call to `automated-admin-user` in the `:bootstrap` phase, which is run
+whenever a new node is started with the group-spec.
+
+{% highlight clojure %}
+(use '[pallet.action.automated-admin-user :only [automated-admin-user]])
+(pallet.core/converge
+  (pallet.core/group-spec "mygroup"
+   :count 1
+   :node-spec (pallet.core/node-spec :image {:os-family :ubuntu})
+   :phases {:bootstrap automated-admin-user})
+  :compute (pallet.configure/compute-service :aws))
+{% endhighlight %}
+
+You should now be able to log into your new node via ssh. You can find the host
+IP address by listing your nodes:
+
+{% highlight clojure %}
+(pallet.compute/nodes (pallet.configure/compute-service :aws))
+{% endhighlight %}
+
+If you are running a ssh agent (e.g. you are on Mac OS X), then you must ensure
+that your key is available to the agent. You can make this change permanently
+using:
+
+{% highlight bash %}
+ssh-add -K your-private-key-file
+{% endhighlight %}
+
+## Installing something
+
+Now we can log into the node, we can ask pallet to install and configure things.
+
+Pallet can run as many different phases as you need, but by default it runs the
+`:configure` phase. Here we use the `:configure` phase to install curl.
+
+{% highlight clojure %}
+(use '[pallet.action.package :only [package]]
+     '[pallet.phase :only [phase-fn]])
+(pallet.core/converge
+  (pallet.core/group-spec "mygroup"
+   :count 1
+   :node-spec (pallet.core/node-spec :image {:os-family :ubuntu})
+   :phases {:bootstrap automated-admin-user
+            :configure (phase-fn (package "curl"))})
+  :compute (pallet.configure/compute-service :aws))
+{% endhighlight %}
+
+## Next
+
+Hopefully this has given you a small taste of running pallet from the REPL.
+
+The example project generates some code as a template for how you might define
+your group-specs, so explore under the `src` directory.
+
+The pallet plugin for lein that is enabled in the generated project is also
+useful for things like triggering a lift or converge, or listing nodes, from the
+command line.
+
+Don't hesitate to ask questions, either through the site here, via the
+[mailing list](http://groups.google.com/group/pallet-clj), or on
+[#pallet](http://webchat.freenode.net/?channels=#pallet) on freenode irc.

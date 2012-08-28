@@ -31,10 +31,12 @@ navigation:
   url: https://github.com/pallet/pallet
 - text: Support
   active: true
-  url: https://palletops.zendesk.com/anonymous_requests/new
+  url: /support
+  sections: [support]
 - text: Contact
   active: true
-  url: http://palletops.wufoo.com/forms/contact-palletops/
+  url: /contact
+  sections: [contact]
 - text: Getting Started
   active: false
   url: /doc/getting-started

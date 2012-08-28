@@ -112,6 +112,14 @@ IP address by listing your nodes:
 (pallet.compute/nodes (pallet.configure/compute-service :aws))
 {% endhighlight %}
 
+If you are running a ssh agent (e.g. you are on Mac OS X), then you must ensure
+that your key is available to the agent. You can make this change permanently
+using:
+
+{% highlight bash %}
+ssh-add -K your-private-key-file
+{% endhighlight %}
+
 ## Installing something
 
 Now we can log into the node, we can ask pallet to install and configure things.

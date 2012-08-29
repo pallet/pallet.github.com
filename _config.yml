@@ -29,6 +29,10 @@ navigation:
 - text: Code
   active: true
   url: https://github.com/pallet/pallet
+- text: Services
+  active: true
+  url: /services
+  sections: [services]
 - text: Support
   active: true
   url: /support

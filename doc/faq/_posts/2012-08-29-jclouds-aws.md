@@ -8,11 +8,20 @@ section: documentation
 
 To run a node outside of us-east-1, you will need to specify a `:location-id` in
 your node-spec. You will also need to ensure that your AMI is available in the
-specified location
+specified location.
 
 {% highlight clojure %}
 :image {:image-id "us-east-1/ami-1aad5273"}
 :location {:location-id "us-east-1a"}
+{% endhighlight %}
+
+# How do I run a node in a VPC?
+
+To run a node inside a VPC, you will need to specify a `:subnet-id` in
+your node-spec.
+
+{% highlight clojure %}
+:location {:subnet-id "subxxxx"}
 {% endhighlight %}
 
 # Why does it take 20mins to list images?

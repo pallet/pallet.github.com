@@ -55,6 +55,15 @@ You can then obtain the compute service using
   (pallet.configure/compute-service :data-center))
 {% endhighlight %}
 
+## Assigning Nodes to groups
+
+In the `:node-list` values above, the first value in each vector is a hostname,
+the second value a group name, the third an IP address and the last is the
+operating system distribution running on the node.
+
+The group-name is used to match the nodes to a group-spec (passed to lift, see
+below). This allows you to target different commands to different nodes.
+
 ## Specifying the SSH username and credentials
 
 Pallet uses SSH to talk to your nodes. The default is to use your local username

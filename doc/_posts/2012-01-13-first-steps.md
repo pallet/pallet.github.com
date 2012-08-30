@@ -97,7 +97,7 @@ add a call to `automated-admin-user` in the `:bootstrap` phase, which is run
 whenever a new node is started with the group-spec.
 
 {% highlight clojure %}
-(use '[pallet.action.automated-admin-user :only [automated-admin-user]])
+(use '[pallet.crate.automated-admin-user :only [automated-admin-user]])
 (pallet.core/converge
   (pallet.core/group-spec "mygroup"
    :count 1

@@ -106,6 +106,17 @@ whenever a new node is started with the group-spec.
   :compute (pallet.configure/compute-service :aws))
 {% endhighlight %}
 
+If you are running a ssh agent (e.g. you are on Mac OS X), then you must ensure
+that your key is available to the agent. You can make this change permanently
+using:
+
+{% highlight bash %}
+ssh-add -K your-private-key-file
+{% endhighlight %}
+
+Note that if your id_rsa key has a passphrase, and you're not running an
+ssh-agent, then this will not work.
+
 You should now be able to log into your new node via ssh (using your own
 username), and note that you can use `sudo`. You can find the host IP address by
 listing your nodes:
@@ -114,13 +125,6 @@ listing your nodes:
 (pallet.compute/nodes (pallet.configure/compute-service :aws))
 {% endhighlight %}
 
-If you are running a ssh agent (e.g. you are on Mac OS X), then you must ensure
-that your key is available to the agent. You can make this change permanently
-using:
-
-{% highlight bash %}
-ssh-add -K your-private-key-file
-{% endhighlight %}
 
 ## Installing something
 

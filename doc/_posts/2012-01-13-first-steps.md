@@ -24,8 +24,8 @@ We will need leiningen plugins for lein 1.x (1.6.2 or later). Let's install
 them:
 
 {% highlight bash %}
-bash$ lein plugin install lein-newnew 0.3.4
-bash$ lein plugin install pallet/lein-template 0.2.5
+bash$ lein plugin install lein-newnew 0.3.5
+bash$ lein plugin install pallet/lein-template 0.2.7
 {% endhighlight %}
 
 Note that this is only required for lein 1 (as installed when following the

@@ -79,7 +79,7 @@ You can now start your first compute node:
   (pallet.core/group-spec "mygroup"
    :count 1
    :node-spec (pallet.core/node-spec
-               :image {:os-family :ubuntu :image-id ""us-east-1/ami-3c994355"}))
+               :image {:os-family :ubuntu :image-id "us-east-1/ami-3c994355"}))
   :compute (pallet.configure/compute-service :aws))
 {% endhighlight %}
 
@@ -103,7 +103,7 @@ whenever a new node is started with the group-spec.
   (pallet.core/group-spec "mygroup"
    :count 1
    :node-spec (pallet.core/node-spec
-               :image {:os-family :ubuntu :image-id ""us-east-1/ami-3c994355"})
+               :image {:os-family :ubuntu :image-id "us-east-1/ami-3c994355"})
    :phases {:bootstrap automated-admin-user})
   :compute (pallet.configure/compute-service :aws))
 {% endhighlight %}

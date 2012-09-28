@@ -42,6 +42,9 @@ Created new project in: quickstart
 bash$ cd quickstart
 {% endhighlight %}
 
+If you are using lein 1.x, then you need to run `lein deps` at this point, to
+pull in the plugins into the local `lib/dev` directory.
+
 ## Configure your credentials
 
 Now you can configure your credentials.

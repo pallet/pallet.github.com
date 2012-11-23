@@ -43,6 +43,18 @@ owners it uses, by specifying it in your service configuration in
 :jclouds.ec2.ami-query "owner-id=137112412989"
 {% endhighlight %}
 
+# How do I run my node in previously existing security groups?
+
+{% highlight clojure %}
+:network {:security-groups ["my-security-group"]}
+{% endhighligh %}
+
+# How do I turn on Cloudwatch Monitoring when creating a node?
+
+{% highlight clojure %}
+:qos {:enable-monitoring true}
+{% endhighligh %}
+
 See also
 [Image Filters](http://www.jclouds.org/documentation/userguide/using-ec2/).
 

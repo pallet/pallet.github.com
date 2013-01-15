@@ -79,3 +79,7 @@ new MapNewVolumeToDevice(deviceName, sizeInGib, deleteOnTermination)
 new MapEphemeralDeviceToDevice(deviceName, virtualName)
 new UnmapDeviceNamed(deviceName)
 ```
+
+# See also
+
+[jclouds EC2 FAQ](http://www.jclouds.org/documentation/faqs/ec2-faq/)

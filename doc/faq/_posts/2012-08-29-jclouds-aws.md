@@ -82,4 +82,5 @@ new UnmapDeviceNamed(deviceName)
 
 # See also
 
-[jclouds EC2 FAQ](http://www.jclouds.org/documentation/faqs/ec2-faq/)
+- [jclouds EC2 User Guide](http://www.jclouds.org/documentation/userguide/using-ec2/)
+- [jclouds EC2 FAQ](http://www.jclouds.org/documentation/faqs/ec2-faq/)

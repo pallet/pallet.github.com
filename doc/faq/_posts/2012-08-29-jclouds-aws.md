@@ -45,3 +45,37 @@ owners it uses, by specifying it in your service configuration in
 
 See also
 [Image Filters](http://www.jclouds.org/documentation/userguide/using-ec2/).
+
+# How can I tell jclouds which credentials to use on bootstrap?
+
+Normally jclouds can find the login credentials based on the information
+provided in the AMI image.  For less frequently used images, it sometimes fails
+to determine the image's login credentials, and you have to supply the relevant
+information in the template.
+
+{% highlight clojure %}
+(node-spec .... :image {... :override-login-user "ubuntu"})
+{% endhighlight %}
+
+Simple options here are `:override-login-user`, `:override-login-password`,
+`:override-login-private-key`, and `:override-authenticate-sudo`.
+
+Alternatively, you can pass a `org.jclouds.domain.LoginCredentials` object with
+`:override-login-credentials` to set all of the above at once.  See
+`org.jclouds.domain.LoginCredentials/builder` to construct an instance.
+
+# How can I mount EBS volumes?
+
+EBS volumes can be mounted using the `:block-device-mappings` argument in your
+`node-spec` under the `:hardware` key.  The argument is a sequence of jcloud's
+BlockDeviceMapping objects.  At the moment, there is no clojure wrapper for
+creating these, but you can use the following jcloud's constructors, which are
+static classes nested in `org.jclouds.ec2.domain.BlockDeviceMapping`:
+
+```java
+new MapEBSSnapshotToDevice(deviceName, snapshotId, sizeInGib,
+                           deleteOnTermination)
+new MapNewVolumeToDevice(deviceName, sizeInGib, deleteOnTermination)
+new MapEphemeralDeviceToDevice(deviceName, virtualName)
+new UnmapDeviceNamed(deviceName)
+```

@@ -10,6 +10,7 @@ designed to make small to midsize deployments simple.
 - [Overview](/doc/overview)
 - [First Steps](/doc/first-steps)
 - [Reference Documentation](/doc/reference)
+- [Crates](/doc/crates)
 - [API Documentation](http://pallet.github.com/pallet/api/0.7/index.html)
 - [Annotated Source](http://pallet.github.com/pallet/marginalia/uberdoc.html)
 

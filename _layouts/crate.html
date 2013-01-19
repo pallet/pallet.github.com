@@ -2,28 +2,11 @@
 <html lang="en">
   {% include head.html %}
   <body>
+    {% assign post = page %}
+    {% include topbar.html %}
     <div class="post">
       <div class="container">
-        <div class="span11 content">
-
-  {{ content }}
-
-  {% include broken-doc.html %}
-  {% include share.html %}
-  <div class="row disqus-post-comments">
-    <div class="span11">
-      {% include disqus.html %}
-    </div>
-  </div>
-</div><!--content-->
-
-<div class="span5 sidebar">
-  <br/>
-  <br/>
-  {% include banner-side.html %}
-  {% include twitter-widget.html %}
-</div>
-
+        {% include crate-documentation.html %}
       </div>
     </div>
     {% include foot.html %}

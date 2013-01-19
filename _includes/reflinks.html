@@ -1,0 +1,18 @@
+  <p>
+    <a href="/doc/reference">Reference Index</a>
+    {% if post.prior %}
+      {% for p in site.categories.reference %}
+        {% if p.url == post.prior %}
+          &#xb7; <a href="{{ p.url }}">{{ p.title }}</a>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    {% if post.follow %}
+      {% for p in site.categories.reference %}
+        {% if p.url == post.follow %}
+          &#xb7; <a href="{{ p.url }}">{{ p.title }}</a>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </p>

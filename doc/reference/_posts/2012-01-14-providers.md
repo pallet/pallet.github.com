@@ -1,10 +1,11 @@
 ---
 title: Providers
-layout: doc
+layout: reference
 permalink: /doc/reference/providers
 section: documentation
 subsection: reference
 summary: Pallet reference documentation for providers
+follow: /doc/reference/node-push
 ---
 
 Pallet uses providers to create, start, stop and otherwise control nodes.  In

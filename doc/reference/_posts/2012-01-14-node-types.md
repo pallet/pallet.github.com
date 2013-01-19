@@ -1,10 +1,13 @@
 ---
 title: Groups, Servers and Node Specs
-layout: doc
+layout: reference
 permalink: /doc/reference/node-types
 section: documentation
 subsection: reference
+prior: /doc/reference/node-push
+follow: /doc/reference/phases
 ---
+
 The specification of a machine in pallet has several components.
 
 The `node-spec` defines all the choices needed to start up a node on a compute

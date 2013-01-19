@@ -1,6 +1,6 @@
 ---
 title: Provisional 0.8 documentation
-layout: doc
+layout: reference
 section: documentation
 subsection: reference
 summary: Provisional information for Pallet 0.8

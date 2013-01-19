@@ -1,9 +1,11 @@
 ---
 title: Environment
-layout: doc
+layout: reference
 permalink: /doc/reference/environment
 section: documentation
 subsection: reference
+prior: /doc/reference/session
+follow: /doc/reference/parameters
 ---
 
 The environment is a map used for passing data and configuration choices into

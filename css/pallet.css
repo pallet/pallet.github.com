@@ -159,3 +159,7 @@ code, pre {
 #zenbox_tab {
    top: 40% !important;
 }
+
+a code {
+    color:#0069d6;
+}

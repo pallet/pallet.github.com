@@ -13,6 +13,10 @@
 ### Releases
 
 <table>
+<thead>
+  <tr><th>Pallet</th><th>Latest Crate Version</th></tr>
+</thead>
+<tbody>
 {% for v in page.versions %}
   <tr>
     <th>{{ v['pallet'] }}</th>
@@ -21,4 +25,5 @@
     <td><a href='https://github.com/{{page.repo}}/blob/{{page.artifactid}}-{{v['version']}}/{{page.path}}'>Source</a></td>
   </tr> 
 {% endfor %}
+</tbody>
 </table>

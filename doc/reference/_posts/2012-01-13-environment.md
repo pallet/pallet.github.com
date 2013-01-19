@@ -14,7 +14,8 @@ contributed by each scope will be merged.
 
 # Environment API
 
-The environment can be accessed with [`pallet.environment/get-for`](http://pallet.github.com/pallet/api/0.6/pallet.environment.html).
+The environment can be accessed with
+[`pallet.environment/get-for`](/pallet/api/0.7/pallet.environment.html#var-get-for).
 
 # Pallet Specific Keys
 
@@ -52,4 +53,6 @@ service level.
 
 ## `lift` and `converge` Arguments
 
-Both `lift` and `converge` can be passed an environment map using the `:environment` keyword.
+Both [`lift`](/pallet/api/0.7/pallet.core.html#lift) and
+[`converge`](/pallet/api/0.7/pallet.core.html#converge) can be passed an
+environment map using the `:environment` keyword.

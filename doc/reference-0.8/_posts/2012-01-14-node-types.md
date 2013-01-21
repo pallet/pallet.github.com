@@ -6,6 +6,7 @@ section: documentation
 subsection: reference
 prior: /doc/reference/0.8/node-push
 follow: /doc/reference/0.8/phases
+apiver: 0.8
 ---
 
 The specification of a machine in pallet has several components.

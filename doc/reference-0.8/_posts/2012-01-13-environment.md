@@ -6,6 +6,7 @@ section: documentation
 subsection: reference
 prior: /doc/reference/0.8/session
 follow: /doc/reference/0.8/parameters
+apiver: 0.8
 ---
 
 The environment is a map used for passing data and configuration choices into

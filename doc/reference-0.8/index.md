@@ -2,6 +2,7 @@
 title: Reference Documentation
 layout: doc
 section: documentation
+apiver: 0.8
 ---
 
 ## Pallet 0.8

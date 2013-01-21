@@ -4,6 +4,7 @@ layout: reference
 section: documentation
 subsection: reference
 summary: Provisional information for Pallet 0.8
+apiver: 0.8
 ---
 
 # Namespace changes:

@@ -26,7 +26,11 @@
   <h1>&nbsp;</h1>
   {% include docindex.html %}
   <h3><a href="/doc/reference">Reference</a><br/></h3>
-  {% include refindex.html %}
+  {% if post.apiver %}
+    {% include refindex-ver.html %}
+  {% else %}
+    {% include refindex.html %}
+  {% endif %}
   <br/>
   {% include banner-side.html %}
   {% include twitter-widget.html %}

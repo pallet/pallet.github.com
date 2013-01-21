@@ -6,6 +6,7 @@ section: documentation
 subsection: reference
 summary: Pallet reference documentation for providers
 follow: /doc/reference/0.8/node-push
+apiver: 0.8
 ---
 
 Pallet uses providers to create, start, stop and otherwise control nodes.  In

@@ -9,7 +9,9 @@ summary: Pallet reference documentation for the converge and lift operations.  T
          to apply configuration to them.
 prior: /doc/reference/0.8/phases
 follow: /doc/reference/0.8/crates
+apiver: 0.8
 ---
+
 ## Converge
 
 The `converge` function can be used to adjust node counts and to apply phases.

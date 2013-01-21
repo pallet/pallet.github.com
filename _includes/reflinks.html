@@ -1,5 +1,9 @@
   <p>
-    <a href="/doc/reference">Reference Index</a>
+    {% if post.apiver %}
+      <a href="/doc/reference-{{ post.api-ver }}">Reference Index</a>
+    {% else %}
+      <a href="/doc/reference">Reference Index</a>
+    {% endif %}
     {% if post.prior %}
       {% for p in site.categories.reference %}
         {% if p.url == post.prior %}

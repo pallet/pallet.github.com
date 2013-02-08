@@ -1,6 +1,7 @@
 ---
 title: Project Configuration File
 layout: reference
+permalink: /doc/reference/0.8/project-configuration
 section: documentation
 subsection: reference
 summary: Description of the pallet.clj project configuration file

@@ -10,6 +10,14 @@
    {:url "https://oss.sonatype.org/content/repositories/releases/"}}
 {% endif %}</pre>
 
+For versions 0.7.x and earlier
+
+<pre>
+:repositories
+  {"sonatype"
+   {:url "https://oss.sonatype.org/content/repositories/releases/"}}
+</pre>
+
 ### Releases
 
 <table>

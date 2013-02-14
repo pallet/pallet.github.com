@@ -22,7 +22,7 @@ Working with project files is easiest using the pallet plugin for lein.  Add the
 following in your `~/.lein/profiles.clj` file:
 
 {% highlight clojure %}
-{:user {:plugins [[org.cloudhoist/pallet-lein "0.6.0-SNAPSHOT"]]}}
+{:user {:plugins [[com.palletops/pallet-lein "0.6.0-beta.3]]}}
 {% endhighlight %}
 
 To create a default configuration file, run `lein pallet project-init`, which

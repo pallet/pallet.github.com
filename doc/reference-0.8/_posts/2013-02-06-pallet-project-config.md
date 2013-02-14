@@ -8,8 +8,6 @@ summary: Description of the pallet.clj project configuration file
 apiver: 0.8
 ---
 
-NOTE: not released yet
-
 The `pallet.clj` project configuration file allows you to specify project
 infrastructure in a form that can be checked into your source repository.  The
 file describes the [group-specs and node-specs](/doc/reference/0.8/node-types)

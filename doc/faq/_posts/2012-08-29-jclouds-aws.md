@@ -47,13 +47,13 @@ owners it uses, by specifying it in your service configuration in
 
 {% highlight clojure %}
 :network {:security-groups ["my-security-group"]}
-{% endhighligh %}
+{% endhighlight %}
 
 # How do I turn on Cloudwatch Monitoring when creating a node?
 
 {% highlight clojure %}
 :qos {:enable-monitoring true}
-{% endhighligh %}
+{% endhighlight %}
 
 See also
 [Image Filters](http://www.jclouds.org/documentation/userguide/using-ec2/).

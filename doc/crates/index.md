@@ -6,7 +6,7 @@ section: documentation
 
 Crates are available to install specific stack components
 
-- [java](/doc/crates/java)
-- [tomcat](/doc/crates/tomcat)
+{% capture crates %}{% include crate-index.md %}{% endcapture %}
+{{ crates | markdownify }}
 
 This index is not complete yet

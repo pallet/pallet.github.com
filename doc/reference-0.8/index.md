@@ -7,6 +7,7 @@ apiver: 0.8
 
 ## Pallet 0.8
 
+- [Project configuration](/doc/reference/0.8/project-configuration)
 - [Talking to the cloud](/doc/reference/0.8/providers)
 - [Talking to nodes](/doc/reference/0.8/node-push)
 - [Groups, Servers and Node Specs](/doc/reference/0.8/node-types)

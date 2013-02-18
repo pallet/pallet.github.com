@@ -34,7 +34,7 @@ look for virtualbox, but you can generate an explicit service descriptor with:
 ## pallet.clj Options
 
 Take a look at the
-(sample project)[https://github.com/pallet/pallet/blob/develop/sample-project-pallet.clj]
+[sample project](https://github.com/pallet/pallet/blob/develop/sample-project-pallet.clj)
 for an annotated description of the options available.
 
 

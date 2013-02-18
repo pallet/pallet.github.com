@@ -20,3 +20,5 @@ apiver: 0.8
 - [Shell Script](/doc/reference/0.8/script)
 - [Logging](/doc/reference/0.8/logging)
 - [Glossary](/doc/reference/0.8/glossary)
+
+- [Porting from 0.7](/doc/reference/0.8/porting-0.7-to-0.8)

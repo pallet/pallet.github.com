@@ -5,7 +5,7 @@
 
 <pre>
 :dependencies [[{{page.group-id}}/{{page.artifact-id}} "{{page.version}}"]]
-{% if "sonatype" == page.mvn-repo %}:repositories
+{% if "sonatype" == page.mvn-repo %}:repositories 
   {"sonatype" 
    {:url "https://oss.sonatype.org/content/repositories/releases/"}}
 {% endif %}</pre>

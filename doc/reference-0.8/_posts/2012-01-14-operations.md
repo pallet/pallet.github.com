@@ -13,7 +13,7 @@ apiver: 0.8
 ---
 
 There are two high level operations in pallet, `lift` and `converge`.  Both
-return an [operation map](#Operations), that can be queried as the operation
+return an [operation map](#operations), that can be queried as the operation
 completes asynchronously.
 
 ## Converge

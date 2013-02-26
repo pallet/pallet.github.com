@@ -20,7 +20,7 @@ completes asynchronously.
 
 The `converge` function can be used to adjust node counts and to apply phases.
 The `:bootstrap` phase is the first phase applied to any new node that is
-started, and `:configure` is always applied.  Additional phases may also be
+started, and `:settings` is always applied.  Additional phases may also be
 specified. If the `:configure` phase is not explicitly passed, then it will
 always be applied as the first phase (or second, after `:bootstrap` on new
 nodes).

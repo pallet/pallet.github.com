@@ -3,6 +3,7 @@ title: Reference Documentation
 layout: doc
 section: documentation
 ---
+## Pallet 0.7
 
 - [Talking to the cloud](/doc/reference/providers)
 - [Talking to nodes](/doc/reference/node-push)

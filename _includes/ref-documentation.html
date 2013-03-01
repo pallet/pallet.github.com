@@ -24,7 +24,11 @@
 
 <div class="span5 sidebar">
   <h1>&nbsp;</h1>
-  {% include docindex.html %}
+  {% if post.apiver %}
+    {% include docindex-ver.html %}
+  {% else %}
+    {% include docindex.html %}
+  {% endif %}
   <h3><a href="/doc/reference">Reference</a><br/></h3>
   {% if post.apiver %}
     {% include refindex-ver.html %}

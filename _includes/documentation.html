@@ -20,7 +20,11 @@
 
 <div class="span5 sidebar">
   <h1>&nbsp;</h1>
-  {% include docindex.html %}
+  {% if post.apiver %}
+    {% include docindex-ver.html %}
+  {% else %}
+    {% include docindex.html %}
+  {% endif %}
   <br/>
   {% include banner-side.html %}
   {% include twitter-widget.html %}

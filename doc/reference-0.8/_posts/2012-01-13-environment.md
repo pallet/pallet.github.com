@@ -16,7 +16,7 @@ contributed by each scope will be merged.
 # Environment API
 
 The environment can be accessed with
-[`pallet.environment/get-for`](/pallet/api/0.8/pallet.environment.html#var-get-for).
+[`pallet.environment/get-environment`](/pallet/api/0.8/pallet.environment.html#var-get-environment).
 
 # Pallet Specific Keys
 

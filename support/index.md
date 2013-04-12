@@ -8,8 +8,7 @@ section: support
 
 We provide free support on a best-effort basis. Drop by our
 [mailing list](http://groups.google.com/group/pallet-clj), our
-[IRC channel](http://webchat.freenode.net/?channels=#pallet), or visit
-our new [support portal](http://palletops.zendesk.com).
+[IRC channel](http://webchat.freenode.net/?channels=#pallet).
 
 If your support needs are more sophisticated, please consider Paid
 Support or our [professional services](/contact) offering.

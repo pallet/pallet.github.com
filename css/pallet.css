@@ -155,11 +155,6 @@ code, pre {
     padding-bottom: 33px;
 }
 
-/* zendesk tab positioning */
-#zenbox_tab {
-   top: 40% !important;
-}
-
 a code {
     color:#0069d6;
 }

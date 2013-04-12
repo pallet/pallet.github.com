@@ -26,7 +26,7 @@ credentials.
 {% highlight clojure %}
   (require 'pallet.compute)
   (def service
-    (pallet.configure/compute-service
+    (pallet.compute/instantiate-provider
      "aws-ec2"
      :identity "AKIAJ5QJ74DTMVR5DDS"
      :credential "mrLBIfHEbo8MI3lQfcODepp8EPrAWtSWxHYCj8V8"))

@@ -67,7 +67,11 @@ specified.
 
 ## Operations
 
-`lift` and `converge` return operation maps, that implement the
+`lift` and `converge` are synchronous by default.  They have a `:timeout-ms`
+option that can be used to specify a timeout for the operation in milliseconds
+(in which case the value specified by `:timeout-val` is returned).
+
+If passed `:async true`, they return operation maps, that implement the
 [`Control`](http://pallet.github.com/pallet-fsmop/0.1/pallet.algo.fsmop.html#var-Control)
 protocol.
 

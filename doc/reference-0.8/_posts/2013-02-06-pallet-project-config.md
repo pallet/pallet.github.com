@@ -31,6 +31,8 @@ look for virtualbox, but you can generate an explicit service descriptor with:
 
 `lein pallet add-service vbox vmfest`
 
+The `pallet.clj` file tells `lein pallet` about the specifics of your project.
+
 ## Combined Application and Deploy Project
 
 The `pallet-lein` plugin assumes by default that you will put your pallet code

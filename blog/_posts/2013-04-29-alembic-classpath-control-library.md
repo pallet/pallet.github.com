@@ -27,12 +27,15 @@ dependency from classlojure.
 
 To use Alembic with nREPL or any other clojure REPL, you will need to add
 Alembic to you development dependencies.  For a leiningen based project, you can
-do this by adding the `lein-alembic` plugin to the `:plugins` vector in
+do this by adding it to the `:dependencies` vector of the `:dev` profile in
 `project.clj`.
 
 {% highlight clojure %}
-:plugins [[lein-alembic "0.1.0"]]
+:profiles {:dev {:dependencies [[alembic "0.1.0"]]}}
 {% endhighlight %}
+
+You can enable Alembic on all you projects, by adding it to the `:dependencies`
+vector of the `:user` profile in `~/.lein/profiles.clj`.
 
 The main function in alembic today is `distill`, which adds a dependency to your
 classpath.  For example, to add `tools.logging`, you would call `distill` like

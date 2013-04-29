@@ -18,10 +18,11 @@ your project's own dependencies.
 [Alembic](https://github.com/pallet/alembic) is a new library that solves this
 by using [classlojure](https://github.com/flatland/classlojure) to put
 [pomegranate](https://github.com/cemerick/pomegranate) (and lein as a whole, in
-fact), into a separate classloader.  It then uses the same dynapath [3] library
-used by pomegranate, to add the resolved dependencies into your classpath.  This
-greatly cuts down the chance of conflict, and will all but eliminate it if we
-can remove the `useful` dependency from classlojure.
+fact), into a separate classloader.  It then uses the same
+[dynapath](https://github.com/tobias/dynapath) library used by pomegranate, to
+add the resolved dependencies into your classpath.  This greatly cuts down the
+chance of conflict, and will all but eliminate it if we can remove the `useful`
+dependency from classlojure.
 
 The main function in alembic today is `distill`, which adds a dependency to your
 classpath.  For example, to add `tools.logging`, you would call `distill` like

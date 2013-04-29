@@ -40,7 +40,7 @@ this:
 
 {% highlight clojure %}
 (require 'alembic.still)
-(alembic.still/distill [org.clojure/tools.logging "0.2.0"])
+(alembic.still/distill '[org.clojure/tools.logging "0.2.0"])
 {% endhighlight %}
 
 Transitive dependencies are of course added as well, which brings up the

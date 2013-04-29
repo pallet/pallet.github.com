@@ -25,6 +25,15 @@ add the resolved dependencies into your classpath.  This greatly cuts down the
 chance of conflict, and will all but eliminate it if we can remove the `useful`
 dependency from classlojure.
 
+To use Alembic with nREPL or any other clojure REPL, you will need to add
+Alembic to you development dependencies.  For a leiningen based project, you can
+do this by adding it to the `:dependencies` vector of the `:dev` profile in
+`project.clj`.
+
+{% highlight clojure %}
+:profiles {:dev {:dependencies [[alembic "0.1.0"]]}}
+{% endhighlight %}
+
 The main function in alembic today is `distill`, which adds a dependency to your
 classpath.  For example, to add `tools.logging`, you would call `distill` like
 this:
@@ -42,15 +51,6 @@ version conflict.
 The `dependencies-added` function can be used to retrieve a sequence of the
 dependencies you have added, so you can add them to your `project.clj` as
 needed.
-
-To use these functions, you will need to add Alembic to you development
-dependencies.  For a leiningen based project, you can do this by adding it to
-the `:dependencies` vector of the `:dev` profile in `project.clj`.
-
-{% highlight clojure %}
-:profiles {:dev {:dependencies [[alembic "0.1.0"]]}}
-{% endhighlight %}
-
 
 [Alembic](https://github.com/pallet/alembic) is in its infancy.  Having lein
 running in a classloader, off to the side as it were, will probably enable lots

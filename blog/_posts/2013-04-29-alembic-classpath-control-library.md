@@ -43,9 +43,18 @@ The `dependencies-added` function can be used to retrieve a sequence of the
 dependencies you have added, so you can add them to your `project.clj` as
 needed.
 
-Alembic is in its infancy.  Having lein running in a classloader, off to the
-side as it were, will probably enable lots more goodies.  Look forward to your
-comments and suggestions, either in the project's
-[issues](https://github.com/pallet/alembic), or on the
+To use these functions, you will need to add Alembic to you development
+dependencies.  For a leiningen based project, you can do this by adding it to
+the `:dependencies` vector of the `:dev` profile in `project.clj`.
+
+{% highlight clojure %}
+:profiles {:dev {:dependencies [[alembic "0.1.0"]]}}
+{% endhighlight %}
+
+
+[Alembic](https://github.com/pallet/alembic) is in its infancy.  Having lein
+running in a classloader, off to the side as it were, will probably enable lots
+more goodies.  Look forward to your comments and suggestions, either in the
+project's [issues](https://github.com/pallet/alembic), or on the
 [clojure-tools](https://groups.google.com/forum/?fromgroups#!forum/clojure-tools)
 google group.

@@ -2,6 +2,7 @@
 layout: news
 title: Alembic - a library to control your classpath
 permalink: alembic-clojure-classpath-control
+summary: Alembic allows you to control the classpath of your clojure REPL
 author: Hugo Duncan
 section: blog
 ---

@@ -12,9 +12,9 @@ The edit `project.clj` and restart your REPL dance is time consuming, and throws
 away the state of your REPL.
 
 Chas Emerick's [pomegranate](https://github.com/cemerick/pomegranate) provides
-all the functionality required to add dependencies to you classpath, but comes
-at the cost of introducing a boatload of dependencies that may conflict with
-your project's own dependencies.
+all the functionality required to add dependencies to your classpath in a
+running JVM instance, but comes at the cost of introducing a boatload of
+dependencies that may conflict with your project's own dependencies.
 
 [Alembic](https://github.com/pallet/alembic) is a new library that solves this
 by using [classlojure](https://github.com/flatland/classlojure) to put

@@ -1,4 +1,4 @@
-# Jekyll
+# Jekyll 
 permalink: /:categories/:title/
 exclude: [release.sh]
 name: Pallet

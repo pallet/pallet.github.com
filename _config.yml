@@ -1,9 +1,10 @@
-# Jekyll 
+# Jekyll
 permalink: /:categories/:title/
 exclude: [release.sh]
 name: Pallet
 pygments: true
 domain: palletops.com
+baseurl: /
 description: Pallet is a platform for agile and programmatic automation of 
    infrastructure in the cloud, on server racks or directly on virtual machines. 
 navigation:

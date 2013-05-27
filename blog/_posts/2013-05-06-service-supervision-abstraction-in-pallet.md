@@ -79,8 +79,15 @@ location (controlled via the `:home` key in settings).
 At a minimum, the `:supervisor` key should be exposed in the crate's `settings`
 function.
 
+## Adding a Service Supervision Implementation
+
+To provide an implementation of a service supervision system to the abstraction,
+you write a crate, similar to the [runit](https://github.com/pallet/runit-crate)
+or [upstart](https://github.com/pallet/upstart-crate) crates, that implements
+the multi-methods that define the abstraction in the
+[service crate](https://github.com/pallet/pallet/blob/develop/src/pallet/crate/service.clj).
+
 ## Conclusion
 
 The new service supervision abstraction makes it quite simple to use, and write,
 crates that can be used with a configurable choice of service supervision.
-

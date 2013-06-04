@@ -29,11 +29,11 @@ In this example we define a function that changes the number of running nodes
 for the "mygroup" group.
 
 {% highlight clojure %}
-  (require 'pallet.core)
+  (require 'pallet.api)
 
   (defn scale-cluster [n]
-    (pallet.core/converge
-      (pallet.core/group-spec "mygroup" :count n)
+    (pallet.api/converge
+      (pallet.api/group-spec "mygroup" :count n)
       :compute (pallet.compute/service "aws")))
 {% endhighlight %}
 
@@ -44,13 +44,13 @@ a single load balancer and twice as many web app frontends as database
 backends.
 
 {% highlight clojure %}
-  (require 'pallet.core)
-  (def load-balancer (pallet.core/group-spec "lb"))
-  (def web-app (pallet.core/group-spec "webapp"))
-  (def database (pallet.core/group-spec "db"))
+  (require 'pallet.api)
+  (def load-balancer (pallet.api/group-spec "lb"))
+  (def web-app (pallet.api/group-spec "webapp"))
+  (def database (pallet.api/group-spec "db"))
 
   (defn scale-cluster [prefix n]
-    (pallet.core/converge
+    (pallet.api/converge
        {load-balancer 1
         web-app n
         database (inc (/ n 2))}

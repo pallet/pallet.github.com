@@ -145,3 +145,12 @@ Alternatively, you can specify everything in one:
 
 The group spec can be used to overide the default packager selection
 (`:yum`, `:aptitude`, `:apt` or `:pacman`) with the `:packager` keyword.
+
+## Cluster Specification
+
+A `cluster-spec` allows you to add a prefix to a sequence of `group-specs`,
+effectively allowing you to have multiple instances of your group spec's,
+divided into logical clusters.
+
+The `cluster-spec` can be the target of a
+[`converge` or `lift` operation](/doc/reference/0.8/operations).

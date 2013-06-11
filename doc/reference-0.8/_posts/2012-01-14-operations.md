@@ -37,27 +37,6 @@ for the "mygroup" group.
       :compute (pallet.configure/compute-service "aws")))
 {% endhighlight %}
 
-`converge` also accepts a :prefix keyword argument, which is applied to the
-group names in the call.  This can be used to build job specific clusters.
-In this example we scale load-balancer, web app and database nodes using
-a single load balancer and twice as many web app frontends as database
-backends.
-
-{% highlight clojure %}
-  (require 'pallet.api)
-  (def load-balancer (pallet.api/group-spec "lb"))
-  (def web-app (pallet.api/group-spec "webapp"))
-  (def database (pallet.api/group-spec "db"))
-
-  (defn scale-cluster [prefix n]
-    (pallet.api/converge
-       {load-balancer 1
-        web-app n
-        database (inc (/ n 2))}
-       :prefix prefix
-       :compute (pallet.configure/compute-service "aws")))
-{% endhighlight %}
-
 ## Lift
 
 The `lift` function is used to apply phases but does not change node

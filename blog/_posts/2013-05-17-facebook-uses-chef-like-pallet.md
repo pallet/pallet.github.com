@@ -13,7 +13,8 @@ I recently watched
 [2013 ChefConf](http://chefconf.opscode.com/), and was intrigued to hear him
 talk about how configuration files are managed.
 
-He [says](http://www.youtube.com/watch?feature=player_detailpage&v=SYZ2GzYAw_Q#t=929s)
+He
+[says](http://www.youtube.com/watch?feature=player_detailpage&v=SYZ2GzYAw_Q#t=929s)
 
 > "This is where this talk will diverge from probably every other configuration
 > management talk you have ever seen, and where our internal setup of chef

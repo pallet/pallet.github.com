@@ -27,6 +27,17 @@ to define the configuration to apply.
 {% highlight clojure %}
 (require 'pallet.compute)
 (def my-data-center
+  (pallet.compute/instantiate-provider
+    "node-list"
+    :node-list [["qa" "fullstack" "10.11.12.13" :ubuntu]
+                ["fe" "tomcats" "10.11.12.14" :ubuntu]]))
+{% endhighlight %}
+
+or for pallet 0.7 or earlier:
+
+{% highlight clojure %}
+(require 'pallet.compute)
+(def my-data-center
   (pallet.compute/compute-service
     "node-list"
      :node-list [["qa" "fullstack" "10.11.12.13" :ubuntu]
@@ -77,6 +88,18 @@ using [`pallet.utils/make-user`][node-push]. This user map can be passed to
 ## Running a command on each node
 
 To test your configuration, trying running a simple `ls` command.
+
+{% highlight clojure %}
+(require 'pallet.actions 'pallet.api)
+(pallet.api/lift
+ (pallet.api/group-spec
+  "tomcats"
+  :phases {:configure (pallet.api/plan-fn
+                       (pallet.actions/exec-script (ls)))})
+ :compute my-data-center)
+{% endhighlight %}
+
+or for pallet 0.7 or earlier:
 
 {% highlight clojure %}
 (require 'pallet.action.exec-script 'pallet.phase)

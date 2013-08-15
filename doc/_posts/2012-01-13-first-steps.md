@@ -17,18 +17,7 @@ a build tool for clojure.  You can downlaod this with your web browser, `curl`
 or `wget` or your favourite download tool, following the
 [install instructions](https://github.com/technomancy/leiningen#installation).
 
-### Install leiningen plugins (lein 1.x only)
-
-We will need leiningen plugins for lein 1.x (1.6.2 or later). Let's install
-them:
-
-{% highlight bash %}
-bash$ lein plugin install lein-newnew 0.3.4
-bash$ lein plugin install pallet/lein-template 0.2.5
-{% endhighlight %}
-
-Note that this is only required for lein 1 (as installed when following the
-steps above). For lein 2, no plugins need to be installed.
+We require leiningen 2.0 or greater.
 
 ## Create a new project
 
@@ -66,7 +55,7 @@ Start a repl with `lein repl` and load pallet with `require` at the repl
 `user=>` prompt.
 
 {% highlight clojure %}
-(require 'pallet.core 'pallet.compute 'pallet.configure)
+(require 'pallet.api 'pallet.compute 'pallet.configure)
 {% endhighlight %}
 
 ## Start a cloud node
@@ -74,18 +63,18 @@ Start a repl with `lein repl` and load pallet with `require` at the repl
 You can now start your first compute node:
 
 {% highlight clojure %}
-(pallet.core/converge
-  (pallet.core/group-spec "mygroup"
+(pallet.api/converge
+  (pallet.api/group-spec "mygroup"
    :count 1
-   :node-spec (pallet.core/node-spec :image {:os-family :ubuntu}))
+   :node-spec (pallet.api/node-spec :image {:os-family :ubuntu}))
   :compute (pallet.configure/compute-service :aws))
 {% endhighlight %}
 
 To shut the node down again, change the `:count` value to `zero`:
 
 {% highlight clojure %}
-(pallet.core/converge
-  (pallet.core/group-spec "mygroup" :count 0)
+(pallet.api/converge
+  (pallet.api/group-spec "mygroup" :count 0)
   :compute (pallet.configure/compute-service :aws))
 {% endhighlight %}
 

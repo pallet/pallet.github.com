@@ -70,6 +70,18 @@ using [`pallet.utils/make-user`][node-push]. This user map can be passed to
 To test your configuration, trying running a simple `ls` command.
 
 {% highlight clojure %}
+(require 'pallet.actions 'pallet.api)
+(pallet.api/lift
+ (pallet.api/group-spec
+  "tomcats"
+  :phases {:configure (pallet.api/plan-fn
+                       (pallet.actions/exec-script (ls)))})
+ :compute my-data-center)
+{% endhighlight %}
+
+or for pallet 0.7 or earlier:
+
+{% highlight clojure %}
 (require 'pallet.action.exec-script 'pallet.phase)
 (pallet.core/lift
  (pallet.core/group-spec

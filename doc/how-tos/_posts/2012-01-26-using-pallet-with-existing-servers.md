@@ -95,7 +95,7 @@ To test your configuration, trying running a simple `ls` command.
  (pallet.api/group-spec
   "tomcats"
   :phases {:configure (pallet.api/plan-fn
-                       (pallet.actions/exec-script (ls)))})
+                       (pallet.actions/exec-script ("ls")))})
  :compute my-data-center)
 {% endhighlight %}
 
@@ -107,7 +107,7 @@ or for pallet 0.7 or earlier:
  (pallet.core/group-spec
   "tomcats"
   :phases {:configure (pallet.phase/phase-fn
-                       (pallet.action.exec-script/exec-script (ls)))})
+                       (pallet.action.exec-script/exec-script ("ls")))})
  :compute my-data-center)
 {% endhighlight %}
 

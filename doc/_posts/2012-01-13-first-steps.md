@@ -128,7 +128,7 @@ Pallet can run as many different phases as you need, but by default it runs the
 `:configure` phase. Here we use the `:configure` phase to install curl.
 
 {% highlight clojure %}
-(use '[pallet.action.package :only [package]]
+(use '[pallet.actions.package :only [package]]
      '[pallet.api :only [plan-fn]])
 (pallet.api/converge
   (pallet.api/group-spec "mygroup"

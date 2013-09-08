@@ -151,6 +151,9 @@ The pallet plugin for lein that is enabled in the generated project is also
 useful for things like triggering a lift or converge, or listing nodes, from the
 command line.
 
+Head over to our [Reference Documentation](http://palletops.com/doc/reference-0.8)
+for a more detailed look at what you can do with pallet and how it works.
+
 Don't hesitate to ask questions, either through the site here, via the
 [mailing list](http://groups.google.com/group/pallet-clj), or on
 [#pallet](http://webchat.freenode.net/?channels=#pallet) on freenode irc.

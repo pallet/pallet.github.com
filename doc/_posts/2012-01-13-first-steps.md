@@ -154,6 +154,10 @@ command line.
 Head over to our [Reference Documentation](http://palletops.com/doc/reference-0.8)
 for a more detailed look at what you can do with pallet and how it works.
 
+VirtualBox cloud?! Well, OK.  Since you asked nicely. 
+Check out [pallet-vmfest](https://github.com/pallet/pallet-vmfest)!
+
+
 Don't hesitate to ask questions, either through the site here, via the
 [mailing list](http://groups.google.com/group/pallet-clj), or on
 [#pallet](http://webchat.freenode.net/?channels=#pallet) on freenode irc.

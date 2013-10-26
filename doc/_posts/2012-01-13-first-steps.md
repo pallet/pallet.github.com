@@ -151,6 +151,15 @@ The pallet plugin for lein that is enabled in the generated project is also
 useful for things like triggering a lift or converge, or listing nodes, from the
 command line.
 
+Head over to our [Reference Documentation](http://palletops.com/doc/reference-0.8)
+for a more detailed look at what you can do with pallet and how it works.
+
+VirtualBox cloud?! Well, OK.  Since you asked nicely. 
+Check out [pallet-vmfest](https://github.com/pallet/pallet-vmfest)!
+
+Looking for an example of deploying apps via pallet?  Got you covered: 
+[deploy webapp example](https://github.com/pallet/example-deploy-webapp)
+
 Don't hesitate to ask questions, either through the site here, via the
 [mailing list](http://groups.google.com/group/pallet-clj), or on
 [#pallet](http://webchat.freenode.net/?channels=#pallet) on freenode irc.

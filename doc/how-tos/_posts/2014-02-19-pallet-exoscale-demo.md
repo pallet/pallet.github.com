@@ -4,9 +4,10 @@ title: Demo of webapp deployment on exoscale using Pallet
 author: Antoine Coetsier
 section: documentation
 subsection: how-tos
-summary: This is a demonstration of using Pallet to deploy a test webapp on 
-         exoscale cloud service. It will spawn a loadbalancer, webserver and
-         database instances with all requirements: SSH keys, security groups,...
+summary: |
+   This is a demonstration of using Pallet to deploy a test webapp on 
+   exoscale cloud service. It will spawn a loadbalancer, webserver and
+   database instances with all requirements: SSH keys, security groups,...
 ---
 
 Deploy a test infrastructure on pallet. This demonstration set can be found on [github](https://raw.github.com/exoscale/pallet-exoscale-demo)
@@ -27,7 +28,7 @@ To make things easier and to hide the pallet magic, we have created a web deploy
 which is an web application that will control the URL-Shortener deployement and configuration. Once you run the project,
 the deployer will be built and present you with the following interface:
 
-![exoscale deployer](http://i.imgur.com/KKcoyDX.png)
+![exoscale deployer]({{ site.url }}/images/exoscale-1.png)
 
 ### Use Case
 

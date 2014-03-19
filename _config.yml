@@ -1,8 +1,9 @@
 # Jekyll
 permalink: /:categories/:title/
 exclude: [release.sh]
+markdown: redcarpet
 name: Pallet
-pygments: true
+highlighter: rouge
 domain: palletops.com
 baseurl: /
 description: Pallet is a platform for agile and programmatic automation of 

@@ -37,7 +37,7 @@ Pallet recognises specific keys in the environment.
 In config.clj, the environment may be specified at the top level, and/or at the
 service level.
 
-{% highlight clojure %}
+``` clojure
 (defpallet
   ;; general environment
   :environment {:algorithms
@@ -49,7 +49,7 @@ service level.
               :environment
               {:proxy "http://192.168.1.37:3128"
                :mirror {:apache "http://apache.mirror.iweb.ca/"}}}})
-{% endhighlight %}
+```
 
 ## `lift` and `converge` Arguments
 

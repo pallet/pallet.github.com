@@ -22,14 +22,14 @@ nodes).
 In this example we define a function that changes the number of running nodes
 for the "mygroup" group.
 
-{% highlight clojure %}
+``` clojure
   (require 'pallet.core)
 
   (defn scale-cluster [n]
     (pallet.core/converge
       (pallet.core/group-spec "mygroup" :count n)
       :compute (pallet.compute/service "aws")))
-{% endhighlight %}
+```
 
 `converge` also accepts a :prefix keyword argument, which is applied to the
 group names in the call.  This can be used to build job specific clusters.
@@ -37,7 +37,7 @@ In this example we scale load-balancer, web app and database nodes using
 a single load balancer and twice as many web app frontends as database
 backends.
 
-{% highlight clojure %}
+``` clojure
   (require 'pallet.core)
   (def load-balancer (pallet.core/group-spec "lb"))
   (def web-app (pallet.core/group-spec "webapp"))
@@ -50,7 +50,7 @@ backends.
         database (inc (/ n 2))}
        :prefix prefix
        :compute (pallet.compute/service "aws")))
-{% endhighlight %}
+```
 
 ## Lift
 

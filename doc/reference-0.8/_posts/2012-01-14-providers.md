@@ -23,14 +23,14 @@ you will need to supply credentials, or other configuration information.
 You can create a service explicitly, using the provider name, and your
 credentials.
 
-{% highlight clojure %}
+``` clojure
   (require 'pallet.compute)
   (def service
     (pallet.compute/instantiate-provider
      "aws-ec2"
      :identity "AKIAJ5QJ74DTMVR5DDS"
      :credential "mrLBIfHEbo8MI3lQfcODepp8EPrAWtSWxHYCj8V8"))
-{% endhighlight %}
+```
 
 Pallet uses [jclouds](http://jclouds.org)' terminology, `identity` and
 `credential`, but your cloud provider will probably use different
@@ -42,7 +42,7 @@ may be called password or secret.
 You can use the pallet configuration file `~/.pallet/config.clj` to specify
 credentials.
 
-{% highlight clojure %}
+``` clojure
   (defpallet
     :services
       {:aws {:provider "ec2"
@@ -51,7 +51,7 @@ credentials.
        :rs  {:provider "cloudservers"
              :identity "username"
              :credential "key"}})
-{% endhighlight %}
+```
 
 The service key, `:aws` and `:rs` above, has to be unqiue, but you can have
 multiple accounts for the same provider.
@@ -62,16 +62,16 @@ or `converge`, you use
 By default, the first provider entry will be used, and you can specify an
 alternative provider by passing the key to the function.
 
-{% highlight clojure %}
+``` clojure
   (pallet.compute/service "rs")
-{% endhighlight %}
+```
 
 The `~/.pallet/config.clj` file is read automatically by the `lein` plugin, and
 in `lein`, you can switch between providers using the `-P` command line option.
 
-{% highlight sh %}
+``` bash
   lein pallet -P rs nodes
-{% endhighlight %}
+```
 
 
 ## Adding Credentials with the lein-pallet Plugin
@@ -80,10 +80,10 @@ The [pallet plugin](https://github.com/pallet/pallet-lein) for
 [Leiningen](https://github.com/technomancy/leiningen) allows you to add service
 definitions in `~/.pallet/services/`. For example,
 
-{% highlight bash %}
+``` bash
 bash$ lein pallet add-service aws aws-ec2 \
   "AKIAJ5QJ74DTMVR5DDS" "mrLBIfHEbo8MI3lQfcODepp8EPrAWtSWxHYCj8V8"
-{% endhighlight %}
+```
 
 would create the file `~/.pallet/services/aws.clj`, containing your credentials
 for AWS EC2.
@@ -115,14 +115,14 @@ configured) can be displayed with
 [pallet.compute/supported-providers](/pallet/api/0.8/pallet.compute#var-supported-providers)
 at the REPL:
 
-{% highlight clojure %}
+``` clojure
    (require 'pallet.compute)
    (pallet.compute/supported-providers)
-{% endhighlight %}
+```
 
 From the command line, you can use the
 [lein plugin](https://github.com/pallet/pallet-lein) to list providers:
 
-{% highlight sh %}
+``` bash
    lein pallet providers
-{% endhighlight %}
+```

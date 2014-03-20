@@ -50,9 +50,9 @@ The default supervision is with `runit`.
 
 ### Dependency Information
 
-{% highlight clojure %}
+``` clojure
 :dependencies [[com.palletops/app-deploy-crate "0.8.0-alpha.1"]]
-{% endhighlight %}
+```
 
 ### Releases
 

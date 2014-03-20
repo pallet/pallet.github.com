@@ -10,19 +10,19 @@ To run a node outside of us-east-1, you will need to specify a `:location-id` in
 your node-spec. You will also need to ensure that your AMI is available in the
 specified location.
 
-{% highlight clojure %}
+``` clojure
 :image {:image-id "us-east-1/ami-1aad5273"}
 :location {:location-id "us-east-1a"}
-{% endhighlight %}
+```
 
 # How do I run a node in a VPC?
 
 To run a node inside a VPC, you will need to specify a `:subnet-id` in
 your node-spec.
 
-{% highlight clojure %}
+``` clojure
 :location {:subnet-id "subxxxx"}
-{% endhighlight %}
+```
 
 # Why does it take 20mins to list images?
 
@@ -39,21 +39,21 @@ owners it uses, by specifying it in your service configuration in
 `~/.pallet/config.clj` or `~/.pallet/services/*`, or when calling
 `pallet.compute/compute-service`.
 
-{% highlight clojure %}
+``` clojure
 :jclouds.ec2.ami-query "owner-id=137112412989"
-{% endhighlight %}
+```
 
 # How do I run my node in previously existing security groups?
 
-{% highlight clojure %}
+``` clojure
 :network {:security-groups ["my-security-group"]}
-{% endhighlight %}
+```
 
 # How do I turn on Cloudwatch Monitoring when creating a node?
 
-{% highlight clojure %}
+``` clojure
 :qos {:enable-monitoring true}
-{% endhighlight %}
+```
 
 See also
 [Image Filters](http://www.jclouds.org/documentation/userguide/using-ec2/).
@@ -65,9 +65,9 @@ provided in the AMI image.  For less frequently used images, it sometimes fails
 to determine the image's login credentials, and you have to supply the relevant
 information in the template.
 
-{% highlight clojure %}
+``` clojure
 (node-spec .... :image {... :override-login-user "ubuntu"})
-{% endhighlight %}
+```
 
 Simple options here are `:override-login-user`, `:override-login-password`,
 `:override-login-private-key`, and `:override-authenticate-sudo`.

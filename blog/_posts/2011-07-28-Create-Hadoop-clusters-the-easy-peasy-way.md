@@ -52,21 +52,21 @@ that's hosted on github. That project's `README.md` file contains
 
 1. First we load pallet and pallet-hadoop at the REPL:
 
-        {% highlight clojure %}
+        ``` clojure
         (use 'pallet-hadoop-example.core) (bootstrap)
-        {% endhighlight %}
+        ```
 
 1. Then we need to provide the credentials for pallet to connect to
 EC2 (or any other cloud provider, really). You will need to have your
 EC2 credentials available for this (how you identify yourself to the
 cloud provider varies from provider to provider):
 
-        {% highlight clojure %}
+        ``` clojure
         user=>; (def cloud-service
                    (compute-service "aws-ec2"
                                     :identity ""         
                                     :credential ""))
-        {% endhighlight %}
+        ```
                                     
 1. Next we create a cluster. `pallet-hadoop-examples` provides a handy
 function for this, which takes two parameters, the number of task
@@ -81,16 +81,16 @@ of our example cluster will serve double duty as
 [`datanodes`](http://wiki.apache.org/hadoop/DataNode). These are the
 four hadoop `roles` currently supported by `pallet-hadoop`.)
 
-        {% highlight clojure %}
+        ``` clojure
         user=> (def my-cluster (make-example-cluster 2 (* 4 1024)))
-        {% endhighlight %}
+        ```
         
 1. Now we are ready to instantiate our cluster on the cloud. For this
 we just need to do:
 
-        {% highlight clojure %}
+        ``` clojure
         user=> (create-cluster my-cluster cloud-service)
-        {% endhighlight %}
+        ```
    
    And wait for it to come back.
    
@@ -98,9 +98,9 @@ we just need to do:
 to ssh into the jobtracker node. To find the IP address of the
 jobtacker we can do the following:
 
-        {% highlight clojure %}
+        ``` clojure
         user=> (jobtracker-ip cloud-service)
-        {% endhighlight %}
+        ```
 
 There you go! You now have a fully functional hadoop cluster all set
 up. To operate it, once you ssh into jobtracker, you just need to you
@@ -126,7 +126,7 @@ First, for each type of node, it defines what configuration phases
 should be run for each role that a node plays. A node can play more
 than one role at the same time, as we'll see later.
 
-    {% highlight clojure %}
+    ``` clojure
     (def role->phase-map
     {:default #{:bootstrap
                 :reinstall
@@ -137,7 +137,7 @@ than one role at the same time, as we'll see later.
      :datanode #{:start-hdfs}
      :jobtracker #{:publish-ssh-key :start-jobtracker}
      :tasktracker #{:start-mapred}})
-     {% endhighlight %}
+     ```
      
 For example, `jobtracker` is just like any other node, but
 it creates and publishes its own public ssh key so that other nodes
@@ -151,7 +151,7 @@ jobtracker.
 
 Next it defines what will be done for each phase:
 
-    {% highlight clojure %}
+    ``` clojure
     (defn hadoop-phases
       "Returns a map of all possible hadoop phases. IP-type specifies..."
       [{:keys [nodedefs ip-type]} properties]
@@ -172,14 +172,14 @@ Next it defines what will be done for each phase:
          :start-hdfs h/data-node
          :start-jobtracker h/job-tracker
          :start-namenode (phase (h/name-node "/tmp/node-name/data"))}))
-    {% endhighlight %}
+    ```
 
 These phases usually use the `hadoop crate` along with other crates in
 `pallet`.
 
 Next, it defines a function to create a `hadoop cluster spec`:
 
-    {% highlight clojure %}
+    ``` clojure
     (defn cluster-spec
       "Generates a data representation of a hadoop cluster.
 
@@ -194,11 +194,11 @@ Next, it defines a function to create a `hadoop cluster spec`:
              options
              {:ip-type ip-type
               :nodedefs nodedefs}))
-    {% endhighlight %}
+    ```
               
 A cluster spec can take the following form:
 
-    {% highlight clojure %}                     
+    ``` clojure                     
     (cluster-spec 
         :private
          {:jobtracker (node-group [:jobtracker :namenode])
@@ -217,7 +217,7 @@ A cluster spec can take the following form:
                         :mapred.tasktracker.map.tasks.maximum 3
                         :mapred.tasktracker.reduce.tasks.maximum 3
                         :mapred.child.java.opts "-Xms1024m"}})                         
-    {% endhighlight %}
+    ```
                          
 In this example, we're defining a hadoop cluster that will use private
 IP addresses for its communication, that will have two types of nodes:

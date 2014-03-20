@@ -34,7 +34,7 @@ the service supervision you have chosen, and make sure your `group-spec` extends
 So to install riemann and configure it to run under `runit` supervision, we
 would use a group spec that extends the riemann `server-spec` like this:
 
-{% highlight clojure %}
+``` clojure
 (require
   '[pallet.crate.java :as java]
   '[pallet.crate.riemann :as riemann]
@@ -44,7 +44,7 @@ would use a group spec that extends the riemann `server-spec` like this:
   :extends [(java/server-spec {})
             (runit/server-spec {})
             (riemann/server-spec {:supervisor :runit})])
-{% endhighlight %}
+```
 
 The riemann crate defines the `:start-riemann`, `:stop-riemann` and
 `:restart-riemann` phases to control the riemann server.
@@ -59,7 +59,7 @@ The riemann crate
 [defines](https://github.com/pallet/riemann-crate/blob/develop/src/pallet/crate/riemann.clj#L95)
 configuration for running under `:runit`, `:upstart` (and `nohup`).
 
-{% highlight clojure %}
+``` clojure
 (defmethod supervisor-config-map [:riemann :runit]
   [_ {:keys [run-command service-name user] :as settings} options]
   {:service-name service-name
@@ -70,7 +70,7 @@ configuration for running under `:runit`, `:upstart` (and `nohup`).
   {:service-name service-name
    :exec run-command
    :setuid user})
-{% endhighlight %}
+```
 
 Both of these are constructed based on a `:user` and a `:run-command` in the
 riemann settings.  The `:run-command` is defaulted based on the riemann install

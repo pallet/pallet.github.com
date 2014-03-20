@@ -25,7 +25,7 @@ the operating system image, the network connectivity, and quality of
 serivce options.  The available keywords are compatible with those in
 `org.jclouds.compute/build-template`.
 
-{% highlight clojure %} 
+``` clojure 
   (require 'pallet.core)
   (def mynodes
     (pallet.core/node-spec
@@ -33,7 +33,7 @@ serivce options.  The available keywords are compatible with those in
       :hardware {:min-cores 2 :min-ram 512}
       :network {:inbound-ports [22 80]}
       :qos {:spot-price (float 0.03) :enable-monitoring true}))
-{% endhighlight %}
+```
 
 An empty :image specification implies a default image will be used for the
 nodes, usually the latest Ubuntu version, or CentOS if no Ubuntu images are
@@ -47,19 +47,19 @@ will be used.
 A `server-spec` is used to specify phase functions, which can be invoked using
 `converge` or `lift`.
 
-{% highlight clojure %}
+``` clojure
   (require 'pallet.core)
   (require 'pallet.action.package)
   (def with-wget
     (pallet.core/server-spec
      :phases {:configure (pallet.phase/phase-fn
                            (pallet.action.package/package "wget"))}))
-{% endhighlight %}
+```
 
 The server specs can be extended.  In this example `with-wget-and-curl`
 extends `with-wget`, and adds installation of curl:
 
-{% highlight clojure %}
+``` clojure
   (require 'pallet.core)
   (require 'pallet.action.package)
   (def with-wget
@@ -71,7 +71,7 @@ extends `with-wget`, and adds installation of curl:
      :extends with-wget
      :phases {:configure (pallet.phase/phase-fn
                            (pallet.action.package/package "curl"))}))
-{% endhighlight %}
+```
 
 The server spec can be used to overide the default packager selection
 (:yum, :aptitude or :pacman) with the :packager keyword.
@@ -87,7 +87,7 @@ to a server-spec.
 The group-spec is used to select the nodes targeted by a [`converge` or `lift`
 operation](/doc/reference/operations).
 
-{% highlight clojure %}
+``` clojure
   (require 'pallet.core)
   (def mynodes
     (pallet.core/node-spec
@@ -106,7 +106,7 @@ operation](/doc/reference/operations).
   (def mygroup
     (pallet.core/group-spec
       "mygroup" :extends [with-wget with-curl] :node-spec mynodes))
-{% endhighlight %}
+```
 
 The ability to extend multiple server-spec's allows you to build easy to
 compose configuration.  As an example, you could define a server-spec for
@@ -117,7 +117,7 @@ java web application.
 
 Alternatively, you can specify everything in one:
 
-{% highlight clojure %}
+``` clojure
   (require 'pallet.core)
   (def mygroup
     (pallet.core/group-spec
@@ -130,4 +130,4 @@ Alternatively, you can specify everything in one:
                   :hardware {:min-cores 2 :min-ram 512}
                   :network {:inbound-ports [22 80]}
                   :qos {:spot-price (float 0.03) :enable-monitoring true})))
-{% endhighlight %}
+```

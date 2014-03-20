@@ -858,9 +858,9 @@ Update to jclouds 1.0.0.
   :proxy key of the environment as a url string will allow remote-file to
   use the proxy.
 
-  {% highlight clojure %}
+  ``` clojure
   :environment {:proxy "http://192.168.2.37:3128"}
-  {% endhighlight %}
+  ```
 
 ## 0.4.5
 

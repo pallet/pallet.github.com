@@ -30,9 +30,9 @@ Alembic to you development dependencies.  For a leiningen based project, you can
 do this by adding it to the `:dependencies` vector of the `:dev` profile in
 `project.clj`.
 
-{% highlight clojure %}
+``` clojure
 :profiles {:dev {:dependencies [[alembic "0.1.0"]]}}
-{% endhighlight %}
+```
 
 You can enable Alembic on all you projects, by adding it to the `:dependencies`
 vector of the `:user` profile in `~/.lein/profiles.clj`.
@@ -41,10 +41,10 @@ The main function in alembic today is `distill`, which adds a dependency to your
 classpath.  For example, to add `tools.logging`, you would call `distill` like
 this:
 
-{% highlight clojure %}
+``` clojure
 (require 'alembic.still)
 (alembic.still/distill '[org.clojure/tools.logging "0.2.0"])
-{% endhighlight %}
+```
 
 Transitive dependencies are of course added as well, which brings up the
 possibility of version conflicts.  Alembic will not add any new version of a

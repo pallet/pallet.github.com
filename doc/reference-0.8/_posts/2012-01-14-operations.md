@@ -28,14 +28,14 @@ nodes).
 In this example we define a function that changes the number of running nodes
 for the "mygroup" group.
 
-{% highlight clojure %}
+``` clojure
   (require 'pallet.api)
 
   (defn scale-cluster [n]
     (pallet.api/converge
       (pallet.api/group-spec "mygroup" :count n)
       :compute (pallet.configure/compute-service "aws")))
-{% endhighlight %}
+```
 
 ## Lift
 

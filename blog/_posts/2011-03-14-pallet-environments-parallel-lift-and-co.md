@@ -33,13 +33,13 @@ phase). Parallel converge and lift are not the default yet, but will be in
 
 To try out parallel lift and converge, add the following to your config.clj:
 
-    {% highlight clojure %}
+    ``` clojure
     :environment {:algorithms
                   {:lift-fn 
                      pallet.core/parallel-lift
                    :converge-fn 
                      pallet.core/parallel-adjust-node-counts}}
-    {% endhighlight %}
+    ```
 
 Which brings us to environments. Environments are a powerful way of injecting
 data into your crates, and provide a customisation mechanism, as seen above.  An
@@ -48,7 +48,7 @@ or at the individual service provider level (same level as :provider), or in the
 actual call to lift and converge. As an example use case, here is the
 environment I use for running live tests in virtualbox via vmfest:
 
-    {% highlight clojure %}
+    ``` clojure
     :environment
       {:phases
         {:bootstrap (fn [request]
@@ -58,7 +58,7 @@ environment I use for running live tests in virtualbox via vmfest:
        :proxy "http://192.168.1.37:3128"
        :mirror {:apache "http://apache.mirror.iweb.ca/"}
        :image {:min-ram 256 :bridged-network "en1: AirPort"}}
-    {% endhighlight %}
+    ```
 
 This example extends the bootstrap phase of all nodes to add a proxy for the
 package manager, adds a proxy for remote-file operations, selects a mirror for

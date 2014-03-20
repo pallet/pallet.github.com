@@ -24,47 +24,47 @@ There are two ways you can obtain a compute service.
 The group is used to match nodes to the [`group-spec`][node-types]s that you use
 to define the configuration to apply.
 
-{% highlight clojure %}
+``` clojure
 (require 'pallet.compute)
 (def my-data-center
   (pallet.compute/instantiate-provider
     "node-list"
     :node-list [["qa" "fullstack" "10.11.12.13" :ubuntu]
                 ["fe" "tomcats" "10.11.12.14" :ubuntu]]))
-{% endhighlight %}
+```
 
 or for pallet 0.7 or earlier:
 
-{% highlight clojure %}
+``` clojure
 (require 'pallet.compute)
 (def my-data-center
   (pallet.compute/compute-service
     "node-list"
      :node-list [["qa" "fullstack" "10.11.12.13" :ubuntu]
                  ["fe" "tomcats" "10.11.12.14" :ubuntu]]))
-{% endhighlight %}
+```
 
 ### Instantiate based on `~/.pallet/config.clj`
 
 If your nodes are fairly static, you may wish to just list them in
 `~/.pallet/config.clj`.
 
-{% highlight clojure %}
+``` clojure
 (defpallet
   :services
   {:data-center {:provider "node-list"
                  :node-list [["qa" "fullstack" "10.11.12.13" :ubuntu]
                              ["fe" "tomcats" "10.11.12.14" :ubuntu]]})
-{% endhighlight %}
+```
 
 You can then obtain the compute service using
 [pallet.configure/compute-service][compute-service].
 
-{% highlight clojure %}
+``` clojure
 (require 'pallet.configure)
 (def my-data-center
   (pallet.configure/compute-service :data-center))
-{% endhighlight %}
+```
 
 ## Assigning Nodes to groups
 
@@ -89,7 +89,7 @@ using [`pallet.utils/make-user`][node-push]. This user map can be passed to
 
 To test your configuration, trying running a simple `ls` command.
 
-{% highlight clojure %}
+``` clojure
 (require 'pallet.actions 'pallet.api)
 (pallet.api/lift
  (pallet.api/group-spec
@@ -97,11 +97,11 @@ To test your configuration, trying running a simple `ls` command.
   :phases {:configure (pallet.api/plan-fn
                        (pallet.actions/exec-script ("ls")))})
  :compute my-data-center)
-{% endhighlight %}
+```
 
 or for pallet 0.7 or earlier:
 
-{% highlight clojure %}
+``` clojure
 (require 'pallet.action.exec-script 'pallet.phase)
 (pallet.core/lift
  (pallet.core/group-spec
@@ -109,7 +109,7 @@ or for pallet 0.7 or earlier:
   :phases {:configure (pallet.phase/phase-fn
                        (pallet.action.exec-script/exec-script ("ls")))})
  :compute my-data-center)
-{% endhighlight %}
+```
 
 [node-types]: http://palletops.com/doc/reference/node-types "Defining server and group-specs"
 [node-push]: http://palletops.com/doc/reference/node-push "Configuring SSH credentials"

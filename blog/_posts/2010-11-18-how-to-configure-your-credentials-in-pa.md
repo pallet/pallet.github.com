@@ -10,7 +10,7 @@ The recent
 of [pallet](https://github.com/hugoduncan/pallet) added a new way to configure
 your cloud credentials, using a clojure file, `~/.pallet/config.clj`.
 
-    {% highlight clojure %}
+    ``` clojure
     (defpallet
       :providers
         {:aws {:provider "ec2"
@@ -19,7 +19,7 @@ your cloud credentials, using a clojure file, `~/.pallet/config.clj`.
          :rs  {:provider "cloudservers"
                :identity "username"
                :credential "key"}})
-     {% endhighlight %}
+     ```
 
 The provider key, `:aws` and `:rs` above, has to be unqiue, but you can have
 multiple accounts for the same provider. The provider string is the
@@ -35,16 +35,16 @@ or `converge`, you use `pallet.compute/compute-service-from-config`. By default,
 the first provider entry will be used, and you can specify an alternative
 provider by passing the key to the function.
 
-    {% highlight clojure %}
+    ``` clojure
     (pallet.compute/compute-service-from-config "rs")
-    {% endhighlight %}
+    ```
 
 The `config.clj` file is read automatically by the lein and cake plugins, and
 in lein, you can switch between providers using the `-P` command line option.
 
-    {% highlight bash %}
+    ``` bash
     lein pallet -P rs nodes
-    {% endhighlight %}
+    ```
 
 
 ## Admin User
@@ -53,29 +53,29 @@ At the same time, the `config.clj` file can be used to set the admin user, that
 is used by pallet to run the node configuration. By default in pallet, this is
 set to your current username and uses your id_rsa key.
 
-    {% highlight clojure %}
+    ``` clojure
     (defpallet
       :admin-user
         {:username "admin"
          :private-key-path "/path/to/private-key"
          :public-key-path "/path/to/public-key"})
-    {% endhighlight %}
+    ```
 
 Another possibility, which could be useful if you are working in a team
 environment, is to set the admin user in the project code.
 
-    {% highlight clojure %}
+    ``` clojure
     (ns pallet.config
       (:require [pallet.utils :as utils]))
 
     (def admin-user (utils/make-user "admin"))
-    {% endhighlight %}
+    ```
 
 ## settings.xml
 
 The `config/clj` file is an alternative to the existing `settings.xml`.
 
-    {% highlight xml %}
+    ``` xml
     <settings>
       <profiles>
         <profile>
@@ -114,7 +114,7 @@ The `config/clj` file is an alternative to the existing `settings.xml`.
         </profile>
       </profiles>
     </settings>
-    {% endhighlight %}
+    ```
 
 
 To create a compute service object from `settings.xml`, you use
@@ -122,6 +122,6 @@ To create a compute service object from `settings.xml`, you use
 active profile. You can specify a different profile by passing the profile's id
 to the function.
 
-    {% highlight clojure %}
+    ``` clojure
     (pallet.compute/compute-service-from-settigs "rackspacedev")
-    {% endhighlight %}
+    ```

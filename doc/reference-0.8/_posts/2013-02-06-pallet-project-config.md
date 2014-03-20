@@ -19,9 +19,9 @@ project, and run `lein pallet up`.
 Working with project files is easiest using the pallet plugin for lein.  Add the
 following in your `~/.lein/profiles.clj` file:
 
-{% highlight clojure %}
+``` clojure
 {:user {:plugins [[com.palletops/pallet-lein "0.6.0-beta.5"]]}}
-{% endhighlight %}
+```
 
 To create a default configuration file, run `lein pallet project-init`, which
 will create a `pallet.clj` file.
@@ -42,9 +42,9 @@ repository.
 
 You can then add your group-specs under the groups key.
 
-{% highlight clojure %}
+``` clojure
 :groups [(group-spec "my-group" :extends [with-automated-admin-user])]
-{% endhighlight %}
+```
 
 Working this way makes sense when you have a standalone application.
 
@@ -53,21 +53,21 @@ Working this way makes sense when you have a standalone application.
 To work with the `pallet-lein` plugin and a `pallet.clj` file, you'll need to
 tell `pallet-lein` to add `src` to its classpath.
 
-{% highlight clojure %}
+``` clojure
 :pallet {:source-paths ["src"]}
-{% endhighlight %}
+```
 
 You can then add your group-specs by adding a `require` on your namespace
 containing you group-specs, and adding them under the `:groups`.  For example,
 if you have a group spec declared with `def` at `myns.groups/dev-group-spec`,
 then you can include it like this:
 
-{% highlight clojure %}
+``` clojure
 (require '[myns.groups :refer [dev-group-spec]])
 
 (defproject myproject
   :groups [dev-group-spec])
-{% endhighlight %}
+```
 
 Working with standalone pallet projects makes sense when you are writing crates
 or other code that will be used as a dependency in other pallet projects.

@@ -19,7 +19,7 @@ credentials for that provider.
 You can use the pallet configuration file
 [~/.pallet/config.clj](/doc/reference/config.clj) to specify credentials.
 
-{% highlight clojure %}
+``` clojure
   (defpallet
     :services
       {:aws {:provider "ec2"
@@ -28,7 +28,7 @@ You can use the pallet configuration file
        :rs  {:provider "cloudservers"
              :identity "username"
              :credential "key"}})
-{% endhighlight %}
+```
 
 The service key, `:aws` and `:rs` above, has to be unqiue, but you can have
 multiple accounts for the same provider.
@@ -38,29 +38,29 @@ or `converge`, you use `pallet.configure/compute-service`. By default, the first
 provider entry will be used, and you can specify an alternative provider by
 passing the key to the function.
 
-{% highlight clojure %}
+``` clojure
   (pallet.compute/service "rs")
-{% endhighlight %}
+```
 
 The [~/.pallet/config.clj](/doc/reference/config.clj) file is read automatically
 by the `lein` plugin, and in `lein`, you can switch between providers using the
 `-P` command line option.
 
-{% highlight sh %}
+``` bash
   lein pallet -P rs nodes
-{% endhighlight %}
+```
 
 ## Explicit Credentials
 
 You can log in to the cloud explicitly, using the provider name, and your
 credentials.
 
-{% highlight clojure %}
+``` clojure
   (require 'pallet.compute)
   (def service
     (pallet.configure/compute-service
      "provider" :identity "username" :credential "password"))
-{% endhighlight %}
+```
 
 Pallet uses [jclouds](http://jclouds.org)' terminology, `identity` and
 `credential`, but your cloud provider will probably use different
@@ -93,13 +93,13 @@ multiple other providers at once (eg. node-list and aws).
 The provider names pallet recognises (given the dependencies that have been
 configured) can be displayed with the following from the REPL:
 
-{% highlight clojure %}
+``` clojure
    (require 'pallet.compute)
    (pallet.compute/supported-providers)
-{% endhighlight %}
+```
 
 From the command line, you can use the lein plugin to list providers:
 
-{% highlight sh %}
+``` bash
    lein pallet providers
-{% endhighlight %}
+```

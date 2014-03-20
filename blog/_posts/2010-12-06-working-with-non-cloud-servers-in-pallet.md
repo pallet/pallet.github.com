@@ -13,24 +13,24 @@ has made working with existing servers much easier, however.
 Pallet now has a `node-list` provider, which you can use to specify the tags and
 address of the machine that you want to manage.
 
-    {% highlight clojure %}
+    ``` clojure
     (require 'pallet.compute.node-list)
     (def service 
       (pallet.compute/compute-service
         "node-list"
          :node-list [(pallet.compute.node-list/make-node
                        "hostname" "tag" "192.168.2.23" :ubuntu)])
-    {% endhighlight %}
+    ```
 
 Use `defnode` and `lift` to configure the machines based on the tag.
 
-    {% highlight clojure %}
+    ``` clojure
     (require 'pallet.core)
     (pallet.core/defnode tag
       :configure (pallet.resource/phase
                    (pallet.resource.package/package "wget")))
     (pallet.core/lift tag)
-    {% endhighlight %}
+    ```
 
 Pallet has it's roots in [jclouds](http://jclouds.org/), and was originally
 meant to work directly with a cloud provisioning api. Adding the abitility to

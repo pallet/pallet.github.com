@@ -30,7 +30,7 @@ the operating system image, the network connectivity, and quality of serivce
 options.  The available keywords are compatible with those in
 `org.jclouds.compute/build-template`.
 
-{% highlight clojure %}
+``` clojure
 (require '[pallet.api :refer [node-spec]])
 (def mynodes
   (node-spec
@@ -38,7 +38,7 @@ options.  The available keywords are compatible with those in
     :hardware {:min-cores 2 :min-ram 512}
     :network {:inbound-ports [22 80]}
     :qos {:spot-price (float 0.03) :enable-monitoring true}))
-{% endhighlight %}
+```
 
 An empty `:image` specification implies a default image will be used for the
 nodes, usually the latest Ubuntu version, or CentOS if no Ubuntu images are
@@ -59,18 +59,18 @@ configuration an control of a single component in your stack (e.g. nginx).  The
 plan functions can be invoked using the
 [`converge` or `lift` operations](/doc/reference/0.8/operations).
 
-{% highlight clojure %}
+``` clojure
 (require '[pallet.api :refer [server-spec plan-fn]])
 (require '[pallet.actions :refer [package]])
 (def with-wget
   (server-spec
    :phases {:configure (plan-fn (package "wget"))}))
-{% endhighlight %}
+```
 
 The server specs can be extended.  In this example `with-wget-and-curl`
 extends `with-wget`, and adds installation of curl:
 
-{% highlight clojure %}
+``` clojure
 (require '[pallet.api :refer [server-spec plan-fn]])
 (require '[pallet.actions :refer [package]])
 (def with-wget
@@ -80,7 +80,7 @@ extends `with-wget`, and adds installation of curl:
   (server-spec
    :extends [with-wget]
    :phases {:configure (plan-fn (package "curl"))}))
-{% endhighlight %}
+```
 
 A default node spec can be added with the `:node-spec` keyword.
 
@@ -98,7 +98,7 @@ A group-spec is created with the
 [`pallet.api/group-spec`](/pallet/api/0.8/pallet.api#var-group-spec)
 function.
 
-{% highlight clojure %}
+``` clojure
 (require '[pallet.api :refer [group-spec node-spec plan-fn server-spec]])
 (require '[pallet.actions :refer [package]])
 (def mynodes
@@ -116,7 +116,7 @@ function.
 (def mygroup
   (group-spec
     "mygroup" :extends [with-wget with-curl] :node-spec mynodes))
-{% endhighlight %}
+```
 
 The ability to extend multiple server-spec's allows you to easily compose
 configuration.  As an example, you could define a server-spec for a `:configure`
@@ -127,7 +127,7 @@ application.
 
 Alternatively, you can specify everything in one:
 
-{% highlight clojure %}
+``` clojure
 (require '[pallet.api :refer [group-spec node-spec plan-fn server-spec]])
 (require '[pallet.actions :refer [package]])
 (def mygroup
@@ -141,7 +141,7 @@ Alternatively, you can specify everything in one:
                 :hardware {:min-cores 2 :min-ram 512}
                 :network {:inbound-ports [22 80]}
                 :qos {:spot-price (float 0.03) :enable-monitoring true})))
-{% endhighlight %}
+```
 
 The group spec can be used to overide the default packager selection
 (`:yum`, `:aptitude`, `:apt` or `:pacman`) with the `:packager` keyword.

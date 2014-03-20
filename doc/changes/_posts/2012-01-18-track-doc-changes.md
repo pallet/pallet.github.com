@@ -2,6 +2,7 @@
 layout: news
 title: Added a Way to Track Documentation Changes
 section: documentation
+redirect_from: /2012/track-doc-changes/ 
 ---
 
 We have added a way to track significant documentation changes. From

@@ -73,7 +73,7 @@ bash$ lein repl
 Once you see the REPL's `user=>` prompt, issue the following command
 to load Pallet:
 
-``` clojure
+``` 
 user=> (require 'pallet.api 'pallet.compute 'pallet.configure)
 nil
 ```
@@ -85,7 +85,7 @@ builds and destroys a compute node running Ubuntu version 12.04. To do
 so you first define a connection to AWS by entering the following at
 the REPL prompt:
 
-``` clojure
+``` 
 user=> (def aws (pallet.configure/compute-service :aws))
 #'user/aws
 ```
@@ -98,7 +98,7 @@ Now we need to define what kind of node we want to build. A
 `group-spec` encapsulates this information. Define a group-spec named
 `mygroup` as follows:
 
-``` clojure
+``` 
 user=>
 (def my-group
   (pallet.api/group-spec "mygroup"
@@ -114,7 +114,7 @@ and the OS that this AMI runs.
 
 You can now instruct Pallet to create one of such nodes, by issuing:
 
-``` clojure  
+``` 
 user=> (def s (pallet.api/converge {my-group 1} :compute aws))
 #'user/s
 ```
@@ -130,7 +130,7 @@ session use the function `explain-session` in `pallet.repl`. For
 example, to see what Pallet did in the during the previous command, do
 this:
 
-``` clojure
+```
 user=> (use 'pallet.repl)
 nil
 
@@ -145,7 +145,7 @@ nil
 Now shut down this node issuing the same command as before, but change
 the `:count` value to zero (you can ignore the `:node-spec`):
 
-``` clojure
+``` 
 user=> (def s (pallet.api/converge {my-group 0} :compute aws))
 #'user/s
 
@@ -171,7 +171,7 @@ The following commands update your `group-spec` with the SSH
 configuration and your authorization, and then builds one node based
 on this spec:
 
-``` clojure
+```
 user=> (use '[pallet.crate.automated-admin-user :only [automated-admin-user]])
 nil
 
@@ -277,7 +277,7 @@ The following command will add additional code to install `curl`
 during the `:configure` phase, then updates the existing nodes with
 the new configuration using `lift` instead of `converge`:
 
-``` clojure
+```
 user=> (use '[pallet.actions :only [package]]
             '[pallet.api :only [plan-fn]])
 nil

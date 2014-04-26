@@ -183,34 +183,6 @@ description: Pallet is a platform for agile and programmatic automation of
         </div>
       </section>
 
-      <section id="news" title="Pallet News">
-        <div class="page-header">
-          <h1><a href="/news" title="Latest Pallet News">Latest News &raquo;</a>
-            <small><a href="/news/atom.xml" title="Latest Pallet News Feed">RSS</a></small>
-          </h1>
-        </div>
-
-        <ul class="unstyled">
-          {% for post in site.categories.news limit:3 %}
-          <li><span>{{ post.date | date_to_string }}</span> &raquo;
-            <a href="{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </section>
-
-      <section id="articles" title="Pallet Blog Articles">
-        <div class="page-header">
-          <h1><a href="/blog" title="Pallet Blog">Articles &raquo;</a>
-            <small><a href="/blog/atom.xml" title="Pallet Blog Feed">RSS</a></small>
-          </h1>
-        </div>
-        <ul class="unstyled">
-          {% for post in site.categories.blog limit:5 %}
-          <li><span>{{ post.date | date_to_string }}</span> &raquo;
-            <a href="{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </section>
     </div>
     {% include foot.html %}
   </body>

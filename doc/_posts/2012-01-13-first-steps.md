@@ -1,5 +1,5 @@
 ---
-title: First Steps
+title: First Steps with Pallet
 layout: doc
 permalink: /doc/first-steps
 section: documentation
@@ -8,8 +8,6 @@ summary: Quickstart instructions for creating a new Pallet project. Covers
          installation of lein and configuration of project.clj, and a primer
          on pallet clojure forms.
 ---
-
-# First Steps with Pallet
 
 This guide walks you through provisioning and configuring your first
 compute node in the cloud. The estimated completion time is 5 minutes.

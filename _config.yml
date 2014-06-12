@@ -13,14 +13,14 @@ description: Pallet is a platform for agile and programmatic automation of
 navigation:
 - text: Overview
   active: false
-  url: /doc/overview
+  url: /pallet/doc/overview
   sections: [overview]  
 - text: About
   active: false
   url: /about
 - text: Documentation
   active: true
-  url: /doc
+  url: /pallet/doc
   sections: [doc, documentation]
 - text: News
   active: true
@@ -47,7 +47,7 @@ navigation:
   sections: [contact]
 - text: Getting Started
   active: false
-  url: /doc/getting-started
+  url: /pallet/doc/getting-started
 - text: Community
   active: false
   url: /community

@@ -16,19 +16,6 @@ layout: nil
   {% assign pages = site.categories.blog %}
   {% include site-entry.xml %}
 
-  
-  <!-- documentation -->
-  {% assign pages = site.categories.doc %}
-  {% include site-entry.xml %}
-
-  <!-- FAQs -->
-  {% assign pages = site.categories.faq %}
-  {% include site-entry.xml %}
-
-  <!-- how tos -->
-  {% assign pages = site.categories.how-tos %}
-  {% include site-entry.xml %}
-
   <!-- html pages -->
   {% for page in site.html_pages %}
   <url>

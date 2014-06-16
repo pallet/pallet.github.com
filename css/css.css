@@ -11,13 +11,13 @@ header h1, header h1 a{
 .container{
 	margin-bottom: 60px;
 }
-*/
+
 .content{
 	margin-left: 0;
 	margin-top: 20px;
 	float: left;
 }
-
+*/
 .content h3.title{
 	background: #f5f5f5;
 	padding-left: 5px;
@@ -47,12 +47,15 @@ header h1, header h1 a{
 	border-right: 1px solid rgba(0, 0, 0, 0.15);
 }
 
+/*
 pre code{
 	background-color: transparent;
 	color: #404040;
 	padding: 0;
         font-size: 14px;
 }
+
+*/
 
 .disqus-post-comments{
     margin-top: 45px;

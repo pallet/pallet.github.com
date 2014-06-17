@@ -2,7 +2,7 @@
 layout: naked-doc
 title: Contact Us
 section: contact
-permalink: /contact
+permalink: /contact/
 ---
 
 <!-- wufoo form "Contact PalletOps" -->

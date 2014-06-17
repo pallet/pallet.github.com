@@ -2,7 +2,7 @@
 layout: naked-doc
 title: Support
 section: support
-permalink: /support
+permalink: /support/
 ---
 
 ## Community Support

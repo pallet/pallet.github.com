@@ -2,7 +2,7 @@
 layout: naked-doc
 title: Services
 section: services
-permalink: /services
+permalink: /services/
 ---
 
 # PalletOps Services

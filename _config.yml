@@ -9,7 +9,10 @@ gems:
   - jekyll-redirect-from
 baseurl: /
 description: Pallet is a platform for agile and programmatic automation of 
-   infrastructure in the cloud, on server racks or directly on virtual machines. 
+   infrastructure in the cloud, on server racks or directly on virtual machines.
+collections:
+  pages:
+    output: true
 navigation:
 - text: Overview
   active: false

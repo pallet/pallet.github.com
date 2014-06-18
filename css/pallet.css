@@ -23,9 +23,7 @@ section > .row {
 -------------------------------------------------- */
 .jumbotron {
   /*  min-width: 940px; */
-  padding-top: 40px;
-  background-color: #6dB3E8;
-  background-image: url(/images/computer-bk.png);
+  padding-top: 45px;
   background-size: 100%;
 /*  
   background: transparent url(../img/grid-18px.png) top center;

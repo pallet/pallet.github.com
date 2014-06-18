@@ -6,20 +6,13 @@ Assign atom = true if this is an index page that has a corresponding atom page
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.name }}</title>
 
 
-  <!-- Latest compiled and minified CSS -->
-  <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    -->
-  <link rel="stylesheet" href="/css/yeti/bootstrap.min.css">
-  <!-- Optional theme -->
-  <!--
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-  -->
-  <!-- Latest compiled and minified JavaScript -->
+  <link rel="stylesheet" href="{{site.cdn}}/{{site.asset-ver}}/css/bootstrap.min.css">
+   <!-- Latest compiled and minified JavaScript -->
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="/css/pallet.css">
-  <link rel="stylesheet" href="/css/css.css">
-  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="{{site.cdn}}/{{site.asset-ver}}/css/pallet.css">
+  <link rel="stylesheet" href="{{site.cdn}}/{{site.asset-ver}}/css/css.css">
+  <link rel="stylesheet" href="{{site.cdn}}/{{site.asset-ver}}/css/highlight.css">
   {% comment %}
   ensure proper rendering and touch zooming
   {% endcomment %}

@@ -5,7 +5,7 @@ install:
   - sudo pip install Pygments
 env:
   global:
-    - secure: "Og8RjX6nirUwdkG7TJofd2qGJS5sYuy16vQ9eSvOX58ykswa9uaIZlW62xd/cvLIN8LPNbcK53S10xMqLnfN3b5mTTa3T8K8H7tHlkLlhCbuOZ18U/TIle2hwf06w/osNFyDCXOZp0GAl0STdcl/6f9E1+htfMa8J6rBVbRvyDk="
+    - secure: "Dv1PuducE+CBuBEDFTqHCNfMRkjQsHI1sDXBAn6wOH5XuFQBLqXK4+3foF1n3w3neic9W30odIc+oOJlI+xRG9wFbhCOUZFrPLBDk753QK+jKYmhd/TF4yNPSi2c4Ik4UIgDWqQ1a/kh5KhozOPeju6SZDGHTBv2oXJl9mXoHyA="
     - "DDIR=tmp-deploy"
     - "TARGET_BRANCH=master"
     - "PROJECT=pallet/pallet.github.com"

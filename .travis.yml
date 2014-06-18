@@ -5,7 +5,7 @@ install:
   - sudo pip install Pygments
 env:
   global:
-    - secure: "Dv1PuducE+CBuBEDFTqHCNfMRkjQsHI1sDXBAn6wOH5XuFQBLqXK4+3foF1n3w3neic9W30odIc+oOJlI+xRG9wFbhCOUZFrPLBDk753QK+jKYmhd/TF4yNPSi2c4Ik4UIgDWqQ1a/kh5KhozOPeju6SZDGHTBv2oXJl9mXoHyA="
+    - secure: "LM5F5+TXWGVcqWVg7xDsaOZZNljN1gCTZPESGijeb3Ia1StFe+hHqx8fR7u5JBdHbJvowCEHGVdfRPHf2YZhpPpT4BKVVpu1hfyHZRZUPFewYWxr4NPSx5Rnr/9v1l6ZMOi324jQwPCSeE/gohqhFSj8Kk+nOEhvGIYBbTCGX8U="
     - "DDIR=tmp-deploy"
     - "TARGET_BRANCH=master"
     - "PROJECT=pallet/pallet.github.com"
@@ -21,6 +21,7 @@ script:
 after_success:
   - cd $DDIR
   - git config credential.helper "store --file=.git/credentials"
+  - mkdir -p .git # ensure .git exitsts
   - echo "https://tbatchelli:${GH_PASSWD}@github.com" > .git/credentials
   - git remote set-url origin https://github.com/${PROJECT}.git
   - git add -A .

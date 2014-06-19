@@ -1,28 +1,147 @@
----
-layout: nil
----
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  <title>Pallet, DevOps for the JVM -- News</title>
  <link href="http://palletops.com/news/atom.xml" rel="self"/>
  <link href="http://palletops.com/news"/>
- <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://{{ site.domain }}/news</id>
+ <updated>2014-06-19T00:54:11+00:00</updated>
+ <id>http://palletops.com/news</id>
  <author>
    <name>Antoni Batchelli</name>
    <email>tbatchelli@palletops.com</email>
  </author>
- {% for post in site.categories.news limit:100 %}
+ 
  <entry>
-   <title>{{ post.title }}</title>
-   <link href="http://palletops.com/{{ post.url }}"/>
-   <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://{{ site.domain }}/{{ post.url }}</id>
-   <content type="html">{{ post.content | xml_escape }}</content>
+   <title>Hugo Duncan talking about Pallet at EuroClojure 2012</title>
+   <link href="http://palletops.com//news/Euroclojure-2012-Pallet-Talk/"/>
+   <updated>2012-06-11T00:00:00+00:00</updated>
+   <id>http://palletops.com//news/Euroclojure-2012-Pallet-Talk/</id>
+   <content type="html">&lt;p&gt;Hugo Duncan gave a &lt;a href=&quot;http://vimeo.com/45562554&quot;&gt;talk on pallet basics&lt;/a&gt; at
+&lt;a href=&quot;http://euroclojure.com/2012/&quot;&gt;EuroClojure 2012&lt;/a&gt;.&lt;/p&gt;
+</content>
    <author>
-     <name>{{ post.author }}</name>
-     <uri>{{ post.author_url }}</uri>
+     <name>Hugo Duncan</name>
+     <uri></uri>
    </author>
  </entry>
- {% endfor %}
+ 
+ <entry>
+   <title>Toni Batchelli talking about Pallet at Clojure/West 2012</title>
+   <link href="http://palletops.com//news/Clojure-West-2012-Pallet-Talk/"/>
+   <updated>2012-05-17T00:00:00+00:00</updated>
+   <id>http://palletops.com//news/Clojure-West-2012-Pallet-Talk/</id>
+   <content type="html">&lt;p&gt;Toni Batchelli gave a &lt;a href=&quot;http://bit.ly/KweuSg&quot;&gt;great talk on pallet basics&lt;/a&gt; at
+&lt;a href=&quot;http://clojurewest.org/&quot;&gt;Clojure/West 2012&lt;/a&gt;.&lt;/p&gt;
+</content>
+   <author>
+     <name>Hugo Duncan</name>
+     <uri></uri>
+   </author>
+ </entry>
+ 
+ <entry>
+   <title>MostlyLazy interview on Pallet at Clojure Conj 2011</title>
+   <link href="http://palletops.com//news/MostlyLazy-podcast-interview/"/>
+   <updated>2012-02-03T00:00:00+00:00</updated>
+   <id>http://palletops.com//news/MostlyLazy-podcast-interview/</id>
+   <content type="html">&lt;p&gt;Last year we attended &lt;a href=&quot;http://clojureconj.org&quot;&gt;Clojure Conj&lt;/a&gt; and
+&lt;a href=&quot;http://cemerick.com&quot;&gt;Chas Emerick&lt;/a&gt; interviewed us for his
+&lt;a href=&quot;http://mostlylazy.com&quot;&gt;MostlyLazy podcast&lt;/a&gt;. Chas published
+&lt;a href=&quot;http://mostlylazy.com/2012/02/03/episode-0-0-4-antoni-batchelli-and-hugo-duncan-at-clojure-conj-2011/&quot;&gt;this interview today&lt;/a&gt;,
+and he has also done a terrific job at summarizing the topics covered
+in the accompanying blog post.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mostlylazy.com/2012/02/03/episode-0-0-4-antoni-batchelli-and-hugo-duncan-at-clojure-conj-2011/&quot;&gt;Head over to Mostly Lazy&lt;/a&gt; to listen to this 23min interview.&lt;/p&gt;
+</content>
+   <author>
+     <name>Antoni Batchelli</name>
+     <uri></uri>
+   </author>
+ </entry>
+ 
+ <entry>
+   <title>Pallet Training at Clojure/West is $1000 until Jan 27th</title>
+   <link href="http://palletops.com//news/pallet-training-early-bird/"/>
+   <updated>2012-01-18T00:00:00+00:00</updated>
+   <id>http://palletops.com//news/pallet-training-early-bird/</id>
+   <content type="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;span9 offset1&quot;&gt;
+    &lt;div class=&quot;alert-message block-message error&quot;&gt;
+      &lt;p&gt;The Pallet Workshop at Clojure/West was cancelled. We
+      continue to offer on-site training. 
+        &lt;a href=&quot;mailto:contact@palletops.com&quot;&gt;Contact us&lt;/a&gt; if you are
+          interested. &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://clojurewest.org&quot;&gt;Clojure/West&lt;/a&gt; has decided to offer Early Bird
+pricing until
+&lt;a href=&quot;http://www.regonline.com/Register/Checkin.aspx?EventID=1041359&quot;&gt;January 27th, at $1000 per seat&lt;/a&gt;.
+The price will go back to it&amp;#39;s standard $1200 after this date.&lt;/p&gt;
+
+&lt;p&gt;Hugo and Toni will be teaching Pallet from the ground up for two days
+before the conference starts, focusing on real world examples. Check
+out
+&lt;a href=&quot;http://clojurewest.squarespace.com/training-pallet/;jsessionid=8DF5E59108FC33EC140FF09A2ACFE3B6.web141&quot;&gt;the course description&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don&amp;#39;t miss this opportunity to learn from the creators of Pallet at a
+great price.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.regonline.com/Register/Checkin.aspx?EventID=1041359&quot;&gt;
+&lt;image src=&quot;http://clojurewest.org/storage/banner_700.png&quot; width=&quot;90%&quot;/&gt;
+&lt;/a&gt;&lt;/p&gt;
+</content>
+   <author>
+     <name>Antoni Batchelli</name>
+     <uri></uri>
+   </author>
+ </entry>
+ 
+ <entry>
+   <title>Announcing a Documentation Overhaul</title>
+   <link href="http://palletops.com//news/new-site/"/>
+   <updated>2012-01-17T00:00:00+00:00</updated>
+   <id>http://palletops.com//news/new-site/</id>
+   <content type="html">&lt;p&gt;The documentation on Pallet has been lagging behind its code base.
+This was partially due to a high rate of change, and to our focus on
+the platform itself.&lt;/p&gt;
+
+&lt;p&gt;Today, we are happy to announce a new documentation infrastructure
+that is the base for this documentation overhaul: a collaboratively
+edited website for Pallet. This infrastructure will make creating and
+adding manuals, development tips, FAQs and how-tos very easy for
+everyone. We are also committed to leading this effort by creating the
+bulk of the documentation. We welcome any help.&lt;/p&gt;
+
+&lt;p&gt;As part of this effort we are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Building this website with a setup that allows it to be
+collaboratively edited
+&lt;a href=&quot;http://github.com/pallet/pallet.github.com&quot;&gt;via GitHub&lt;/a&gt; and using
+Markdown.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Making &lt;a href=&quot;http://palletops.com/doc&quot;&gt;palletops.com/doc&lt;/a&gt; the canonical
+documentation repository for Pallet. On this note, we are also
+removing any other documentation that we have outside this site to
+ensure that everyone is accessing this most up-to-date version.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Finally, we are creating RSS feeds for news, documentation updates
+and events so that you can keep track of what is new in Pallet-land.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This effort is iterative and we will be adding new features to this
+site every few days in the upcoming weeks. You can follow these
+updates &lt;a href=&quot;http://palletops.com/news&quot;&gt;in our News page&lt;/a&gt; or by
+subscribing to either our
+&lt;a href=&quot;http://palletops.com/news/atom.xml&quot;&gt;News RSS feed&lt;/a&gt; or our
+&lt;a href=&quot;http://palletops.com/atom.xml&quot;&gt;General RSS feed&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We welcome &lt;a href=&quot;mailto:contact@palletops.com&quot;&gt;any feedback&lt;/a&gt; and help in
+this effort. Stay tuned for instructions on how you can help!&lt;/p&gt;
+</content>
+   <author>
+     <name>Antoni Batchelli</name>
+     <uri></uri>
+   </author>
+ </entry>
+ 
 </feed>

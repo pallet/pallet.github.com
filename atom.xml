@@ -3,7 +3,7 @@
  <title>Pallet, DevOps for the JVM</title>
  <link href="http://palletops.com/atom.xml" rel="self"/>
  <link href="http://palletops.com/"/>
- <updated>2014-06-19T23:01:21+00:00</updated>
+ <updated>2014-06-19T23:02:43+00:00</updated>
  <id>http://palletops.com/</id>
  <author>
    <name>Antoni Batchelli</name>
@@ -95,7 +95,7 @@ google group.&lt;/p&gt;
 
 &lt;p&gt;Below is the &lt;a href=&quot;http://clojurewest.squarespace.com/training-pallet/&quot;&gt;official announcement&lt;/a&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;span style=&quot;color: #626262; font-family: &#39;Lucida Sans Unicode&#39;, &#39;Lucida Grande&#39;, Tahoma, sans-serif; font-size: 12px; line-height: 21px;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color: #626262; font-family: 'Lucida Sans Unicode', 'Lucida Grande', Tahoma, sans-serif; font-size: 12px; line-height: 21px;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
 
 &lt;p style=&quot;margin-bottom: 1em; margin-top: 0em;&quot;&gt;&lt;strong&gt;Cost:&amp;nbsp;&lt;/strong&gt;$1200 (&lt;a href=&quot;http://www.regonline.com/Register/Checkin.aspx?EventID=1041359&quot;&gt; &lt;strong&gt;Sign up before Jan 27th and get $200 off!&lt;/strong&gt;&lt;/a&gt;)&lt;/p&gt;
 
@@ -131,7 +131,7 @@ google group.&lt;/p&gt;
 
 &lt;p style=&quot;margin-bottom: 1em; margin-top: 0em;&quot;&gt;&lt;strong&gt;Course Description:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p style=&quot;margin-bottom: 1em; margin-top: 0em;&quot;&gt;Learn to use Pallet from the library&#39;s primary developers.&lt;/p&gt;
+&lt;p style=&quot;margin-bottom: 1em; margin-top: 0em;&quot;&gt;Learn to use Pallet from the library's primary developers.&lt;/p&gt;
 
 &lt;p style=&quot;margin-bottom: 1em; margin-top: 0em;&quot;&gt;If you care about building infrastructure as code, for deployment&amp;nbsp;locally on fixed infrastructure or to public and private clouds, then&amp;nbsp;Pallet is the tool for you.&lt;/p&gt;
 
@@ -143,7 +143,7 @@ google group.&lt;/p&gt;
 &lt;li&gt;Apply all your software development skills to managing your infrastructure.&lt;/li&gt;
 &lt;li&gt;Write re-usable infrastructure components, that can be used from development&amp;nbsp;through to production, on local virtual machines, or on the cloud.&lt;/li&gt;
 &lt;li&gt;Make infrastructure and deployment an integral part of your applications.&lt;/li&gt;
-&lt;li&gt;Eliminate the low level work of maintaining the connections between the&amp;nbsp;servers in your architecture by leveraging Pallet&#39;s first class support for&amp;nbsp;discovering connection details at configuration time.&lt;/li&gt;
+&lt;li&gt;Eliminate the low level work of maintaining the connections between the&amp;nbsp;servers in your architecture by leveraging Pallet's first class support for&amp;nbsp;discovering connection details at configuration time.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p style=&quot;margin-bottom: 1em; margin-top: 0em;&quot;&gt;What will you learn?&lt;/p&gt;
@@ -154,11 +154,11 @@ google group.&lt;/p&gt;
 
 &lt;ul style=&quot;list-style-type: square; margin-top: 1em; margin-right: 0px; margin-bottom: 1em; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 2em;&quot;&gt;
 &lt;li&gt;Functional infrastructure: Learn how stateful infrastructure can be built&amp;nbsp;using pure functional programming.&lt;/li&gt;
-&lt;li&gt;Actions: Pallet&#39;s actions provide a rich library of functions that form a&amp;nbsp;language used to write code that will run on remote machines. Actions are&amp;nbsp;designed to work across the whole range of operating systems supported by&amp;nbsp;Pallet, giving you freedom to move between operating systems and versions.&lt;/li&gt;
+&lt;li&gt;Actions: Pallet's actions provide a rich library of functions that form a&amp;nbsp;language used to write code that will run on remote machines. Actions are&amp;nbsp;designed to work across the whole range of operating systems supported by&amp;nbsp;Pallet, giving you freedom to move between operating systems and versions.&lt;/li&gt;
 &lt;li&gt;Crates: Build high level abstractions by writing crates, which are clojure&amp;nbsp;functions that call any mixture of actions or other crate functions. &amp;nbsp;You&amp;nbsp;are familiar with building abstractions using functions in Clojure, and the&amp;nbsp;same techniques are used when you write crates in Pallet.&lt;/li&gt;
-&lt;li&gt;Phases: when configuring and running your infrastructure, there will be many&amp;nbsp;operations you will wish to automate. &amp;nbsp;We&#39;ll show you how Pallet&#39;s phases&amp;nbsp;provide an open framework for you to automate as many tasks as you need,&amp;nbsp;while taking full advantage of the composability of pallet.&lt;/li&gt;
-&lt;li&gt;Servers and groups: server-spec&#39;s in Pallet provide a mechanism for directly&amp;nbsp;describing the configuration and operation of (software) server components&amp;nbsp;in your architecture. group-spec&#39;s allow you to map the server-spec&#39;s to&amp;nbsp;individual nodes. Using server-spec&#39;s, you will see how to code your&amp;nbsp;infrastructure on a single vm, and then use the same server-spec&#39;s to deploy&amp;nbsp;to a horizontally scaled cloud environment.&lt;/li&gt;
-&lt;li&gt;Stevedore: For some special cases, Pallet&#39;s actions may be too restrictive,&amp;nbsp;and for these cases Pallet allows you to write script using clojure,&amp;nbsp;enabling the use of all the rich data available about you infrastructure in&amp;nbsp;arbitrary scripts.&lt;/li&gt;
+&lt;li&gt;Phases: when configuring and running your infrastructure, there will be many&amp;nbsp;operations you will wish to automate. &amp;nbsp;We'll show you how Pallet's phases&amp;nbsp;provide an open framework for you to automate as many tasks as you need,&amp;nbsp;while taking full advantage of the composability of pallet.&lt;/li&gt;
+&lt;li&gt;Servers and groups: server-spec's in Pallet provide a mechanism for directly&amp;nbsp;describing the configuration and operation of (software) server components&amp;nbsp;in your architecture. group-spec's allow you to map the server-spec's to&amp;nbsp;individual nodes. Using server-spec's, you will see how to code your&amp;nbsp;infrastructure on a single vm, and then use the same server-spec's to deploy&amp;nbsp;to a horizontally scaled cloud environment.&lt;/li&gt;
+&lt;li&gt;Stevedore: For some special cases, Pallet's actions may be too restrictive,&amp;nbsp;and for these cases Pallet allows you to write script using clojure,&amp;nbsp;enabling the use of all the rich data available about you infrastructure in&amp;nbsp;arbitrary scripts.&lt;/li&gt;
 &lt;li&gt;Upcoming: Review the driving forces behind enhancements that will be coming&amp;nbsp;to Pallet, and discuss how these will benefit you.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -175,10 +175,10 @@ google group.&lt;/p&gt;
    <link href="http://palletops.com//pallet-meetup-at-clojureconj"/>
    <updated>2011-10-23T00:00:00+00:00</updated>
    <id>http://palletops.com//pallet-meetup-at-clojureconj</id>
-   <content type="html">&lt;p&gt;We are trying to get together with all the Pallet users and lurkers that exist in the Clojure community a the &lt;a href=&quot;http://clojure-conj.org/&quot;&gt;Clojure/Conj&lt;/a&gt; this November. We still don&#39;t know the details on where and at what date/time we&#39;ll be able to meet, but we will meet for sure.&lt;/p&gt;
-&lt;p&gt;We&#39;ve setup a &lt;a href=&quot;http://www.meetup.com/Pallet-Users-Group/events/38415062/&quot;&gt;Pallet Users Meetup&lt;/a&gt; to register RSVPs and also to communicate the specifics of this meetup once they&#39;re settled.&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;We&#39;re looking forward meeting you all!&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.meetup.com/Pallet-Users-Group/events/38415062/&quot;&gt;Please RSVP&lt;/a&gt; so we know you&#39;re interested and we can plan accordingly!&lt;/p&gt;
+   <content type="html">&lt;p&gt;We are trying to get together with all the Pallet users and lurkers that exist in the Clojure community a the &lt;a href=&quot;http://clojure-conj.org/&quot;&gt;Clojure/Conj&lt;/a&gt; this November. We still don't know the details on where and at what date/time we'll be able to meet, but we will meet for sure.&lt;/p&gt;
+&lt;p&gt;We've setup a &lt;a href=&quot;http://www.meetup.com/Pallet-Users-Group/events/38415062/&quot;&gt;Pallet Users Meetup&lt;/a&gt; to register RSVPs and also to communicate the specifics of this meetup once they're settled.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;We're looking forward meeting you all!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.meetup.com/Pallet-Users-Group/events/38415062/&quot;&gt;Please RSVP&lt;/a&gt; so we know you're interested and we can plan accordingly!&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 </content>
    <author>
@@ -753,7 +753,7 @@ to the function.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://cemerick.com&quot;&gt;Chas Emerick&lt;/a&gt; has been promoting Pallet as part of his talk at the first &lt;a href=&quot;http://clojure-conj.org/&quot;&gt;clojure-conj&lt;/a&gt; conference, and followed that up with a &lt;a href=&quot;http://cemerick.com/2010/11/02/continuous-deployment-of-clojure-web-applications/&quot;&gt;blog post&lt;/a&gt; and &lt;a href=&quot;https://github.com/cemerick/clojure-web-deploy-conj&quot;&gt;project code&lt;/a&gt;.  The post has an fantastic screen cast on using pallet together with Hudson.&lt;/p&gt;
 &lt;p&gt;Toni Batchelli (aka &lt;a href=&quot;http://disclojure.org/&quot;&gt;disclojure&lt;/a&gt;) has given a couple of talks: a &lt;a href=&quot;http://www.scribd.com/doc/39275742/Pallet-Bacug&quot;&gt;great technical introduction&lt;/a&gt;, and a &lt;a href=&quot;http://www.scribd.com/doc/40391319/Pallet-Gogrid&quot;&gt;slightly higher level overview&lt;/a&gt;. He has also vastly improved the &lt;a href=&quot;http://github.com/hugoduncan/pallet-examples&quot;&gt;pallet examples&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Finally, Adrian Cole of &lt;a href=&quot;http://jclouds.org&quot;&gt;jclouds&lt;/a&gt;, the foundation of pallet, has been lavish in his support, even giving a &lt;a href=&quot;http://oredev.org/2010/speakers/adrian-cole&quot;&gt;workshop on pallet&lt;/a&gt; at &lt;a href=&quot;http://oredev.org/2010&quot;&gt;&amp;Oslash;redev&lt;/a&gt; in Sweden!&lt;/p&gt;
-&lt;h2&gt;What&#39;s new&lt;/h2&gt;
+&lt;h2&gt;What's new&lt;/h2&gt;
 &lt;p&gt;Some highlights from the &lt;a href=&quot;https://github.com/hugoduncan/pallet/wiki/ReleaseNotes&quot;&gt;release notes&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Added ~/.pallet/config.clj as a way of configuring your credentials, and the default admin user. The admin user can also be configured in project code in the pallet.config namespace.&lt;/li&gt;

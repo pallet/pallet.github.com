@@ -23,12 +23,12 @@ after_success:
   - git config credential.helper "store --file=.git/credentials"
   - mkdir -p .git # ensure .git exitsts
   - echo "https://tbatchelli:${GH_PASSWD}@github.com" > .git/credentials
-  - grep -c CCN .git/credentials
   - git remote set-url origin https://github.com/${PROJECT}.git
   - git add -A .
   - git config user.email "tbatchelli@acm.org"
   - git config user.name "tbatchelli"
   - git commit -am "new-site-deployed" --allow-empty
+  - echo "push origin $TARGET_BRANCH"
   - git push origin $TARGET_BRANCH 2>&1
 after_script:
   - rm -rf $DDIR

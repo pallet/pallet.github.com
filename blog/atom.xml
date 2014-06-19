@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
- <title>Pallet, DevOps for the JVM</title>
- <link href="http://palletops.com/atom.xml" rel="self"/>
- <link href="http://palletops.com/"/>
+ <title>Pallet, DevOps for the JVM -- Blog</title>
+ <link href="http://palletops.com/blog/atom.xml" rel="self"/>
+ <link href="http://palletops.com/blog"/>
  <updated>2014-06-19T01:06:21+00:00</updated>
- <id>http://palletops.com/</id>
+ <id>http://palletops.com/blog</id>
  <author>
    <name>Antoni Batchelli</name>
    <email>tbatchelli@palletops.com</email>
  </author>
- <!-- blog posts -->
  
  <entry>
-   <title>Article: Alembic - a library to control your classpath</title>
+   <title>Alembic - a library to control your classpath</title>
    <link href="http://palletops.com//alembic-clojure-classpath-control"/>
    <updated>2013-04-29T00:00:00+00:00</updated>
    <id>http://palletops.com//alembic-clojure-classpath-control</id>
@@ -72,7 +71,7 @@ google group.&lt;/p&gt;
  </entry>
  
  <entry>
-   <title>Article: Pallet training scheduled for March 14 and 15 at the Clojure/West Conference</title>
+   <title>Pallet training scheduled for March 14 and 15 at the Clojure/West Conference</title>
    <link href="http://palletops.com//pallet-training-scheduled-for-march-14-15-at"/>
    <updated>2011-12-13T00:00:00+00:00</updated>
    <id>http://palletops.com//pallet-training-scheduled-for-march-14-15-at</id>
@@ -171,7 +170,7 @@ google group.&lt;/p&gt;
  </entry>
  
  <entry>
-   <title>Article: Pallet meetup at Clojure/Conj</title>
+   <title>Pallet meetup at Clojure/Conj</title>
    <link href="http://palletops.com//pallet-meetup-at-clojureconj"/>
    <updated>2011-10-23T00:00:00+00:00</updated>
    <id>http://palletops.com//pallet-meetup-at-clojureconj</id>
@@ -188,7 +187,7 @@ google group.&lt;/p&gt;
  </entry>
  
  <entry>
-   <title>Article: Create Hadoop clusters the easy peasy way with Pallet</title>
+   <title>Create Hadoop clusters the easy peasy way with Pallet</title>
    <link href="http://palletops.com//create-hadoop-clusters-the-easy-peasy-way-wit"/>
    <updated>2011-07-28T00:00:00+00:00</updated>
    <id>http://palletops.com//create-hadoop-clusters-the-easy-peasy-way-wit</id>
@@ -442,7 +441,7 @@ by emailing the &lt;a href=&quot;mailto:pallet-clj@googlegroups.com&quot;&gt;&lt
  </entry>
  
  <entry>
-   <title>Article: Zi, the Maven plugin in Clojure</title>
+   <title>Zi, the Maven plugin in Clojure</title>
    <link href="http://palletops.com//zi-the-maven-plugin-in-clojure"/>
    <updated>2011-07-15T00:00:00+00:00</updated>
    <id>http://palletops.com//zi-the-maven-plugin-in-clojure</id>
@@ -496,7 +495,7 @@ by emailing the &lt;a href=&quot;mailto:pallet-clj@googlegroups.com&quot;&gt;&lt
  </entry>
  
  <entry>
-   <title>Article: Pallet 0.4.10 -  environments, parallel lift and converge, and virtualbox too!</title>
+   <title>Pallet 0.4.10 -  environments, parallel lift and converge, and virtualbox too!</title>
    <link href="http://palletops.com//pallet-0410-environments-parallel-lift-and-co"/>
    <updated>2011-03-14T00:00:00+00:00</updated>
    <id>http://palletops.com//pallet-0410-environments-parallel-lift-and-co</id>
@@ -579,7 +578,7 @@ instances on EC2 - stay tuned...&lt;/p&gt;
  </entry>
  
  <entry>
-   <title>Article: Working with Non-Cloud Servers in Pallet</title>
+   <title>Working with Non-Cloud Servers in Pallet</title>
    <link href="http://palletops.com//working-with-non-cloud-servers-in-pallet"/>
    <updated>2010-12-06T00:00:00+00:00</updated>
    <id>http://palletops.com//working-with-non-cloud-servers-in-pallet</id>
@@ -621,7 +620,7 @@ stopping nodes, and is obviously not supported by &lt;code&gt;node-list&lt;/code
  </entry>
  
  <entry>
-   <title>Article: How to Configure your Credentials in Pallet</title>
+   <title>How to Configure your Credentials in Pallet</title>
    <link href="http://palletops.com//how-to-configure-your-cloud-credentials-in-pa"/>
    <updated>2010-11-18T00:00:00+00:00</updated>
    <id>http://palletops.com//how-to-configure-your-cloud-credentials-in-pa</id>
@@ -744,7 +743,7 @@ to the function.&lt;/p&gt;
  </entry>
  
  <entry>
-   <title>Article: Pallet release 0.3.0</title>
+   <title>Pallet release 0.3.0</title>
    <link href="http://palletops.com//pallet-release-030-agile-cloud-development"/>
    <updated>2010-10-15T00:00:00+00:00</updated>
    <id>http://palletops.com//pallet-release-030-agile-cloud-development</id>
@@ -770,142 +769,6 @@ to the function.&lt;/p&gt;
 </content>
    <author>
      <name>Hugo Duncan</name>
-     <uri></uri>
-   </author>
- </entry>
- 
- <!-- news -->
- 
- <entry>
-   <title>News: Hugo Duncan talking about Pallet at EuroClojure 2012</title>
-   <link href="http://palletops.com//news/Euroclojure-2012-Pallet-Talk/"/>
-   <updated>2012-06-11T00:00:00+00:00</updated>
-   <id>http://palletops.com//news/Euroclojure-2012-Pallet-Talk/</id>
-   <content type="html">&lt;p&gt;Hugo Duncan gave a &lt;a href=&quot;http://vimeo.com/45562554&quot;&gt;talk on pallet basics&lt;/a&gt; at
-&lt;a href=&quot;http://euroclojure.com/2012/&quot;&gt;EuroClojure 2012&lt;/a&gt;.&lt;/p&gt;
-</content>
-   <author>
-     <name>Hugo Duncan</name>
-     <uri></uri>
-   </author>
- </entry>
- 
- <entry>
-   <title>News: Toni Batchelli talking about Pallet at Clojure/West 2012</title>
-   <link href="http://palletops.com//news/Clojure-West-2012-Pallet-Talk/"/>
-   <updated>2012-05-17T00:00:00+00:00</updated>
-   <id>http://palletops.com//news/Clojure-West-2012-Pallet-Talk/</id>
-   <content type="html">&lt;p&gt;Toni Batchelli gave a &lt;a href=&quot;http://bit.ly/KweuSg&quot;&gt;great talk on pallet basics&lt;/a&gt; at
-&lt;a href=&quot;http://clojurewest.org/&quot;&gt;Clojure/West 2012&lt;/a&gt;.&lt;/p&gt;
-</content>
-   <author>
-     <name>Hugo Duncan</name>
-     <uri></uri>
-   </author>
- </entry>
- 
- <entry>
-   <title>News: MostlyLazy interview on Pallet at Clojure Conj 2011</title>
-   <link href="http://palletops.com//news/MostlyLazy-podcast-interview/"/>
-   <updated>2012-02-03T00:00:00+00:00</updated>
-   <id>http://palletops.com//news/MostlyLazy-podcast-interview/</id>
-   <content type="html">&lt;p&gt;Last year we attended &lt;a href=&quot;http://clojureconj.org&quot;&gt;Clojure Conj&lt;/a&gt; and
-&lt;a href=&quot;http://cemerick.com&quot;&gt;Chas Emerick&lt;/a&gt; interviewed us for his
-&lt;a href=&quot;http://mostlylazy.com&quot;&gt;MostlyLazy podcast&lt;/a&gt;. Chas published
-&lt;a href=&quot;http://mostlylazy.com/2012/02/03/episode-0-0-4-antoni-batchelli-and-hugo-duncan-at-clojure-conj-2011/&quot;&gt;this interview today&lt;/a&gt;,
-and he has also done a terrific job at summarizing the topics covered
-in the accompanying blog post.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://mostlylazy.com/2012/02/03/episode-0-0-4-antoni-batchelli-and-hugo-duncan-at-clojure-conj-2011/&quot;&gt;Head over to Mostly Lazy&lt;/a&gt; to listen to this 23min interview.&lt;/p&gt;
-</content>
-   <author>
-     <name>Antoni Batchelli</name>
-     <uri></uri>
-   </author>
- </entry>
- 
- <entry>
-   <title>News: Pallet Training at Clojure/West is $1000 until Jan 27th</title>
-   <link href="http://palletops.com//news/pallet-training-early-bird/"/>
-   <updated>2012-01-18T00:00:00+00:00</updated>
-   <id>http://palletops.com//news/pallet-training-early-bird/</id>
-   <content type="html">&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;span9 offset1&quot;&gt;
-    &lt;div class=&quot;alert-message block-message error&quot;&gt;
-      &lt;p&gt;The Pallet Workshop at Clojure/West was cancelled. We
-      continue to offer on-site training. 
-        &lt;a href=&quot;mailto:contact@palletops.com&quot;&gt;Contact us&lt;/a&gt; if you are
-          interested. &lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://clojurewest.org&quot;&gt;Clojure/West&lt;/a&gt; has decided to offer Early Bird
-pricing until
-&lt;a href=&quot;http://www.regonline.com/Register/Checkin.aspx?EventID=1041359&quot;&gt;January 27th, at $1000 per seat&lt;/a&gt;.
-The price will go back to it&amp;#39;s standard $1200 after this date.&lt;/p&gt;
-
-&lt;p&gt;Hugo and Toni will be teaching Pallet from the ground up for two days
-before the conference starts, focusing on real world examples. Check
-out
-&lt;a href=&quot;http://clojurewest.squarespace.com/training-pallet/;jsessionid=8DF5E59108FC33EC140FF09A2ACFE3B6.web141&quot;&gt;the course description&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Don&amp;#39;t miss this opportunity to learn from the creators of Pallet at a
-great price.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.regonline.com/Register/Checkin.aspx?EventID=1041359&quot;&gt;
-&lt;image src=&quot;http://clojurewest.org/storage/banner_700.png&quot; width=&quot;90%&quot;/&gt;
-&lt;/a&gt;&lt;/p&gt;
-</content>
-   <author>
-     <name>Antoni Batchelli</name>
-     <uri></uri>
-   </author>
- </entry>
- 
- <entry>
-   <title>News: Announcing a Documentation Overhaul</title>
-   <link href="http://palletops.com//news/new-site/"/>
-   <updated>2012-01-17T00:00:00+00:00</updated>
-   <id>http://palletops.com//news/new-site/</id>
-   <content type="html">&lt;p&gt;The documentation on Pallet has been lagging behind its code base.
-This was partially due to a high rate of change, and to our focus on
-the platform itself.&lt;/p&gt;
-
-&lt;p&gt;Today, we are happy to announce a new documentation infrastructure
-that is the base for this documentation overhaul: a collaboratively
-edited website for Pallet. This infrastructure will make creating and
-adding manuals, development tips, FAQs and how-tos very easy for
-everyone. We are also committed to leading this effort by creating the
-bulk of the documentation. We welcome any help.&lt;/p&gt;
-
-&lt;p&gt;As part of this effort we are:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Building this website with a setup that allows it to be
-collaboratively edited
-&lt;a href=&quot;http://github.com/pallet/pallet.github.com&quot;&gt;via GitHub&lt;/a&gt; and using
-Markdown.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Making &lt;a href=&quot;http://palletops.com/doc&quot;&gt;palletops.com/doc&lt;/a&gt; the canonical
-documentation repository for Pallet. On this note, we are also
-removing any other documentation that we have outside this site to
-ensure that everyone is accessing this most up-to-date version.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Finally, we are creating RSS feeds for news, documentation updates
-and events so that you can keep track of what is new in Pallet-land.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This effort is iterative and we will be adding new features to this
-site every few days in the upcoming weeks. You can follow these
-updates &lt;a href=&quot;http://palletops.com/news&quot;&gt;in our News page&lt;/a&gt; or by
-subscribing to either our
-&lt;a href=&quot;http://palletops.com/news/atom.xml&quot;&gt;News RSS feed&lt;/a&gt; or our
-&lt;a href=&quot;http://palletops.com/atom.xml&quot;&gt;General RSS feed&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;We welcome &lt;a href=&quot;mailto:contact@palletops.com&quot;&gt;any feedback&lt;/a&gt; and help in
-this effort. Stay tuned for instructions on how you can help!&lt;/p&gt;
-</content>
-   <author>
-     <name>Antoni Batchelli</name>
      <uri></uri>
    </author>
  </entry>

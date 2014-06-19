@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+  
+<head>
+  <meta charset="utf-8" />
+  <title>Create Hadoop clusters the easy peasy way with Pallet - Pallet</title>
+
+
+  <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140617-03/css/bootstrap.min.css">
+   <!-- Latest compiled and minified JavaScript -->
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140617-03/css/pallet.css">
+  <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140617-03/css/css.css">
+  <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140617-03/css/highlight.css">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19685457-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  </script>
+
+
+  
+
+  
+    
+      <meta name="description" content="Pallet is a platform for agile and programmatic automation of infrastructure in the cloud, on server racks or directly on virtual machines." />
+    
+  
+  <!-- begin olark code -->
+<script data-cfasync="false" type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){
+f[z]=function(){
+(a.s=a.s||[]).push(arguments)};var a=f[z]._={
+},q=c.methods.length;while(q--){(function(n){f[z][n]=function(){
+f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={
+0:+new Date};a.P=function(u){
+a.p[u]=new Date-a.p[0]};function s(){
+a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){
+hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){
+return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){
+b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{
+b.contentWindow[g].open()}catch(w){
+c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{
+var t=b.contentWindow[g];t.write(p());t.close()}catch(x){
+b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({
+loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+/* custom configuration goes here (www.olark.com/documentation) */
+olark.identify('9249-736-10-9825');/*]]>*/</script><noscript><a href="https://www.olark.com/site/9249-736-10-9825/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+<!-- end olark code -->
+
+</head>
+
+  <body>
+    
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">PalletOps</a>
+    </div> <!-- /.navbar-toggle -->
+    <div class="collapse navbar-collapse" id="topbar-collapse">
+      <ul class="nav navbar-nav">
+	            
+              
+            
+              
+            
+              
+                
+                
+                
+                <li class="">
+                  <a href="/pallet/doc">
+                    Documentation
+                    </a>
+                </li>
+              
+            
+              
+                
+                
+                
+                <li class="">
+                  <a href="/news">
+                    News
+                    </a>
+                </li>
+              
+            
+              
+                
+                
+                   
+                
+                
+                   
+                
+                <li class="active">
+                  <a href="/blog">
+                    Blog
+                    </a>
+                </li>
+              
+            
+              
+                
+                
+                
+                <li class="">
+                  <a href="https://github.com/pallet/pallet">
+                    Code
+                    </a>
+                </li>
+              
+            
+              
+                
+                
+                
+                <li class="">
+                  <a href="/services">
+                    Services
+                    </a>
+                </li>
+              
+            
+              
+                
+                
+                
+                <li class="">
+                  <a href="/support">
+                    Support
+                    </a>
+                </li>
+              
+            
+              
+                
+                
+                
+                <li class="">
+                  <a href="/contact">
+                    Contact
+                    </a>
+                </li>
+              
+            
+              
+            
+              
+            
+
+      </ul>
+   <form class="navbar-form navbar-right" role="search"
+      method="get" action="http://www.google.com/search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search"
+		 name="q" maxlength="255">
+	  <input name="sitesearch" type="hidden" value="palletops.com">
+        </div> <!-- /.form-group -->
+      </form> 
+    </div> <!-- /#topbar-collapse -->
+  </div> <!-- /.container -->
+</nav>
+
+    <div class="post">
+      <div class="container">
+      
+<div class="row">
+<div class="col-md-9 content">
+  <div class="page-header">
+    
+      <h1 class="title">
+      
+        Create Hadoop clusters the easy peasy way with Pallet
+      
+      </h1>
+    
+  </div>
+  <div class="post_content">
+    
+      <p>Setting up a Hadoop cluster
+<a href="http://hadoop.apache.org/common/docs/current/cluster_setup.html">is usually a pretty involved task</a>.
+There are certain rules about how the cluster is to be
+configured. These rules need to be followed strictly for the cluster
+to work. For example, some nodes need to know how to talk to the other
+nodes, and some nodes need to allow other nodes to talk to them. Go
+ahead and check out the
+<a href="http://hadoop.apache.org/common/docs/current/cluster_setup.html">official instructions</a>,
+or this more detailed tutorial on
+<a href="http://www.michael-noll.com/tutorials/running-hadoop-on-ubuntu-linux-multi-node-cluster/">setting up multi-node Hadoop clusters</a>. In
+this article we describe a solution that will create a fully
+functional hadoop cluster on any public cloud with very few steps, and
+in a very flexible way.</p>
+
+<p>We present <a href="https://github.com/pallet/pallet-hadoop"><code>pallet-hadoop</code></a>,
+a library that builds a set of hadoop abstractions on top
+<a href="https://github.com/pallet/pallet"><code>Pallet</code></a>.</p>
+
+<p>One of the most defining aspects of <code>Pallet</code> is that it is a library,
+not a service, and hence there is no server to install in your
+network, just something that you embed in your code or use in your
+scripts. Also, as a library, Pallet provides a set of abstractions to
+make it easier for you to build cluster configurations on top of
+it. These two aspects of Pallet are what has allowed us to provide a
+solution to tame Hadoop cluster setups.</p>
+
+<p>This work is a collaboration effort by
+<a href="https://github.com/sritchie">Sam Ritchie (@sritchie09)</a>, who provided
+tons of Hadoop insight and did most of the work on <code>pallet-hadoop</code>, and the
+<a href="https://github.com/pallet">Pallet Team (@palletops)</a>, that provided
+the <code>Hadoop Crate</code>.</p>
+
+<p>Before we get into the details of how <code>pallet-hadoop</code> is implemented,
+let&#39;s see how it works, by using the project
+<a href="https://github.com/pallet/pallet-hadoop-example"><code>pallet-hadoop-example</code></a>
+in GitHub.</p>
+
+<h2>Build a Hadoop Cluster with Pallet-hadoop-example</h2>
+
+<p>To start a hadoop cluster we will use a project called
+<a href="https://github.com/pallet/pallet-hadoop-example"><code>pallet-hadoop-example</code></a>
+that&#39;s hosted on github. That project&#39;s <code>README.md</code> file contains
+<a href="https://github.com/pallet/pallet-hadoop-example">very detailed instructions</a>, which I&#39;ll summarize here.</p>
+
+<ol>
+<li><p>First we load pallet and pallet-hadoop at the REPL:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">``` clojure
+(use &#39;pallet-hadoop-example.core) (bootstrap)
+```
+</code></pre></div></li>
+<li><p>Then we need to provide the credentials for pallet to connect to
+EC2 (or any other cloud provider, really). You will need to have your
+EC2 credentials available for this (how you identify yourself to the
+cloud provider varies from provider to provider):</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">``` clojure
+user=&gt;; (def cloud-service
+           (compute-service &quot;aws-ec2&quot;
+                            :identity &quot;&quot;         
+                            :credential &quot;&quot;))
+```
+</code></pre></div></li>
+<li><p>Next we create a cluster. <code>pallet-hadoop-examples</code> provides a handy
+function for this, which takes two parameters, the number of task
+tracker nodes (slaves) and the memory devoted to each machine in the
+cluster. The following will define a hadoop cluster with 2 <code>slave</code>
+nodes and one <code>master</code> node (To keep things simple, the <code>master</code> node
+of our example cluster will serve double duty as
+<a href="http://wiki.apache.org/hadoop/JobTracker"><code>jobtracker</code></a> and
+<a href="http://wiki.apache.org/hadoop/NameNode"><code>namenode</code></a>, while our
+<code>slave</code> nodes will act as both
+<a href="http://wiki.apache.org/hadoop/TaskTracker"><code>tasktrackers</code></a> and
+<a href="http://wiki.apache.org/hadoop/DataNode"><code>datanodes</code></a>. These are the
+four hadoop <code>roles</code> currently supported by <code>pallet-hadoop</code>.)</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">``` clojure
+user=&gt; (def my-cluster (make-example-cluster 2 (* 4 1024)))
+```
+</code></pre></div></li>
+<li><p>Now we are ready to instantiate our cluster on the cloud. For this
+we just need to do:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">``` clojure
+user=&gt; (create-cluster my-cluster cloud-service)
+```
+</code></pre></div></li>
+</ol>
+
+<p>And wait for it to come back.</p>
+
+<ol>
+<li><p>At this point, the cluster is all configured, and we should be able
+to ssh into the jobtracker node. To find the IP address of the
+jobtacker we can do the following:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">``` clojure
+user=&gt; (jobtracker-ip cloud-service)
+```
+</code></pre></div></li>
+</ol>
+
+<p>There you go! You now have a fully functional hadoop cluster all set
+up. To operate it, once you ssh into jobtracker, you just need to you
+need to sudo as hadoop (<code>sudo su - hadoop</code>). The hadoop binaries are
+found in <code>/usr/local/hadoop-0.20.2/</code>.</p>
+
+<p>(To run your first MapReduce job on the cluster, see the &quot;Running Word Count&quot; section of <a href="https://github.com/pallet/pallet-hadoop-example"><code>pallet-hadoop-example</code> <code>README</code></a>.)</p>
+
+<h2>Pallet-hadoop</h2>
+
+<p><a href="https://github.com/pallet/pallet-hadoop"><code>Pallet-hadoop</code></a> is a library
+built on top of pallet. Pallet provides a
+<a href="https://github.com/pallet/pallet-apache-crates/blob/master/hadoop/src/pallet/crate/hadoop.clj"><code>hadoop-crate</code></a>
+that takes care of the low level operation of hadoop: install it,
+create the hadoop user with a preconfigured profile, create ssh
+authorizations between nodes, write configuration files from a data
+map, etc.</p>
+
+<p><code>Pallet-hadoop</code> builds a set of abstractions on top of <code>pallet</code> and
+the hadoop crate.</p>
+
+<p>First, for each type of node, it defines what configuration phases
+should be run for each role that a node plays. A node can play more
+than one role at the same time, as we&#39;ll see later.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">``` clojure
+(def role-&gt;phase-map
+{:default #{:bootstrap
+            :reinstall
+            :configure
+            :reconfigure
+            :authorize-jobtracker}
+ :namenode #{:start-namenode}
+ :datanode #{:start-hdfs}
+ :jobtracker #{:publish-ssh-key :start-jobtracker}
+ :tasktracker #{:start-mapred}})
+ ```
+</code></pre></div>
+<p>For example, <code>jobtracker</code> is just like any other node, but
+it creates and publishes its own public ssh key so that other nodes
+can authorize it. This way, <code>jobtracker</code> can ssh to all the other
+nodes (a requirement for a functioning hadoop cluster).</p>
+
+<p>By default, each node bootstraps (setting basic configuration, e.g.
+authorizing your own public ssh keys so you can ssh into each of the
+nodes directly), installs and configures hadoop, and authorizes the
+jobtracker.</p>
+
+<p>Next it defines what will be done for each phase:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">``` clojure
+(defn hadoop-phases
+  &quot;Returns a map of all possible hadoop phases. IP-type specifies...&quot;
+  [{:keys [nodedefs ip-type]} properties]
+  (let [[jt-tag nn-tag] 
+                (roles-&gt;tags [:jobtracker :namenode] nodedefs)
+        configure (phase
+                   (h/configure ip-type nn-tag jt-tag properties))]
+    {:bootstrap automated-admin-user
+     :configure (phase (java :jdk)
+                       (h/install :cloudera)
+                       configure)
+     :reinstall (phase (h/install :cloudera)
+                       configure)
+     :reconfigure configure
+     :publish-ssh-key h/publish-ssh-key
+     :authorize-jobtracker (phase (h/authorize-tag jt-tag))
+     :start-mapred h/task-tracker
+     :start-hdfs h/data-node
+     :start-jobtracker h/job-tracker
+     :start-namenode (phase (h/name-node &quot;/tmp/node-name/data&quot;))}))
+```
+</code></pre></div>
+<p>These phases usually use the <code>hadoop crate</code> along with other crates in
+<code>pallet</code>.</p>
+
+<p>Next, it defines a function to create a <code>hadoop cluster spec</code>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">``` clojure
+(defn cluster-spec
+  &quot;Generates a data representation of a hadoop cluster.
+
+    ip-type: `:public` or `:private`. (Hadoop keeps track of
+  jobtracker and namenode identity via IP address. This option toggles
+  the type of IP address used. (EC2 requires `:private`, while a local
+  cluster running on virtual machines will require `:public`.&quot;
+  [ip-type nodedefs &amp;amp; {:as options}]
+  {:pre [(#{:public :private} ip-type)]}
+  (merge {:base-machine-spec {}
+          :base-props {}}
+         options
+         {:ip-type ip-type
+          :nodedefs nodedefs}))
+```
+</code></pre></div>
+<p>A cluster spec can take the following form:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">``` clojure                     
+(cluster-spec 
+    :private
+     {:jobtracker (node-group [:jobtracker :namenode])
+      :slaves     (slave-group 10)}
+     :base-machine-spec {:os-family :ubuntu
+                         :os-version-matches &quot;10.10&quot;
+                         :os-64-bit true
+                         :min-ram (* 4 1024)}
+     :base-props {:hdfs-site 
+                   {:dfs.data.dir &quot;/mnt/dfs/data&quot;
+                    :dfs.name.dir &quot;/mnt/dfs/name&quot;}
+                  :mapred-site
+                   {:mapred.local.dir &quot;/mnt/hadoop/mapred/local&quot;
+                    :mapred.task.timeout 300000
+                    :mapred.reduce.tasks 3
+                    :mapred.tasktracker.map.tasks.maximum 3
+                    :mapred.tasktracker.reduce.tasks.maximum 3
+                    :mapred.child.java.opts &quot;-Xms1024m&quot;}})                         
+```
+</code></pre></div>
+<p>In this example, we&#39;re defining a hadoop cluster that will use private
+IP addresses for its communication, that will have two types of nodes:
+a <code>jobtracker</code> node and <code>slave</code> nodes. <code>jobtracker</code> nodes will play
+the roles of both <code>jobtracker</code> and <code>namenode</code>, while a <code>slave</code> will be
+both a <code>datanode</code> and a <code>tasktracker</code>. There will be 10 slaves in this cluster.</p>
+
+<p>Next, <code>:base-machine-spec</code> specifies on what type of hardware will be
+used for all the nodes. This specifies a 64bit machine with 4GB of
+RAM, running <code>Ubuntu 10.10</code>.</p>
+
+<p><code>:base-props</code> provides the shared properties that we want to
+customize. These are divided between <code>HDFS</code> properties (<code>:hdfs-site</code>)
+and <code>MapReduce</code> properties (<code>:mapred-site</code>). These properties should
+be self-explanatory.</p>
+
+<p>Here are the full lists of options for
+<a href="http://hadoop.apache.org/core/docs/r0.20.0/mapred-default.html">mapred</a>,
+<a href="http://hadoop.apache.org/core/docs/r0.20.0/hdfs-default.html">hdfs</a>
+and
+<a href="http://hadoop.apache.org/core/docs/r0.20.0/core-default.html">core</a>.</p>
+
+<h2>Future</h2>
+
+<p>This work simplifies significantly the task of setting up a Hadoop
+cluster, but also this is very much work in progress and we already
+have plenty of ideas on how to provide the best Hadoop experience.</p>
+
+<p><strong>Help us get there</strong> by sharing this post (see widgets
+below) and by telling us about your use cases or any advice you think
+would make this project rock even more, either by dropping by the #pallet
+channel at <a href="http://freenode.net/irc_servers.shtml">freenode.net</a>, or
+by emailing the <a href="mailto:pallet-clj@googlegroups.com"><code>pallet</code> list</a>  .  </p>
+
+    
+  </div>
+
+  <!-- This must be within a content class -->
+<div class="alert-message info block-message">
+  <p>
+    If you found this document interesting and think others could
+    benefit from it, please <strong>consider sharing it!</strong> </p>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-1">
+      <a href="//twitter.com/share" class="twitter-share-button" data-lang="en" data-hashtags="palletops">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+    <div class="col-md-2">
+      <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+      <script type="IN/Share" data-counter="right"></script>
+    </div>
+    <div class="col-md-2">
+      <!-- Place this tag where you want the +1 button to render -->
+<div class="g-plusone" data-size="medium" data-annotation="bubble" data-width="700"></div>
+
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '//apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+      </div>
+    <div class="col-md-2"><p>Thanks!</p></div>
+  </div> <!-- share row -->
+</div>
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'palletops';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div><!--content-->
+<div class="col-md-3 sidebar">
+  <h4>Published on 28 July 2011</h4>
+  
+  <h6>blog</h6>
+  
+  <br/>
+  <br/>
+  
+
+  <div class="twitter-widget">
+<a href="https://twitter.com/palletops" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @palletops</a>
+<script>!function(d,s,id){var
+  js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
+<div class="twitter_widget">
+  <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+  <script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 4,
+  interval: 30000,
+  width: 'auto',
+  height: 300,
+  theme: {
+    shell: {
+      background: '#EEE',
+      color: '#404040'
+    },
+    tweets: {
+      background: '#EEE',
+      color: '#555',
+      links: '#00438A'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    behavior: 'all'
+  }
+}).render().setUser('palletops').start();
+</script>
+</div>
+
+</div> <!-- /.sidebar -->
+</div><!-- /.row -->
+
+      </div> <!-- /.container -->
+    </div>
+    <footer class="footer">
+  <div class="container">
+    
+
+    <div class="row">
+      <div class="col-md-5">
+        <h4>About</h4>
+            <p>Pallet is an open source DevOps library for the JVM,
+            built on Clojure, with native support for clusters, node
+              dependencies and agile development.</p>
+            <p></p>
+        <p>Infrastructure generously provided by:</p>
+        <p>
+          <a href="http://rackspace.com">
+            <img src="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140617-03/images/rackspace-logo.png" alt="Rackspace Logo"></img>
+            </a></p>
+      </div>
+      <div class="col-md-3 col-md-offset-1">
+        <h4>Site Map</h4>
+        <ul>
+                      
+              
+            
+              
+            
+              
+                
+                
+                
+                <li class="">
+                  <a href="/pallet/doc">
+                    Documentation
+                    </a>
+                </li>
+              
+            
+              
+                
+                
+                
+                <li class="">
+                  <a href="/news">
+                    News
+                    </a>
+                </li>
+              
+            
+              
+                
+                
+                   
+                
+                
+                   
+                
+                <li class="active">
+                  <a href="/blog">
+                    Blog
+                    </a>
+                </li>
+              
+            
+              
+                
+                
+                
+                <li class="">
+                  <a href="https://github.com/pallet/pallet">
+                    Code
+                    </a>
+                </li>
+              
+            
+              
+                
+                
+                
+                <li class="">
+                  <a href="/services">
+                    Services
+                    </a>
+                </li>
+              
+            
+              
+                
+                
+                
+                <li class="">
+                  <a href="/support">
+                    Support
+                    </a>
+                </li>
+              
+            
+              
+                
+                
+                
+                <li class="">
+                  <a href="/contact">
+                    Contact
+                    </a>
+                </li>
+              
+            
+              
+            
+              
+            
+
+          </ul>
+      </div>
+      <div class="col-md-3">
+        <h4>Contact</h4>
+        <ul>
+        <li><a href="/contact">Contact Form</a></li>
+        <li><a href="/support">Get Support</a></li>
+        <li><a href="mailto:contact@palletops.com">email</a></li>
+        </ul>
+        <p/>
+        <a href="https://twitter.com/palletops" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @palletops</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
+    </div> <!-- row -->
+    <p class="pull-right"><a href="#"><br>Back to top</a></p>
+    <p>
+      <br>
+      Site built with <a target="_blank" href="http://jekyllrb.com">Jekyll</a> and
+      <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>.<br>
+      Copyright &copy; 2012 Hugo Duncan and Antoni Batchelli
+    </p>
+  </div>
+  <script type="text/javascript">
+    function extlink(href) {
+      _gaq.push(['_trackEvent','extlink',href]);
+      return true;
+    };
+    (function(){
+    var links = document.getElementsByTagName('a');
+    var regex = new RegExp('^' + window.location.protocol + '//' + window.location.hostname);
+    for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+      if ( ! links[i].href.match(regex) && links[i].href.substr(0,4) == "http") {
+         links[i].setAttribute(
+           'onClick',
+            "extlink('" + links[i].href + "')");}}})();
+  </script>
+</footer>
+
+  </body>
+</html>

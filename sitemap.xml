@@ -12,12 +12,75 @@
   <!-- Blog entries -->
   
     
+  <url>
+    <loc>http://palletops.com//alembic-clojure-classpath-control</loc>
+    
+    <lastmod>2013-04-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//pallet-training-scheduled-for-march-14-15-at</loc>
+    
+    <lastmod>2011-12-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//pallet-meetup-at-clojureconj</loc>
+    
+    <lastmod>2011-10-23</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//create-hadoop-clusters-the-easy-peasy-way-wit</loc>
+    
+    <lastmod>2011-07-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//zi-the-maven-plugin-in-clojure</loc>
+    
+    <lastmod>2011-07-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//pallet-0410-environments-parallel-lift-and-co</loc>
+    
+    <lastmod>2011-03-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//working-with-non-cloud-servers-in-pallet</loc>
+    
+    <lastmod>2010-12-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//how-to-configure-your-cloud-credentials-in-pa</loc>
+    
+    <lastmod>2010-11-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//pallet-release-030-agile-cloud-development</loc>
+    
+    <lastmod>2010-10-15</lastmod>
+    
+  </url>
+  
 
 
   <!-- html pages -->
   
   <url>
-    <loc>http://palletops.com//index.html</loc>
+    <loc>http://palletops.com//blog/index.html</loc>
     
     <lastmod>2014-06-19</lastmod>
     
@@ -27,6 +90,15 @@
   
   <url>
     <loc>http://palletops.com//news/index.html</loc>
+    
+    <lastmod>2014-06-19</lastmod>
+    
+    
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//index.html</loc>
     
     <lastmod>2014-06-19</lastmod>
     

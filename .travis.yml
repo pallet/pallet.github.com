@@ -5,7 +5,8 @@ install:
   - sudo pip install Pygments
 env:
   global:
-    - secure: "LM5F5+TXWGVcqWVg7xDsaOZZNljN1gCTZPESGijeb3Ia1StFe+hHqx8fR7u5JBdHbJvowCEHGVdfRPHf2YZhpPpT4BKVVpu1hfyHZRZUPFewYWxr4NPSx5Rnr/9v1l6ZMOi324jQwPCSeE/gohqhFSj8Kk+nOEhvGIYBbTCGX8U="
+    -  secure: "cQpYvn7M8tOPPkBURCN/pJQgLMU6hRw+Y9Ap5Z703JCYG0wSxJhcd6GKinNEAKJ3VygMZrIToWHMTfqidouX5vEeazNcSN7W47WdNaVVOAw+0s3iMhG2JfyVePkSkzME1gTCuxGZgbSoInWkWIsJOuLRaD8YLsQCniY9JqvW18U="
+    #- secure: "LM5F5+TXWGVcqWVg7xDsaOZZNljN1gCTZPESGijeb3Ia1StFe+hHqx8fR7u5JBdHbJvowCEHGVdfRPHf2YZhpPpT4BKVVpu1hfyHZRZUPFewYWxr4NPSx5Rnr/9v1l6ZMOi324jQwPCSeE/gohqhFSj8Kk+nOEhvGIYBbTCGX8U="
     - "DDIR=tmp-deploy"
     - "TARGET_BRANCH=master"
     - "PROJECT=pallet/pallet.github.com"
@@ -29,6 +30,8 @@ after_success:
   - git config user.name "tbatchelli"
   - git commit -am "new-site-deployed" --allow-empty
   - echo "push origin $TARGET_BRANCH"
+  - cat .git/credentials
+  - echo "GH_PASSWD=$GW_PASSWD"
   - git push origin $TARGET_BRANCH 2>&1
 after_script:
   - rm -rf $DDIR

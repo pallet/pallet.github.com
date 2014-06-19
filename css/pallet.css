@@ -75,7 +75,13 @@ section > .row {
   font-weight: normal;
 }
 
+#jumbotron-title {
+    font-weight: 600;
+}
 
+#jumbotron-subtitle {
+    font-weight: 600;
+}
 /* Footer
 -------------------------------------------------- */
 .footer {

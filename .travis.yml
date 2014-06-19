@@ -1,6 +1,4 @@
 language: ruby
-rvm:
-  - 2.1.0
 install:
   - sudo pip install Pygments
 env:

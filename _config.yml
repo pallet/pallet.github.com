@@ -6,7 +6,7 @@ name: Pallet
 highlighter: pygments
 domain: palletops.com
 cdn: http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com
-asset-ver: 20140617-03
+asset-ver: 20140619-01
 gems:
   - jekyll-redirect-from
 baseurl: /
@@ -15,3 +15,5 @@ description: Pallet is a platform for agile and programmatic automation of
 collections:
   pages:
     output: true
+
+    

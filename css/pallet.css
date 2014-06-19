@@ -79,8 +79,8 @@ section > .row {
 /* Footer
 -------------------------------------------------- */
 .footer {
-  background-color: #eee;
-  min-width: 940px;
+    background-color: #eee;
+    background-size: cover;
   padding: 30px 0;
   text-shadow: 0 0px 0 #fff;
   border-top: 1px solid #e5e5e5;

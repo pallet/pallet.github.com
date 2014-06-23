@@ -4,7 +4,7 @@
   <!--  Homepage -->
   <url>
     <loc>http://palletops.com/</loc>
-    <lastmod>2014-06-19</lastmod>
+    <lastmod>2014-06-23</lastmod>
     <changefreq>daily</changefreq>
 		<priority>1.0</priority>
   </url>
@@ -80,9 +80,9 @@
   <!-- html pages -->
   
   <url>
-    <loc>http://palletops.com//blog/index.html</loc>
+    <loc>http://palletops.com//news/index.html</loc>
     
-    <lastmod>2014-06-19</lastmod>
+    <lastmod>2014-06-23</lastmod>
     
     
     
@@ -91,16 +91,16 @@
   <url>
     <loc>http://palletops.com//index.html</loc>
     
-    <lastmod>2014-06-19</lastmod>
+    <lastmod>2014-06-23</lastmod>
     
     
     
   </url>
   
   <url>
-    <loc>http://palletops.com//news/index.html</loc>
+    <loc>http://palletops.com//blog/index.html</loc>
     
-    <lastmod>2014-06-19</lastmod>
+    <lastmod>2014-06-23</lastmod>
     
     
     

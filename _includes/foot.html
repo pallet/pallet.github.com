@@ -26,10 +26,8 @@
         <li><a href="/contact">Contact Form</a></li>
         <li><a href="/support">Get Support</a></li>
         <li><a href="mailto:contact@palletops.com">email</a></li>
+	<li><a href="https://twitter.com/intent/user?screen_name=PalletOps" target="_blank"><i class="fa fa-twitter"></i>twitter</a></li>
         </ul>
-        <p/>
-        <a href="https://twitter.com/palletops" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @palletops</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
     </div> <!-- row -->
     <p class="pull-right"><a href="#"><br>Back to top</a></p>
@@ -42,21 +40,4 @@
   </div>
 </footer>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-  function extlink(href) {
-    _gaq.push(['_trackEvent','extlink',href]);
-     return true;
-    };
-    (function(){
-    var links = document.getElementsByTagName('a');
-    var regex = new RegExp('^' + window.location.protocol + '//' + window.location.hostname);
-    for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-      if ( ! links[i].href.match(regex) && links[i].href.substr(0,4) == "http") {
-         links[i].setAttribute(
-           'onClick',
-            "extlink('" + links[i].href + "')");}}})();
-</script>
-{% include olark.html %}
+{% include scripts.html %}

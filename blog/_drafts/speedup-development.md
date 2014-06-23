@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: main/post
 title: Speedup Development for the Cloud with Pallet & VMFest
 author: Antoni Batchelli
 section: blog

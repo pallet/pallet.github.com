@@ -1,5 +1,5 @@
 ---
-layout: naked-doc
+layout: main/naked-doc
 title: Contact Us
 section: contact
 permalink: /contact/

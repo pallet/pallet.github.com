@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: MostlyLazy interview on Pallet at Clojure Conj 2011
 author: Antoni Batchelli
 section: news

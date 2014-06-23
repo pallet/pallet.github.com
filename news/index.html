@@ -5,10 +5,10 @@ section: news
 ---
 <!doctype html>
 <html lang="en">
-  {% include head.html %}
+  {% include main/head.html %}
   <link rel="alternate" type="application/rss+xml" title="RSS" href="atom.xml">
   <body>
-    {% include topbar.html %}
+    {% include main/topbar.html %}
     <div class="post">
       <div class="container">
         <div class="row">
@@ -33,10 +33,10 @@ section: news
             {% endfor %}
            </div>
           <div class="col-md-3 sidebar">
-            {% include sidebar-common.html %}
+            {% include main/sidebar-common.html %}
           </div>
         </div> <!-- row -->
       </div> <!-- container -->   
-      {% include foot.html %}
+      {% include main/foot.html %}
   </body>
 </html>

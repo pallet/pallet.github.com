@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: main/post
 title: Automate VirtualBox with VMFest for Fun and Profit
 author: Antoni Batchelli
 section: blog

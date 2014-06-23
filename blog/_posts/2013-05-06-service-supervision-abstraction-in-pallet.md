@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: Service Supervision in Pallet 0.8
 permalink: service-supervision
 published: false

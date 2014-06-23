@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: Pallet 0.4.10 -  environments, parallel lift and converge, and virtualbox too!
 permalink: pallet-0410-environments-parallel-lift-and-co
 author: Hugo Duncan

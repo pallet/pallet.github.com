@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: Pallet training scheduled for March 14 and 15 at the Clojure/West Conference
 permalink: pallet-training-scheduled-for-march-14-15-at
 author: Antoni Batchelli

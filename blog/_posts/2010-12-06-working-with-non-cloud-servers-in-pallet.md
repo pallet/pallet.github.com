@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: Working with Non-Cloud Servers in Pallet
 permalink: working-with-non-cloud-servers-in-pallet
 author: Hugo Duncan

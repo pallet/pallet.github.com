@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: Zi, the Maven plugin in Clojure
 permalink: zi-the-maven-plugin-in-clojure
 author: Hugo Duncan

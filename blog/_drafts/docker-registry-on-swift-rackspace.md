@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: Running a Docker Registry on Rackspace (OpenStack Swift)
 author: Hugo Duncan
 section: blog

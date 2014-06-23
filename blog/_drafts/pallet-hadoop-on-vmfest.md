@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: TBD
 permalink: hadoop-on-vmfest
 author: Toni Batchelli

@@ -8,9 +8,9 @@ description: Articles about Pallet's new features, use cases and other
 <!doctype html>
 <html lang="en">
   {% assign atom = true %}
-  {% include head.html %}
+  {% include main/head.html %}
   <body>
-    {% include topbar.html %}
+    {% include main/topbar.html %}
     <div class="post">
       <div class="container">
         <div class="row">
@@ -28,11 +28,11 @@ description: Articles about Pallet's new features, use cases and other
               {% endfor %}
             </div>
           <div class="col-md-3 sidebar">
-            {% include sidebar-common.html %}
+            {% include main/sidebar-common.html %}
           </div>
         </div> <!-- row -->
       </div> <!-- container -->   
-      {% include foot.html %}
+      {% include main/foot.html %}
   </body>
 </html>
 

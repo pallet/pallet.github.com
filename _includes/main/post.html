@@ -27,10 +27,10 @@
   </div>
   <p class="text-muted"> This post was published on {{ post.date | date:'%d %B %Y' }}
   under the categories: {% for category in post.categories %}{{category }} {% endfor %} </p>
-  {% include share.html %}
-  {% include disqus.html %}
+  {% include main/share.html %}
+  {% include main/disqus.html %}
 </div><!--content-->
 <div class="col-md-3 sidebar">
-  {% include sidebar-common.html %}
+  {% include main/sidebar-common.html %}
 </div> <!-- /.sidebar -->
 </div><!-- /.row -->

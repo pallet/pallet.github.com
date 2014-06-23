@@ -6,9 +6,9 @@ description: Pallet is a platform for agile and programmatic automation of
 <!DOCTYPE html>
 <html lang="en">
   {% assign atom = true %}
-  {% include head.html %}
+  {% include main/head.html %}
   <body>
-    {% include topbar.html %}
+    {% include main/topbar.html %}
     <header class="jumbotron hidden-sm hidden-xs" id="overview"
 	    style="background-image: url({{site.cdn}}/{{site.asset-ver}}/images/jumbotron-bg-2.jpg)">
       <div class="container">
@@ -23,7 +23,7 @@ description: Pallet is a platform for agile and programmatic automation of
       <section id="banner">
         <div class="alerts">
           <div class="row">
-            {% include banner-main.html %}
+            {% include main/banner-main.html %}
           </div>
         </div>
       </section>
@@ -133,7 +133,7 @@ description: Pallet is a platform for agile and programmatic automation of
       </section>
 
     </div>
-    {% include foot.html %}
+    {% include main/foot.html %}
     </div> <!-- /.container -->
   </body>
 </html>

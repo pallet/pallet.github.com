@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: Introspecting Pallet (part I)
 author: Antoni Batchelli
 section: blog

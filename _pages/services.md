@@ -1,5 +1,5 @@
 ---
-layout: naked-doc
+layout: mail/naked-doc
 title: Services
 section: services
 permalink: /services/

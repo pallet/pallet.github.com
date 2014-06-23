@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: Hugo Duncan talking about Pallet at EuroClojure 2012
 author: Hugo Duncan
 section: news

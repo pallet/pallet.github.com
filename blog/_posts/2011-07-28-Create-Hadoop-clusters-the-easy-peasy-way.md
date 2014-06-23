@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: Create Hadoop clusters the easy peasy way with Pallet
 permalink: create-hadoop-clusters-the-easy-peasy-way-wit
 author: Antoni Batchelli

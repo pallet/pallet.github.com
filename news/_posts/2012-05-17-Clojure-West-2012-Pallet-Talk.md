@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: Toni Batchelli talking about Pallet at Clojure/West 2012
 author: Hugo Duncan
 section: news

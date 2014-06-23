@@ -1,5 +1,5 @@
 ---
-layout: news
+layout: main/blog-post
 title: Facebook's Chef Usage Mirrors Pallet's Approach to Config Files
 permalink: facebook-config-files
 published: false

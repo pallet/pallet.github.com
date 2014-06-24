@@ -19,7 +19,7 @@ description: Articles about Pallet's new features, use cases and other
               <h1 class="title"> The Pallet Blog </h1>
             </div>
               {% for post in site.categories.blog offset: 0 limit: 25 %}
-                <div class="post_content">  
+                <div class="post-content">
                   <h2><a href="{{ post.url }}/">{{ post.title }}</a></h2>
                   <p class="date">{{ post.date | date: "%A, %d %B %Y"}}</p>
                   <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
@@ -27,7 +27,7 @@ description: Articles about Pallet's new features, use cases and other
                 </div>
               {% endfor %}
             </div>
-          <div class="col-md-3 sidebar">
+          <div class="col-md-3 col-xs-12 sidebar">
             {% include main/sidebar-common.html %}
           </div>
         </div> <!-- row -->

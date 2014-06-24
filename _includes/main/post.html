@@ -3,15 +3,15 @@
   <div class="page-header">
     <h1 class="title"><a href="/{{ page.url }}">{{ page.title }}</a></h1>
   </div>
-  <div class="post_content">
+  <div class="post-content">
     {{ content }}
   </div>
-  <p class="text-muted"> This post was published on {{ post.date | date:'%d %B %Y' }}
+  <p class="text-muted post-meta"> This post was published on {{ post.date | date:'%d %B %Y' }}
   under the categories: {% for category in post.categories %}{{category }} {% endfor %} </p>
   {% include main/share.html %}
   {% include main/disqus.html %}
 </div><!--content-->
-<div class="col-md-3 sidebar">
+<div class="col-md-3 col-xs-12 sidebar">
   {% include main/sidebar-common.html %}
 </div><!-- /.sidebar -->
 </div><!-- /.row -->

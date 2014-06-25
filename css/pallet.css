@@ -2,32 +2,23 @@
 -------------------------------------------------- */
 body {
   padding-top: 45px;
-  /*
-  background-color: #fff;
-  position: relative;
-  */
 }
-
-/*
-section {
-  padding-top: 20px;
-}
-
-
-section > .row {
-  margin-bottom: 5px;
-}
-*/
 
 /* Jumbotrons
 -------------------------------------------------- */
 .jumbotron {
-  padding-top: 45px;
-  background-origin: border-box;
-  background-size: cover;
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
+    padding-top: 45px;
+    /* from: http://lea.verou.me/css3patterns/#rainbow-bokeh */
+    background: 
+    radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.15) 30%, rgba(255,255,255,.3) 32%, rgba(255,255,255,0) 33%) 0 0,
+    radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.3) 13%, rgba(255,255,255,0) 14%) 0 0,
+    radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 17%, rgba(255,255,255,.43) 19%, rgba(255,255,255,0) 20%) 0 110px,
+    radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) -130px -170px,
+    radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) 130px 370px,
+    radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.2) 13%, rgba(255,255,255,0) 14%) 0 0,
+    linear-gradient(45deg, #343702 0%, #184500 20%, #187546 30%, #006782 40%, #0b1284 50%, #760ea1 60%, #83096e 70%, #840b2a 80%, #b13e12 90%, #e27412 100%);
+    background-size: 470px 470px, 970px 970px, 410px 410px, 610px 610px, 530px 530px, 730px 730px, 100% 100%;
+    background-color: #840b2a;   
 }
 
 /* jumbotron-push-spaces is to fix the height of the background */
@@ -40,16 +31,13 @@ section > .row {
 .jumbotron p {
   margin-bottom: 9px;
   text-align: center;
-/*  text-shadow: 0 1px 1px rgba(255,255,255,.3); */
 }
 .jumbotron h1 {
   font-size: 100px;
   color: #fff;
   line-height: 1;
-/*  text-shadow: 0 1px 2px rgba(255,255,255,.5); */
 }
 .jumbotron p {
-  font-weight: 300;
   color: #fff; 
 }
 .jumbotron .lead {
@@ -57,31 +45,17 @@ section > .row {
   line-height: 27px;
 }
 .jumbotron p a {
-/*  color: #fff;
-*/  font-weight: bold;
-}
-
-.subhead .inner {
-  padding: 36px 0 27px;
-}
-.subhead h1,
-.subhead p {
-  text-align: left;
-}
-.subhead h1 {
-  font-size: 40px;
-}
-.subhead p a {
-  font-weight: normal;
+  font-weight: bold;
 }
 
 #jumbotron-title {
-    font-weight: 600;
+    font-weight: 400;
 }
 
 #jumbotron-subtitle {
-    font-weight: 600;
+    font-weight: 400;
 }
+
 /* Footer
 -------------------------------------------------- */
 .footer {

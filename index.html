@@ -5,12 +5,12 @@
 <head>
   <meta charset="utf-8" />
   <title>Pallet</title>
-    <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140624-01/css/bootstrap.min.css">
-  <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140624-01/css/pallet.css">
-  <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140624-01/css/social-buttons-3.css">
+    <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140625-01/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/pallet.css">
+  <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140625-01/css/social-buttons-3.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140624-01/css/css.css">
-  <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140624-01/css/highlight.css">
+  <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140625-01/css/css.css">
+  <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140625-01/css/highlight.css">
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -122,8 +122,7 @@
   </div> <!-- /.container -->
 </nav>
 
-    <header class="jumbotron hidden-sm hidden-xs" id="overview"
-	    style="background-image: url(http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140624-01/images/jumbotron-bg-2.jpg)">
+    <header class="jumbotron hidden-sm hidden-xs" id="overview">
       <div class="container">
         <h1 id="jumbotron-title">PalletOps</h1>
           <p class="lead" id="jumbotron-subtitle"> Functional Infrastructures<br/><br/>
@@ -154,43 +153,49 @@
               customization.</p>
           </div>
           <div class="col-md-4">
-            <h3>Supported Providers</h3>
-            <ul>
-              <li><a href="http://aws.amazon.com/ec2">
-                  Amazon Web Services' EC2</a></li>
-              <li><a href="http://www.rackspace.com/cloud/cloud_hosting_products/servers/">
-                  RackSpace Cloud Servers</a></li>
-              <li><a href="http://virtualbox.org">
-                  Virtualbox </a></li>
-              <li><a href="http://www.gogrid.com/">
-                  GoGrid Cloud Hosting</a></li>
-              <li><a href="http://www.eucalyptus.com/">
-                  Eucalyptus</a></li>
-              <li><a href="http://nova.openstack.org/">
-                  OpenStack Nova </a></li>
-              <li><a href="http://www.slicehost.com/">
-                  SliceHost</a></li>
-              <li><a href="http://www.exoscale.ch/">
-                  Exoscale Open Cloud</a></li>
-              <li><a href="http://jclouds.apache.org/reference/providers/"
-                  target="_blank">
-                  ... and many more.</a></li>
-            </ul>
+            <h3>Works with</h3>
+	    <div class="row">
+	      <div class="col-md-6">
+		<ul>
+		  <li>AWS</li>
+		  <li>Rackspace</li>
+		  <li>OpenStack</li>
+		  <li>Exoscale</li>
+		  <li>VirtualBox</li>
+		  <li>Docker</li>
+		</ul>
+	      </div>
+	      <div class="col-md-6">
+		<ul>
+		  <li>Ubuntu</li>
+		  <li>CentOS</li>
+		  <li>RedHat</li>
+		  <li>CoreOS</li>
+		</ul>
+	      </div>
+	    </div> <!-- /.row -->
           </div>
           <div class="col-md-4">
-            <h3>Used by ...</h3>
-            <ul>
-              <li><a href="http://twitter.com">Twitter<a></li>
-              <li><a href="http://www.walmartlabs.com">WalmartLabs<a/></li>
-              <li><a href="http://www.emimusic.com/">EMI Music</a></li>
-              <li><a href="http://gogrid.com">GoGrid</a></li>
-              <li><a href="http://lonocloud.com">LonoCloud</a></li>
-              <li><a href="http://paper.li">paper.li</a></li>
-              <li><a href="https://circleci.com">CircleCI</a></li>
-              <li><a href="http://www.wri.org/">World Resources
-              Institute</a></li>
-              <li><a href="http://lsfinteractive.com">LSF Interactive</a></li>
-            </ul>
+            <h3>Already using Pallet</h3>
+	    <div class="row">
+	      <div class="col-md-6">
+		<ul>
+		  <li>Twitter</li>
+		  <li>WalmartLabs</li>
+		  <li>EMI Music</li>
+		  <li>Quantum Retail</li>
+		  <li>GoGrid</li>
+		</ul>
+	      </div>
+	      <div class="col-md-6">
+		<ul>
+		  <li>paper.li</li>
+		  <li>CircleCI</li>
+		  <li>Share911</li>
+		  <li>LSF Interactive</li>
+		</ul>
+	      </div>
+	    </div>
           </div>
         </div> <!-- row -->
       </section>
@@ -255,7 +260,7 @@
         <p>Infrastructure generously provided by:</p>
         <p>
           <a href="http://rackspace.com">
-            <img src="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140624-01/images/rackspace-logo.png" alt="Rackspace Logo"></img>
+            <img src="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140625-01/images/rackspace-logo.png" alt="Rackspace Logo"></img>
             </a></p>
       </div>
       <div class="col-md-3  col-xs-6 col-md-offset-1">
@@ -346,18 +351,15 @@
       </div>
     </div> <!-- row -->
     <div class="row footer-footer">
-      <div class="col-sm-6">
+      <div class="col-sm-12">
 	<p>
 	  Copyright &copy; 2014 Hugo Duncan and Antoni Batchelli
 	</p>
-      </div>
-      <div class="col-sm-6">
-	<div class="pull-right">
-	  <p class="text-muted">
-	    <small>Built with <a target="_blank" href="http://jekyllrb.com">Jekyll</a> and
+	<p class="text-muted">
+	    <small>Built with <a target="_blank"
+	    href="http://jekyllrb.com">Jekyll</a> and
 	    <a target="_blank" href="http://getbootstrap.com">Bootstrap</a> on
-	    Tue, 24 Jun 2014 23:42:32 +0000</small></p>
-	</div>
+	    Wed, 25 Jun 2014 19:25:17 +0000</small></p>
       </div>
     </div> <!-- /.row -->
   </div>

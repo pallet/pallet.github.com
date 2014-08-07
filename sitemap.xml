@@ -4,7 +4,7 @@
   <!--  Homepage -->
   <url>
     <loc>http://palletops.com/</loc>
-    <lastmod>2014-06-26</lastmod>
+    <lastmod>2014-08-07</lastmod>
     <changefreq>daily</changefreq>
 		<priority>1.0</priority>
   </url>
@@ -12,6 +12,13 @@
   <!-- Blog entries -->
   
     
+  <url>
+    <loc>http://palletops.com//blog/lein-uberimage/</loc>
+    
+    <lastmod>2014-08-07</lastmod>
+    
+  </url>
+  
   <url>
     <loc>http://palletops.com//alembic-clojure-classpath-control</loc>
     
@@ -80,9 +87,9 @@
   <!-- html pages -->
   
   <url>
-    <loc>http://palletops.com//blog/index.html</loc>
+    <loc>http://palletops.com//news/index.html</loc>
     
-    <lastmod>2014-06-26</lastmod>
+    <lastmod>2014-08-07</lastmod>
     
     
     
@@ -91,16 +98,34 @@
   <url>
     <loc>http://palletops.com//index.html</loc>
     
-    <lastmod>2014-06-26</lastmod>
+    <lastmod>2014-08-07</lastmod>
     
     
     
   </url>
   
   <url>
-    <loc>http://palletops.com//news/index.html</loc>
+    <loc>http://palletops.com//blog/index.html</loc>
     
-    <lastmod>2014-06-26</lastmod>
+    <lastmod>2014-08-07</lastmod>
+    
+    
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//2012/new-site/</loc>
+    
+    <lastmod>2014-08-07</lastmod>
+    
+    
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//2012/pallet-training-early-bird/</loc>
+    
+    <lastmod>2014-08-07</lastmod>
     
     
     

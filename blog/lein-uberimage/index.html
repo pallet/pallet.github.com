@@ -3,7 +3,7 @@
   
 <head>
   <meta charset="utf-8" />
-  <title>Pallet 0.4.10 -  environments, parallel lift and converge, and virtualbox too! - Pallet</title>
+  <title>Run clojure projects on Docker with lein-uberimage - Pallet</title>
     <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140625-01/css/bootstrap.min.css">
   <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140625-01/css/pallet.css">
   <link rel="stylesheet" href="http://67516654d2ef99c3042d-b9d92f522aee852c07f26ce9d1459c9c.r8.cf1.rackcdn.com/20140625-01/css/social-buttons-3.css">
@@ -127,83 +127,78 @@
       <div class="row">
 <div class="col-md-9 content">
   <div class="page-header">
-    <h1 class="title"><a href="//pallet-0410-environments-parallel-lift-and-co">Pallet 0.4.10 -  environments, parallel lift and converge, and virtualbox too!</a></h1>
+    <h1 class="title"><a href="//blog/lein-uberimage/">Run clojure projects on Docker with lein-uberimage</a></h1>
   </div>
   <div class="post-content">
-    <p>This week saw the release of 0.4.10.</p>
+    <p>We built a lein plugin to make it easy to run clojure projects in Docker containers. This article first introduces containers and Docker, and then shows how you can effortlessly create such containers for your Clojure projects with <code>lein uberimage</code>. </p>
 
-<p>The pace of pallet development has picked up over the last couple of months.
-Much of this has been driven by
-<a href="http://blog.gogrid.com/2011/02/08/agile-development-at-gogrid-with-pallet-and-jclouds-presentation/">our work at GoGrid</a>,
-where we are applying pallet to automate fully functional GoGrid environments
-for use by development teams for test and development. Thanks
-<a href="htp://gogrid.com">GoGrid</a>!</p>
+<p><image src="/images/docker-large-h-trans.png" alt="Docker logo" class="img-responsive"></p>
 
-<p>The 0.4.x cycle has seen us switch to gitflow and to frequent releases to avoid
-dependence on SNAPSHOTS. Personally, this has made development much more
-enjoyable - hopefully it makes life easier for users of pallet too.</p>
+<h2>Why Containers and Why Docker</h2>
 
-<h2>0.4.10 Release</h2>
+<p>A container is a lighweight form of computer virtualization. Containers run within a host, and a host can run many containers concurrently. Each container is functionally equivalent to a computer loaded with a full OS, but behind the scenes all containers in the same host are sharing the same host resources: kernel, memory, IO, and disk.</p>
 
-<p>Major changes since 0.4.0 include parallel converges and lifts, support for
-vmfest, and environments.</p>
+<p>There are many ways of virtualization technologies used today, VirtualBox, Xen (used by Amazon Web Services) and vmware to name a few, but what makes containers special is their lightweight nature. Each container uses very little resources (disk, memory, cpu) and they all boot orders of magnitude faster than a virtual machine or
+a computer.</p>
 
-<p>Parallel converge ensures that the wait when starting nodes is minimised,
-executing requests for all nodes to be created in parallel. Parallel lift
-applies each phase across all nodes in parallel. Phases still run sequentially
-(running each phase waits for all nodes to complete the previous
-phase). Parallel converge and lift are not the default yet, but will be in
-0.5.0.</p>
+<p>Containers are very convenient for both development and production environments. For development, they provide a fast and simple way to run different and isolated runtime environments for each application. In production, they are very fast and efficient, with the added bonus that containers in production always match the ones in development; the same exact containers are used during all app&#39;s lifecycle.</p>
 
-<p>To try out parallel lift and converge, add the following to your config.clj:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">``` clojure
-:environment {:algorithms
-              {:lift-fn 
-                 pallet.core/parallel-lift
-               :converge-fn 
-                 pallet.core/parallel-adjust-node-counts}}
-```
+<p><a href="http://www.docker.com">Docker</a> is a novel container technology for Linux that provides a very low friction access to containers. Containers have been around for a while, and the Linux kernel has provided key container technologies for a while already. Docker wraps all these kernel features under a high level API and defines a standard container and image formats using union filesystems. To make containers easy to share and distribute, Docker also provides public and private image repositories. All these features have brought containers to the masses.</p>
+
+<p>Although Docker is currently Linux only, you can use it on OSX installing <a href="http://boot2docker.io">boot2docker</a></p>
+
+<p>For a more detailed introduction to Docker, check out this video on <a href="http://sysadmincasts.com/episodes/31-introduction-to-docker">sysadmincasts.com</a>.</p>
+
+<h2>Docker images</h2>
+
+<p>Each container is a process tree that is started from an existing image. These images contain a filesystem with the files necessary to run your application. Sometimes this entails a linux distribution and sometimes just one statically linked binary. The common practice in the Docker world is to build a custom image for each type of service you intend to run. This contrasts with other forms of virtualization where you start the VMs from a base image and then you configure them with the required software. In the case of VMs, the time it takes a VM to boot until it is ready to run your application is measured in minutes, whereas in Docker a container can boot in sub-second times.</p>
+
+<h2>Building Docker images with uberimage</h2>
+
+<p><code>lein-uberimage</code> builds a Docker image for clojure projects. The generated images contain a base operating system, a java runtime, and your project&#39;s <code>uberjar</code>. Once this image is built, you can instantiate as many containers as you need using this image, each container running your <code>uberjar</code>.</p>
+
+<p>At the time of writing this, <code>lein-uberimage</code> requires that the project builds with <code>lein uberjar</code> and that the resulting jar can be run via <code>java -jar &lt;your-uberjar&gt;.jar</code>. This means your <code>project.clj</code> will have to have a <code>:main</code> entry pointing to the <code>-main</code> function in your code. This restriction will be removed in the future.</p>
+
+<p>To build the Docker image for your project, run the following in your project&#39;s root:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>lein uberimage
 </code></pre></div>
-<p>Which brings us to environments. Environments are a powerful way of injecting
-data into your crates, and provide a customisation mechanism, as seen above.  An
-:environment can be specified at the top level of the defpallet in config.clj,
-or at the individual service provider level (same level as :provider), or in the
-actual call to lift and converge. As an example use case, here is the
-environment I use for running live tests in virtualbox via vmfest:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">``` clojure
-:environment
-  {:phases
-    {:bootstrap (fn [request]
-                  (pallet.resource.package/package-manager
-                     request :configure
-                     :proxy &quot;http://192.168.1.37:3128&quot;))}
-   :proxy &quot;http://192.168.1.37:3128&quot;
-   :mirror {:apache &quot;http://apache.mirror.iweb.ca/&quot;}
-   :image {:min-ram 256 :bridged-network &quot;en1: AirPort&quot;}}
-```
+<p><code>uberimage</code> will call lein&#39;s <code>uberjar</code> to build the standalone jar file. Then it will build a new image with <code>Ubuntu 14.04</code>, <code>OpenJDK 7</code> and the freshly built jar. The image is also configured to run your jar file on boot. This task will return the <code>uuid</code> for this image.</p>
+
+<p>From this image you just created, you can spawn as many containers as you need. The most basic way to start a container is this:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker run &lt;my-image-uuid&gt;
 </code></pre></div>
-<p>This example extends the bootstrap phase of all nodes to add a proxy for the
-package manager, adds a proxy for remote-file operations, selects a mirror for
-apache downloads, and specifies a default template for new nodes.</p>
+<p>In most cases, your app won&#39;t be useful unless you can access it via known ports, and by default, Docker does not expose any ports of a container, so you need to tell Docker to expose those ports. Since you will be running many containers on the same host you need to ensure that not two containers are bound to the same port. For example, if your application listens on port 3000, you need to tell Docker to bind the container&#39;s port 3000 to any unbound port in the host, e.g. 8080:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker run -p 3000:8080 &lt;my-image-uuid&gt;
+</code></pre></div>
+<p>Once the container has started, just head over to <code>http://&lt;docker-host&gt;:8080</code> to access your newly deployed service. If you launch a second container with the same image, you cannot bind it to the same host port (8080 in this case) and you should instead map it to port 8081 <code>docker run -p 3000:8081 ...</code>.</p>
 
-<p>To access arbitrary data from the environment, use pallet.environment/get-for.</p>
+<h2>Trying It Out</h2>
 
-<p>Finally, vmfest is Toni Batchelli&#39;s great new lib for using VirtualBox from
-clojure.  Toni is simplifying the setup before announcing this more generally,
-but it works very well, and is now my default development and testing setup for
-pallet. If you want to give it a try, give tbatchelli a shout on #pallet in
-freenode IRC.  <a href="https://github.com/tbatchelli/vmfest">vmfest is on github</a>.</p>
+<ul>
+<li><a href="https://docs.docker.com/installation/#installation">Install</a> Docker.</li>
+<li>Clone this <a href="https://github.com/tbatchelli/compojure-example">example clojure project</a>.</li>
+<li>On the project root, run <code>lein uberimage</code> and copy the supplied image uuid</li>
+<li>At the shell, run <code>docker run -d -p 3000:3000 &lt;image-uuid&gt;</code></li>
+<li>Open the browser and head on to <code>http://&lt;docker-host&gt;:3000</code>. Docker-host could be <code>localhost</code> in case you are in linux, or the boot2docker IP address if you are using boot2docker.</li>
+<li>Run <code>docker run -d -p 3001:3000 &lt;image-uuid&gt;</code> to run a second instance and check <code>http://&lt;docker-host&gt;:3001</code> with your browser. Notice the different IP address.</li>
+</ul>
 
-<p>For full details, check the <a href="https://github.com/pallet/pallet/wiki/ReleaseNotes">release notes</a>.</p>
+<h2>Additional Options</h2>
 
-<h2>Upcoming</h2>
+<p>In case the supplied OS and java versions are not what you&#39;re looking for, you can supply your own base image to <code>lein-uberimage</code>:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>lein uberimage -b &lt;your-image-with-jvm&gt;
+</code></pre></div>
+<p>And in case your Docker is not locally installed on the default port or it is remote, you can override its url:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>lein uberimage -H http://&lt;host&gt;:&lt;port&gt;
+</code></pre></div>
+<h2>Concluding remarks</h2>
 
-<p>Expect a post with a more in depth example of using environements soon.  There
-are some other interesting features in the pipeline, including the use of spot
-instances on EC2 - stay tuned...</p>
+<p>There is not much more to it for now. This is our first stab at helping clojurians leverage containers. Please submit bugs and ideas to our project&#39;s <a href="https://github.com/palletops/lein-uberimage/issues">Issues</a> or drop by our chatroom <a href="http://webchat.freenode.net/?channels=pallet">#pallet</a> on freenode.</p>
+
+<p><code>lein-uberimage</code> is build on top of <a href="https://github.com/palletops/clj-docker.">clj-docker</a>, a clojure wrapper over docker.</p>
 
   </div>
-  <p class="text-muted post-meta"> This post was published on 14 March 2011
+  <p class="text-muted post-meta"> This post was published on 07 August 2014
   under the categories: blog  </p>
   <!-- This must be within a content class -->
 
@@ -213,14 +208,14 @@ instances on EC2 - stay tuned...</p>
   </div> <!-- /.panel-heading-->
   <div class="panel-body">
     <ul class="list-inline">
-      <li> <a href="//twitter.com/intent/tweet?url=http%3A%2F%2Fpalletops.com%2F%2Fpallet-0410-environments-parallel-lift-and-co&text=Check+this+out%3A&hashtags=palletops">
+      <li> <a href="//twitter.com/intent/tweet?url=http%3A%2F%2Fpalletops.com%2F%2Fblog%2Flein-uberimage%2F&text=Check+this+out%3A&hashtags=palletops">
 	 <button class="btn btn-sm btn-twitter"><i class="fa
 	 fa-twitter"></i> | Twitter</button> </a> </li>
-      <li><a href="http://linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fpalletops.com%2F%2Fpallet-0410-environments-parallel-lift-and-co&title=Pallet 0.4.10 -  environments, parallel lift and converge, and virtualbox too!&summary=This week saw the release of 0.4.10.
+      <li><a href="http://linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fpalletops.com%2F%2Fblog%2Flein-uberimage%2F&title=Run clojure projects on Docker with lein-uberimage&summary=We built a lein plugin to make it easy to run clojure projects in Docker containers. This article first introduces containers and Docker, and then shows how you can effortlessly create such containers for your Clojure projects with lein uberimage. 
 ">
 	<button class="btn btn-sm btn-linkedin"><i class="fa
 	fa-linkedin"></i> | LinkedIn</button></a><li>
-      <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fpalletops.com%2F%2Fpallet-0410-environments-parallel-lift-and-co"
+      <li><a href="https://plus.google.com/share?url=http%3A%2F%2Fpalletops.com%2F%2Fblog%2Flein-uberimage%2F"
 	 <button class="btn btn-sm btn-google-plus">
 	   <i class="fa fa-google-plus"></i> | Goolge+</button></a></li>
     </ul>

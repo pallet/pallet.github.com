@@ -3,13 +3,91 @@
  <title>Pallet, DevOps for the JVM</title>
  <link href="http://palletops.com/atom.xml" rel="self"/>
  <link href="http://palletops.com/"/>
- <updated>2014-06-26T16:50:30+00:00</updated>
+ <updated>2014-08-07T23:34:30+00:00</updated>
  <id>http://palletops.com/</id>
  <author>
    <name>Antoni Batchelli</name>
    <email>tbatchelli@palletops.com</email>
  </author>
  <!-- blog posts -->
+ 
+ <entry>
+   <title>Article: Run clojure projects on Docker with lein-uberimage</title>
+   <link href="http://palletops.com//blog/lein-uberimage/"/>
+   <updated>2014-08-07T00:00:00+00:00</updated>
+   <id>http://palletops.com//blog/lein-uberimage/</id>
+   <content type="html">&lt;p&gt;We built a lein plugin to make it easy to run clojure projects in Docker containers. This article first introduces containers and Docker, and then shows how you can effortlessly create such containers for your Clojure projects with &lt;code&gt;lein uberimage&lt;/code&gt;. &lt;/p&gt;
+
+&lt;p&gt;&lt;image src=&quot;/images/docker-large-h-trans.png&quot; alt=&quot;Docker logo&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;
+
+&lt;h2&gt;Why Containers and Why Docker&lt;/h2&gt;
+
+&lt;p&gt;A container is a lighweight form of computer virtualization. Containers run within a host, and a host can run many containers concurrently. Each container is functionally equivalent to a computer loaded with a full OS, but behind the scenes all containers in the same host are sharing the same host resources: kernel, memory, IO, and disk.&lt;/p&gt;
+
+&lt;p&gt;There are many ways of virtualization technologies used today, VirtualBox, Xen (used by Amazon Web Services) and vmware to name a few, but what makes containers special is their lightweight nature. Each container uses very little resources (disk, memory, cpu) and they all boot orders of magnitude faster than a virtual machine or
+a computer.&lt;/p&gt;
+
+&lt;p&gt;Containers are very convenient for both development and production environments. For development, they provide a fast and simple way to run different and isolated runtime environments for each application. In production, they are very fast and efficient, with the added bonus that containers in production always match the ones in development; the same exact containers are used during all app&amp;#39;s lifecycle.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.docker.com&quot;&gt;Docker&lt;/a&gt; is a novel container technology for Linux that provides a very low friction access to containers. Containers have been around for a while, and the Linux kernel has provided key container technologies for a while already. Docker wraps all these kernel features under a high level API and defines a standard container and image formats using union filesystems. To make containers easy to share and distribute, Docker also provides public and private image repositories. All these features have brought containers to the masses.&lt;/p&gt;
+
+&lt;p&gt;Although Docker is currently Linux only, you can use it on OSX installing &lt;a href=&quot;http://boot2docker.io&quot;&gt;boot2docker&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For a more detailed introduction to Docker, check out this video on &lt;a href=&quot;http://sysadmincasts.com/episodes/31-introduction-to-docker&quot;&gt;sysadmincasts.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Docker images&lt;/h2&gt;
+
+&lt;p&gt;Each container is a process tree that is started from an existing image. These images contain a filesystem with the files necessary to run your application. Sometimes this entails a linux distribution and sometimes just one statically linked binary. The common practice in the Docker world is to build a custom image for each type of service you intend to run. This contrasts with other forms of virtualization where you start the VMs from a base image and then you configure them with the required software. In the case of VMs, the time it takes a VM to boot until it is ready to run your application is measured in minutes, whereas in Docker a container can boot in sub-second times.&lt;/p&gt;
+
+&lt;h2&gt;Building Docker images with uberimage&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;lein-uberimage&lt;/code&gt; builds a Docker image for clojure projects. The generated images contain a base operating system, a java runtime, and your project&amp;#39;s &lt;code&gt;uberjar&lt;/code&gt;. Once this image is built, you can instantiate as many containers as you need using this image, each container running your &lt;code&gt;uberjar&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;At the time of writing this, &lt;code&gt;lein-uberimage&lt;/code&gt; requires that the project builds with &lt;code&gt;lein uberjar&lt;/code&gt; and that the resulting jar can be run via &lt;code&gt;java -jar &amp;lt;your-uberjar&amp;gt;.jar&lt;/code&gt;. This means your &lt;code&gt;project.clj&lt;/code&gt; will have to have a &lt;code&gt;:main&lt;/code&gt; entry pointing to the &lt;code&gt;-main&lt;/code&gt; function in your code. This restriction will be removed in the future.&lt;/p&gt;
+
+&lt;p&gt;To build the Docker image for your project, run the following in your project&amp;#39;s root:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lein uberimage
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;uberimage&lt;/code&gt; will call lein&amp;#39;s &lt;code&gt;uberjar&lt;/code&gt; to build the standalone jar file. Then it will build a new image with &lt;code&gt;Ubuntu 14.04&lt;/code&gt;, &lt;code&gt;OpenJDK 7&lt;/code&gt; and the freshly built jar. The image is also configured to run your jar file on boot. This task will return the &lt;code&gt;uuid&lt;/code&gt; for this image.&lt;/p&gt;
+
+&lt;p&gt;From this image you just created, you can spawn as many containers as you need. The most basic way to start a container is this:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &amp;lt;my-image-uuid&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;In most cases, your app won&amp;#39;t be useful unless you can access it via known ports, and by default, Docker does not expose any ports of a container, so you need to tell Docker to expose those ports. Since you will be running many containers on the same host you need to ensure that not two containers are bound to the same port. For example, if your application listens on port 3000, you need to tell Docker to bind the container&amp;#39;s port 3000 to any unbound port in the host, e.g. 8080:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run -p 3000:8080 &amp;lt;my-image-uuid&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once the container has started, just head over to &lt;code&gt;http://&amp;lt;docker-host&amp;gt;:8080&lt;/code&gt; to access your newly deployed service. If you launch a second container with the same image, you cannot bind it to the same host port (8080 in this case) and you should instead map it to port 8081 &lt;code&gt;docker run -p 3000:8081 ...&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Trying It Out&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.docker.com/installation/#installation&quot;&gt;Install&lt;/a&gt; Docker.&lt;/li&gt;
+&lt;li&gt;Clone this &lt;a href=&quot;https://github.com/tbatchelli/compojure-example&quot;&gt;example clojure project&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;On the project root, run &lt;code&gt;lein uberimage&lt;/code&gt; and copy the supplied image uuid&lt;/li&gt;
+&lt;li&gt;At the shell, run &lt;code&gt;docker run -d -p 3000:3000 &amp;lt;image-uuid&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Open the browser and head on to &lt;code&gt;http://&amp;lt;docker-host&amp;gt;:3000&lt;/code&gt;. Docker-host could be &lt;code&gt;localhost&lt;/code&gt; in case you are in linux, or the boot2docker IP address if you are using boot2docker.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;docker run -d -p 3001:3000 &amp;lt;image-uuid&amp;gt;&lt;/code&gt; to run a second instance and check &lt;code&gt;http://&amp;lt;docker-host&amp;gt;:3001&lt;/code&gt; with your browser. Notice the different IP address.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Additional Options&lt;/h2&gt;
+
+&lt;p&gt;In case the supplied OS and java versions are not what you&amp;#39;re looking for, you can supply your own base image to &lt;code&gt;lein-uberimage&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lein uberimage -b &amp;lt;your-image-with-jvm&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And in case your Docker is not locally installed on the default port or it is remote, you can override its url:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;lein uberimage -H http://&amp;lt;host&amp;gt;:&amp;lt;port&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Concluding remarks&lt;/h2&gt;
+
+&lt;p&gt;There is not much more to it for now. This is our first stab at helping clojurians leverage containers. Please submit bugs and ideas to our project&amp;#39;s &lt;a href=&quot;https://github.com/palletops/lein-uberimage/issues&quot;&gt;Issues&lt;/a&gt; or drop by our chatroom &lt;a href=&quot;http://webchat.freenode.net/?channels=pallet&quot;&gt;#pallet&lt;/a&gt; on freenode.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;lein-uberimage&lt;/code&gt; is build on top of &lt;a href=&quot;https://github.com/palletops/clj-docker.&quot;&gt;clj-docker&lt;/a&gt;, a clojure wrapper over docker.&lt;/p&gt;
+</content>
+   <author>
+     <name>Antoni Batchelli</name>
+     <uri></uri>
+   </author>
+ </entry>
  
  <entry>
    <title>Article: Alembic - a library to control your classpath</title>

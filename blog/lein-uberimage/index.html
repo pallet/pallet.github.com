@@ -168,9 +168,9 @@ a computer.</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker run &lt;my-image-uuid&gt;
 </code></pre></div>
 <p>In most cases, your app won&#39;t be useful unless you can access it via known ports, and by default, Docker does not expose any ports of a container, so you need to tell Docker to expose those ports. Since you will be running many containers on the same host you need to ensure that not two containers are bound to the same port. For example, if your application listens on port 3000, you need to tell Docker to bind the container&#39;s port 3000 to any unbound port in the host, e.g. 8080:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker run -p 3000:8080 &lt;my-image-uuid&gt;
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>docker run -p 8080:3000 &lt;my-image-uuid&gt;
 </code></pre></div>
-<p>Once the container has started, just head over to <code>http://&lt;docker-host&gt;:8080</code> to access your newly deployed service. If you launch a second container with the same image, you cannot bind it to the same host port (8080 in this case) and you should instead map it to port 8081 <code>docker run -p 3000:8081 ...</code>.</p>
+<p>Once the container has started, just head over to <code>http://&lt;docker-host&gt;:8080</code> to access your newly deployed service. If you launch a second container with the same image, you cannot bind it to the same host port (8080 in this case) and you should instead map it to port 8081 <code>docker run -p 8081:3000 ...</code>.</p>
 
 <h2>Trying It Out</h2>
 
@@ -280,7 +280,7 @@ a computer.</p>
   
   
   <div id="tags">
-    <h3>Tags:</h3>
+    <h3>Categories:</h3>
     
     
     
@@ -434,7 +434,7 @@ a computer.</p>
 	    <small>Built with <a target="_blank"
 	    href="http://jekyllrb.com">Jekyll</a> and
 	    <a target="_blank" href="http://getbootstrap.com">Bootstrap</a> on
-	    Mon, 11 Aug 2014 23:01:42 +0000</small></p>
+	    Mon, 11 Aug 2014 23:23:43 +0000</small></p>
       </div>
     </div> <!-- /.row -->
   </div>

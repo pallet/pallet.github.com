@@ -3,7 +3,7 @@
  <title>Pallet, DevOps for the JVM</title>
  <link href="http://palletops.com/atom.xml" rel="self"/>
  <link href="http://palletops.com/"/>
- <updated>2014-08-11T23:01:42+00:00</updated>
+ <updated>2014-08-11T23:23:43+00:00</updated>
  <id>http://palletops.com/</id>
  <author>
    <name>Antoni Batchelli</name>
@@ -54,9 +54,9 @@ a computer.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &amp;lt;my-image-uuid&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In most cases, your app won&amp;#39;t be useful unless you can access it via known ports, and by default, Docker does not expose any ports of a container, so you need to tell Docker to expose those ports. Since you will be running many containers on the same host you need to ensure that not two containers are bound to the same port. For example, if your application listens on port 3000, you need to tell Docker to bind the container&amp;#39;s port 3000 to any unbound port in the host, e.g. 8080:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run -p 3000:8080 &amp;lt;my-image-uuid&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run -p 8080:3000 &amp;lt;my-image-uuid&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Once the container has started, just head over to &lt;code&gt;http://&amp;lt;docker-host&amp;gt;:8080&lt;/code&gt; to access your newly deployed service. If you launch a second container with the same image, you cannot bind it to the same host port (8080 in this case) and you should instead map it to port 8081 &lt;code&gt;docker run -p 3000:8081 ...&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Once the container has started, just head over to &lt;code&gt;http://&amp;lt;docker-host&amp;gt;:8080&lt;/code&gt; to access your newly deployed service. If you launch a second container with the same image, you cannot bind it to the same host port (8080 in this case) and you should instead map it to port 8081 &lt;code&gt;docker run -p 8081:3000 ...&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2&gt;Trying It Out&lt;/h2&gt;
 
@@ -897,9 +897,9 @@ a computer.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run &amp;lt;my-image-uuid&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;In most cases, your app won&amp;#39;t be useful unless you can access it via known ports, and by default, Docker does not expose any ports of a container, so you need to tell Docker to expose those ports. Since you will be running many containers on the same host you need to ensure that not two containers are bound to the same port. For example, if your application listens on port 3000, you need to tell Docker to bind the container&amp;#39;s port 3000 to any unbound port in the host, e.g. 8080:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run -p 3000:8080 &amp;lt;my-image-uuid&amp;gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;docker run -p 8080:3000 &amp;lt;my-image-uuid&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Once the container has started, just head over to &lt;code&gt;http://&amp;lt;docker-host&amp;gt;:8080&lt;/code&gt; to access your newly deployed service. If you launch a second container with the same image, you cannot bind it to the same host port (8080 in this case) and you should instead map it to port 8081 &lt;code&gt;docker run -p 3000:8081 ...&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Once the container has started, just head over to &lt;code&gt;http://&amp;lt;docker-host&amp;gt;:8080&lt;/code&gt; to access your newly deployed service. If you launch a second container with the same image, you cannot bind it to the same host port (8080 in this case) and you should instead map it to port 8081 &lt;code&gt;docker run -p 8081:3000 ...&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2&gt;Trying It Out&lt;/h2&gt;
 

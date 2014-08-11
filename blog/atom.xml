@@ -3,7 +3,7 @@
  <title>Pallet, DevOps for the JVM -- Blog</title>
  <link href="http://palletops.com/blog/atom.xml" rel="self"/>
  <link href="http://palletops.com/blog"/>
- <updated>2014-08-11T18:59:41+00:00</updated>
+ <updated>2014-08-11T23:01:42+00:00</updated>
  <id>http://palletops.com/blog</id>
  <author>
    <name>Antoni Batchelli</name>
@@ -12,9 +12,9 @@
  
  <entry>
    <title>Run clojure projects on Docker with lein-uberimage</title>
-   <link href="http://palletops.com//blog/lein-uberimage/"/>
+   <link href="http://palletops.com//blog/lein-uberimage"/>
    <updated>2014-08-07T00:00:00+00:00</updated>
-   <id>http://palletops.com//blog/lein-uberimage/</id>
+   <id>http://palletops.com//blog/lein-uberimage</id>
    <content type="html">&lt;p&gt;We built a lein plugin to make it easy to run clojure projects in Docker containers. This article first introduces containers and Docker, and then shows how you can effortlessly create such containers for your Clojure projects with &lt;code&gt;lein uberimage&lt;/code&gt;. &lt;/p&gt;
 
 &lt;p&gt;&lt;image src=&quot;/images/docker-large-h-trans.png&quot; alt=&quot;Docker logo&quot; class=&quot;img-responsive&quot;&gt;&lt;/p&gt;

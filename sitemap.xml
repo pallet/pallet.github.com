@@ -13,7 +13,7 @@
   
     
   <url>
-    <loc>http://palletops.com//blog/lein-uberimage/</loc>
+    <loc>http://palletops.com//blog/lein-uberimage</loc>
     
     <lastmod>2014-08-07</lastmod>
     
@@ -106,6 +106,33 @@
   
   <url>
     <loc>http://palletops.com//blog/index.html</loc>
+    
+    <lastmod>2014-08-11</lastmod>
+    
+    
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//blog/category/blog/index.html</loc>
+    
+    <lastmod>2014-08-11</lastmod>
+    
+    
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//blog/category/news/index.html</loc>
+    
+    <lastmod>2014-08-11</lastmod>
+    
+    
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//blog/category/docker/index.html</loc>
     
     <lastmod>2014-08-11</lastmod>
     

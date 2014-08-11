@@ -1,0 +1,29 @@
+---
+layout: nil
+section: blog
+---
+<!doctype html>
+<html lang="en">
+  {% assign page.title = Category Archive for {{ page.category }} %}
+
+  {% include main/head.html %}
+  <body>
+    {% include main/topbar.html %}
+    <div class="post">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 content">
+            <div class="page-header">
+              <h1 class="title">Category archive for {{ page.category }}</h1>
+            </div>
+	    {{ content }}
+	  </div>
+          <div class="col-md-3 col-xs-12 sidebar">
+            {% include main/sidebar-common.html %}
+	    {% include blog-tags.html %}
+          </div>
+        </div> <!-- row -->
+      </div> <!-- container -->
+      {% include main/foot.html %}
+  </body>
+</html>

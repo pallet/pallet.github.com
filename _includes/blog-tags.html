@@ -1,0 +1,18 @@
+<div class="blog-tag">
+  {% comment %} Tag ordering from: https://github.com/LanyonM/lanyonm.github.io/blob/master/tags.html {% endcomment %}
+  {% capture site_tags %}{% for tag in site.categories %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+  {% assign tag_words = site_tags | split:',' | sort %}
+  <div id="tags">
+    <h3>Tags:</h3>
+    {% for item in (0..site.categories.size) %}
+    {% unless forloop.last %}
+    {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+    <!-- Warning! hardcoded link for /blog/category ... -->
+    <p><a href="/blog/category/{{ this_word | cgi_escape }}" style="text-decoration: none">
+	<span class="label label-primary">{{ this_word }} | {{ site.categories[this_word].size }}</span>
+      </a>
+    </p>
+    {% endunless %}
+    {% endfor %}
+  </div>
+</div>

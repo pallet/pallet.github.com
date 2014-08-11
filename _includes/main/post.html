@@ -7,11 +7,16 @@
     {{ content }}
   </div>
   <p class="text-muted post-meta"> This post was published on {{ page.date | date:'%d %B %Y' }}
-  under the categories: {% for category in page.categories %}{{category }} {% endfor %} </p>
+    under the category: {% for category in page.categories %}
+    <a href="/blog/category/{{ category }}" style="text-decoration: none">
+      <span class="label label-primary">{{category }}</span> </a>{% endfor %}
+  </p>
+  
   {% include main/share.html %}
   {% include main/disqus.html %}
 </div><!--content-->
 <div class="col-md-3 col-xs-12 sidebar">
   {% include main/sidebar-common.html %}
+  {% include blog-tags.html %}
 </div><!-- /.sidebar -->
 </div><!-- /.row -->

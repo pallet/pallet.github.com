@@ -15,5 +15,6 @@ description: Pallet is a platform for agile and programmatic automation of
 collections:
   pages:
     output: true
-
-    
+# Categories by: https://github.com/shigeya/jekyll-category-archive-plugin
+category_archive:
+  path: /blog/category/

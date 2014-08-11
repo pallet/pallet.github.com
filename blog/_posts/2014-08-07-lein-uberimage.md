@@ -3,6 +3,8 @@ layout: main/blog-post
 title: Run clojure projects on Docker with lein-uberimage
 author: Antoni Batchelli
 section: blog
+permalink: blog/lein-uberimage
+categories: [docker,news]
 ---
 
 We built a lein plugin to make it easy to run clojure projects in Docker containers. This article first introduces containers and Docker, and then shows how you can effortlessly create such containers for your Clojure projects with `lein uberimage`. 

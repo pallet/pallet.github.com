@@ -56,10 +56,10 @@ $ docker run <my-image-uuid>
 In most cases, your app won't be useful unless you can access it via known ports, and by default, Docker does not expose any ports of a container, so you need to tell Docker to expose those ports. Since you will be running many containers on the same host you need to ensure that not two containers are bound to the same port. For example, if your application listens on port 3000, you need to tell Docker to bind the container's port 3000 to any unbound port in the host, e.g. 8080:
 
 ``` bash
-$ docker run -p 3000:8080 <my-image-uuid>
+$ docker run -p 8080:3000 <my-image-uuid>
 ```
 
-Once the container has started, just head over to `http://<docker-host>:8080` to access your newly deployed service. If you launch a second container with the same image, you cannot bind it to the same host port (8080 in this case) and you should instead map it to port 8081 `docker run -p 3000:8081 ...`.
+Once the container has started, just head over to `http://<docker-host>:8080` to access your newly deployed service. If you launch a second container with the same image, you cannot bind it to the same host port (8080 in this case) and you should instead map it to port 8081 `docker run -p 8081:3000 ...`.
 
 ## Trying It Out
 

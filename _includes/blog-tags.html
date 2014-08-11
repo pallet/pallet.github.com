@@ -3,7 +3,7 @@
   {% capture site_tags %}{% for tag in site.categories %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
   {% assign tag_words = site_tags | split:',' | sort %}
   <div id="tags">
-    <h3>Tags:</h3>
+    <h3>Categories:</h3>
     {% for item in (0..site.categories.size) %}
     {% unless forloop.last %}
     {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}

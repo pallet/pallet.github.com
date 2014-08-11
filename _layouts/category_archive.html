@@ -4,8 +4,7 @@ section: blog
 ---
 <!doctype html>
 <html lang="en">
-  {% assign page.title = Category Archive for {{ page.category }} %}
-
+  {% assign page.title = Blog Entries for: {{ page.category }} %}
   {% include main/head.html %}
   <body>
     {% include main/topbar.html %}
@@ -14,7 +13,7 @@ section: blog
         <div class="row">
           <div class="col-md-9 content">
             <div class="page-header">
-              <h1 class="title">Category archive for {{ page.category }}</h1>
+              <h1 class="title">Blog Entries for: {{ page.category }}</h1>
             </div>
 	    {{ content }}
 	  </div>

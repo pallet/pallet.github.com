@@ -4,7 +4,7 @@
   <!--  Homepage -->
   <url>
     <loc>http://palletops.com/</loc>
-    <lastmod>2014-08-11</lastmod>
+    <lastmod>2014-08-12</lastmod>
     <changefreq>daily</changefreq>
 		<priority>1.0</priority>
   </url>
@@ -87,18 +87,9 @@
   <!-- html pages -->
   
   <url>
-    <loc>http://palletops.com//blog/index.html</loc>
-    
-    <lastmod>2014-08-11</lastmod>
-    
-    
-    
-  </url>
-  
-  <url>
     <loc>http://palletops.com//index.html</loc>
     
-    <lastmod>2014-08-11</lastmod>
+    <lastmod>2014-08-12</lastmod>
     
     
     
@@ -107,7 +98,16 @@
   <url>
     <loc>http://palletops.com//news/index.html</loc>
     
-    <lastmod>2014-08-11</lastmod>
+    <lastmod>2014-08-12</lastmod>
+    
+    
+    
+  </url>
+  
+  <url>
+    <loc>http://palletops.com//blog/index.html</loc>
+    
+    <lastmod>2014-08-12</lastmod>
     
     
     
@@ -116,7 +116,7 @@
   <url>
     <loc>http://palletops.com//blog/category/blog/index.html</loc>
     
-    <lastmod>2014-08-11</lastmod>
+    <lastmod>2014-08-12</lastmod>
     
     
     
@@ -125,7 +125,7 @@
   <url>
     <loc>http://palletops.com//blog/category/news/index.html</loc>
     
-    <lastmod>2014-08-11</lastmod>
+    <lastmod>2014-08-12</lastmod>
     
     
     
@@ -134,7 +134,7 @@
   <url>
     <loc>http://palletops.com//blog/category/docker/index.html</loc>
     
-    <lastmod>2014-08-11</lastmod>
+    <lastmod>2014-08-12</lastmod>
     
     
     
@@ -143,7 +143,7 @@
   <url>
     <loc>http://palletops.com//2012/new-site/</loc>
     
-    <lastmod>2014-08-11</lastmod>
+    <lastmod>2014-08-12</lastmod>
     
     
     
@@ -152,7 +152,7 @@
   <url>
     <loc>http://palletops.com//2012/pallet-training-early-bird/</loc>
     
-    <lastmod>2014-08-11</lastmod>
+    <lastmod>2014-08-12</lastmod>
     
     
     

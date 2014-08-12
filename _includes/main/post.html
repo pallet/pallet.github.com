@@ -6,12 +6,12 @@
   <div class="post-content">
     {{ content }}
   </div>
+  {% include main/post-call-us.html %}
   <p class="text-muted post-meta"> This post was published on {{ page.date | date:'%d %B %Y' }}
-    under the category: {% for category in page.categories %}
+    under the categories: {% for category in page.categories %}
     <a href="/blog/category/{{ category }}" style="text-decoration: none">
       <span class="label label-primary">{{category }}</span> </a>{% endfor %}
   </p>
-  
   {% include main/share.html %}
   {% include main/disqus.html %}
 </div><!--content-->

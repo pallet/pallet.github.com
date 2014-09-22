@@ -9,8 +9,9 @@ categories:
 ---
 
 [leiningen][leiningen] suffers from JVM and [Clojure][clojure]
-start-up times, and while [Phil][technomancy] does a lot to minimise these, your
-leiningen `profiles.clj` file can significantly slow things down
+start-up times, and while [Phil][technomancy] applies great effort to
+minimise these, your [leiningen][leiningen]
+[`profiles.clj` file][profiles] can significantly slow things down
 again.
 
 ## How Much is `profiles.clj` Slowing You Down?
@@ -74,9 +75,32 @@ plugin affects leiningen start-up time.  In particular, don't require
 task namespaces just to hook them (esp. leiningen.repl), as these can
 then get loaded no matter which task is being run.
 
+## Other Speed-Ups
+
+If you use the repl heavily, you might rely on some custom `:jvm-opts`
+to make the REPL longer lived.  These options often slow down other
+lein invocations though, so you might want to move them to the `:repl`
+profile too.
+
+```clj
+{ …
+:repl {:jvm-opts ["-Djava.awt.headless=true"
+                  "-Dfile.encoding=UTF-8"
+                  "-XX:MaxPermSize=512m"
+                  "-Xmx1024m"
+                  ;; allow permgen collection
+                  "-XX:+UseConcMarkSweepGC"
+                  "-XX:+CMSClassUnloadingEnabled"]} … }
+```
+
+## Conclusion
+
+Hopefully at least one of these tricks will help speed up your
+leiningen start-up times.  Let us know what your time savings are!
 
 [clojure]:http://clojure.com/ "Clojure"
 [leiningen]:https://github.com/technomancy/leiningen "Leiningen"
+[profiles]:https://github.com/technomancy/leiningen/blob/master/doc/PROFILES.md "Leiningen profiles"
 [eastwood]:https://github.com/jonase/eastwood "Eastwood linter for clojure"
 [lein-plz]:https://github.com/johnwalker/lein-plz "Plz add depenencies"
 [alembic]:https://github.com/pallet/alembic "Alembic add dependencies and run Lein at the REPL"

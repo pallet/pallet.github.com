@@ -105,7 +105,19 @@ We want the unit to be run on all nodes in the cluster, so we use the
 Global=true
 ```
 
+To actually run the fleet unit file, `scp` it to one of your cluster
+nodes, and then use `fleetctl` to start it.
 
+```
+fleetctl start latest-docker.service
+```
+
+You should check that docker has restarted and is show using the new
+binary in `/var/bin`.
+
+```
+systemctl status -l docker.service
+```
 
 # Switching Back to the Default CoreOS docker Version
 
